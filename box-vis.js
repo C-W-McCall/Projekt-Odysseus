@@ -1,4 +1,4 @@
-const svg = d3.selectAll(".visual-container").append("svg").attr("width", 1560).attr("height", 1002);
+const svg = d3.selectAll(".visual-container").append("svg").attr("width", 1570).attr("height", 1000);
 console.log(svg);
 
 
