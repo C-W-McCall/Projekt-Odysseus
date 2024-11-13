@@ -96,14 +96,6 @@ createBox(850, 300, 0.75);
 createBox(1150, 300, 0.75);
 
 
-svg.append("rect")
-.attr('x', 680)
-.attr('y', 0)
-.attr('width', 200)
-.attr('height', 200)
-.attr('fill', 'grey');
-
-
 
 const averagePlasticPrM3InSea = [20000, 10000, 500, 500000, 4000]
 
