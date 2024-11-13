@@ -88,9 +88,19 @@ svg.append('line')
   return this;
 }
 
-createBox(0, 500, 0.5);
-createBox(250, 500, 0.5);
+createBox(-50, 300, 0.75);
+createBox(250, 300, 0.75);
 
-createBox(500, 500, 0.5);
-createBox(750, 500, 0.5);
-createBox(1000, 500, 0.5);
+createBox(550, 300, 0.75);
+createBox(850, 300, 0.75);
+createBox(1150, 300, 0.75);
+
+
+svg.append("rect")
+.attr('x', 680)
+.attr('y', 0)
+.attr('width', 200)
+.attr('height', 200)
+
+
+svg.append('')
