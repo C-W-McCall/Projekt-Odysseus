@@ -101,6 +101,16 @@ svg.append("rect")
 .attr('y', 0)
 .attr('width', 200)
 .attr('height', 200)
+.attr('fill', 'grey');
 
 
-svg.append('')
+
+const averagePlasticPrM3InSea = [20000, 10000, 500, 500000, 4000]
+
+
+for(let i = 0; i<averagePlasticPrM3InSea.length; i++) {
+    console.log(Math.floor(averagePlasticPrM3InSea[i] / 100))
+}
+
+
+
