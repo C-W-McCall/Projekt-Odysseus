@@ -36,7 +36,9 @@ server.listen(port, onServerReady);
 
 async function onGetAlbums(request, response) {
     try {
-        const dbResult = await db.query('SELECT * FROM samples');
+        const dbResult = await db.query(
+            'SELECT measurement FROM samples'
+        );
         response.json(dbResult.rows);
     } catch (error) {
         console.error('Error fetching data from database:', error);

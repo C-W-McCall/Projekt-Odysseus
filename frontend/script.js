@@ -25,5 +25,6 @@ function fetchAlbums() {
             .enter()
             .append('td')
             .text((d) => d);
+            return console.log(albums);
     });
 }
