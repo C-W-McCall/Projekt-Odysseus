@@ -11,8 +11,8 @@ header {
     padding: 10px;
     text-align: left;
     color: #fcffc7;
-
 }
+
 .Overskrift {
     padding: 10px;
     position: absolute;
@@ -35,48 +35,20 @@ header {
     color: #fcffc7;
  }
 
- .container {
-    display: flex;
-    gap: 10px; 
-}
-
-.textbox {
+ .textbox {
     border: 3px solid #fcffc7;
     background-color: #020c23;
-    color: #fcffc7; 
+    color: #fcffc7;
     padding: 15px;
-    margin: 5px;
     border-radius: 4px;
-    flex: 1; 
-    text-align: center; 
-    position: flex;
-        top: 1000px; 
-        left: 150px; 
-        font-size: 12px;
+    flex: 1;
+    text-align: center;
 }
 
- 
- .datamodelBoxen {
-    background-color: #020c23;;
-    padding: 100px;
-    border-radius: 16px;
-    margin-bottom: 32px;
- }
-
-.select-container label {
-    font-size: 16px;
-    color: #333;
-}
-
-
-.visual-container {
-    position: center;
-    top: 500px; 
-    width: 90%;
-    height: 0px;
-    width: 1570px;
+.container {
+    display: flex;
+    gap: 10px;
     margin: 20px auto;
+    padding: 10px;
+    width: 80%;
 }
-
- 
- 
