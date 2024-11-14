@@ -20,7 +20,7 @@ const dbResult = await db.query('select now()');
 console.log('Database connection established on', dbResult.rows[0].now);
 
 console.log('Recreating tables...');
-db.query(`
+await db.query(`
 drop table if exists oceans cascade;
 drop table if exists samples cascade;
 drop table if exists sampling_methods cascade;
@@ -88,87 +88,90 @@ density_class_id integer references density_classes (density_class_id),
 latitude real,
 longitude real
 );
+
+
 `);
 console.log('Tables recreated.');
 
 console.log('Copying data from CSV files...');
-copyIntoTable(db, `
+await copyIntoTable(db, `
 	copy temp_table
 	from stdin
-	with csv header`, 'db/MircoPlastics.csv'
+	with csv header`, 'db/MicroPlastics.csv');
 
-	`insert into oceans (ocean)
-	(select distinct ocean from temp_table);
-	
-	
-	insert into sampling_methods (sampling_method)
-	(select distinct samplingmethod from temp_table);
-	
-	
-	insert into units (unit)
-	(select distinct unit from temp_table);
-	
-	
-	insert into density_classes (density_class)
-	(select distinct densityclass from temp_table);
-	
-	
-	insert into samples (ocean_id, sampling_method_id, measurement, date, unit_id, density_range, density_class_id, latitude, longitude)
-	(select case when ocean = 'Pacific Ocean' then 1
-	when ocean = 'Arctic Ocean' then 2
-	when ocean = 'Atlantic Ocean' then 3
-	when ocean = 'Sounthern Ocean' then 4
-	when ocean = 'Indian Ocean' then 5
-	end,
-	case when samplingmethod = 'Aluminum bucket' then 1
-	when samplingmethod = 'stainless-steel sampler' then 2
-	when samplingmethod = 'Surface water intake' then 3
-	when samplingmethod = 'Sediment grab sampler' then 4
-	when samplingmethod = 'Grab sample' then 5
-	when samplingmethod = 'shovel' then 6
-	when samplingmethod = 'Manta net' then 7
-	when samplingmethod = 'Metal spoon' then 8
-	when samplingmethod = 'Ekman dredge' then 9
-	when samplingmethod = 'PVC cylinder' then 10
-	when samplingmethod = 'Shipek grab sampler' then 11
-	when samplingmethod = 'Stainless steel spoon' then 12
-	when samplingmethod = 'Metal scoop' then 13
-	when samplingmethod = 'CTD rosette sampler' then 14
-	when samplingmethod = 'Intake seawater pump' then 15
-	when samplingmethod = 'Plankton net' then 16
-	when samplingmethod = 'Neuston net' then 17
-	when samplingmethod = 'Stainless steel bucket' then 18
-	when samplingmethod = 'Hand picking' then 19
-	when samplingmethod = 'Van Veen grab sampler' then 20
-	when samplingmethod = 'AVANI net' then 21
-	when samplingmethod = 'Trowel' then 22
-	when samplingmethod = 'Van Dorn sampler' then 23
-	when samplingmethod = 'plankton net' then 24
-	when samplingmethod = 'Megacorer' then 25
-	when samplingmethod = 'Day grab' then 26
-	when samplingmethod = 'Petite Ponar benthic grab' then 27
-	when samplingmethod = 'Remotely operated vehicle' then 28
-	end,
-	measurement,
-	date,
-	case when unit = 'pieces/10 mins' then 1
-	when unit = 'pieces kg-1 d.w.' then 2
-	when unit = 'pieces/m3' then 3
-	end,
-	densityrange,
-	case when densityclass = 'Very Low' then 1
-	when densityclass = 'High' then 2
-	when densityclass = 'Medium' then 3
-	when densityclass = 'Very High' then 4
-	when densityclass = 'Low' then 5
-	end,
-	latitude,
-	longitude
-	from temp_table
-	);`
 
-);
+await db.query(`
+        insert into oceans (ocean)
+(select distinct ocean from temp_table);
+
+
+insert into sampling_methods (sampling_method)
+(select distinct samplingmethod from temp_table);
+
+
+insert into units (unit)
+(select distinct unit from temp_table);
+
+
+insert into density_classes (density_class)
+(select distinct densityclass from temp_table);
+
+
+insert into samples (ocean_id, sampling_method_id, measurement, date, unit_id, density_range, density_class_id, latitude, longitude)
+(select case when ocean = 'Pacific Ocean' then 1
+when ocean = 'Arctic Ocean' then 2
+when ocean = 'Atlantic Ocean' then 3
+when ocean = 'Sounthern Ocean' then 4
+when ocean = 'Indian Ocean' then 5
+end,
+case when samplingmethod = 'Aluminum bucket' then 1
+when samplingmethod = 'stainless-steel sampler' then 2
+when samplingmethod = 'Surface water intake' then 3
+when samplingmethod = 'Sediment grab sampler' then 4
+when samplingmethod = 'Grab sample' then 5
+when samplingmethod = 'shovel' then 6
+when samplingmethod = 'Manta net' then 7
+when samplingmethod = 'Metal spoon' then 8
+when samplingmethod = 'Ekman dredge' then 9
+when samplingmethod = 'PVC cylinder' then 10
+when samplingmethod = 'Shipek grab sampler' then 11
+when samplingmethod = 'Stainless steel spoon' then 12
+when samplingmethod = 'Metal scoop' then 13
+when samplingmethod = 'CTD rosette sampler' then 14
+when samplingmethod = 'Intake seawater pump' then 15
+when samplingmethod = 'Plankton net' then 16
+when samplingmethod = 'Neuston net' then 17
+when samplingmethod = 'Stainless steel bucket' then 18
+when samplingmethod = 'Hand picking' then 19
+when samplingmethod = 'Van Veen grab sampler' then 20
+when samplingmethod = 'AVANI net' then 21
+when samplingmethod = 'Trowel' then 22
+when samplingmethod = 'Van Dorn sampler' then 23
+when samplingmethod = 'plankton net' then 24
+when samplingmethod = 'Megacorer' then 25
+when samplingmethod = 'Day grab' then 26
+when samplingmethod = 'Petite Ponar benthic grab' then 27
+when samplingmethod = 'Remotely operated vehicle' then 28
+end,
+measurement,
+date,
+case when unit = 'pieces/10 mins' then 1
+when unit = 'pieces kg-1 d.w.' then 2
+when unit = 'pieces/m3' then 3
+end,
+densityrange,
+case when densityclass = 'Very Low' then 1
+when densityclass = 'High' then 2
+when densityclass = 'Medium' then 3
+when densityclass = 'Very High' then 4
+when densityclass = 'Low' then 5
+end,
+latitude,
+longitude
+from temp_table
+);`)
 	
+
 await db.end();
 console.log('Data copied.');
 

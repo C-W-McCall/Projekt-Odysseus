@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 console.log('Connecting to database', process.env.PG_DATABASE);
+
 const db = new pg.Pool({
     host: process.env.PG_HOST,
     port: parseInt(process.env.PG_PORT),
@@ -14,8 +15,16 @@ const db = new pg.Pool({
         rejectUnauthorized: false,
     } : undefined,
 });
-const dbResult = await db.query('select now()');
-console.log('Database connection established on', dbResult.rows[0].now);
+
+(async () => {
+    try {
+        const dbResult = await db.query('SELECT NOW()');
+        console.log('Database connection established on', dbResult.rows[0].now);
+    } catch (error) {
+        console.error('Error connecting to database:', error);
+        process.exit(1);  // Stop the server if DB connection fails
+    }
+})();
 
 const port = process.env.PORT || 3000;
 const server = express();
@@ -26,15 +35,15 @@ server.get('/api/albums', onGetAlbums);
 server.listen(port, onServerReady);
 
 async function onGetAlbums(request, response) {
-    const query = request.query;
-    const start = query.start;
-    const end = query.end;
-    const dbResult = await db.query(`
-        select ocean_id, avg(measurement), extract(year from date) as year from samples
-where measurement is not null
-group by ocean_id, year;`,
-        [start, end]);
-    response.send(dbResult.rows);
+    try {
+        const dbResult = await db.query(
+            'SELECT measurement FROM samples'
+        );
+        response.json(dbResult.rows);
+    } catch (error) {
+        console.error('Error fetching data from database:', error);
+        response.status(500).json({ error: 'Failed to retrieve data' });
+    }
 }
 
 function onEachRequest(request, response, next) {
