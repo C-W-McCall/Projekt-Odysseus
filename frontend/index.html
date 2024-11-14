@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <script src="/D3-moduler/d3.v7.js"></script>
+    <script src="d3.v7.js"></script>
 </head>
 <body>
    <!-- Navigationslinje som list -->
@@ -41,6 +41,11 @@
             <p>Visualisering med kasser vises her</p>
         </div>
     </section>
-
+    <p>
+        Find albums released between <input type="number" id="year" min="1972" max="2022" value="2000">
+        <button onclick="fetchAlbums()">Go!</button>
+    </p>
+    <div id="visuals"></div>
+<script src="script.js"></script>
 </body>
 </html>
