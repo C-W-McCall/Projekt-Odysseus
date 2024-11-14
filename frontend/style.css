@@ -4,6 +4,7 @@ body {
     font-family: Arial, sans-serif;
     color: #fcffc7;
     background-color: #020c23;
+    
 }
 
 nav {
@@ -36,6 +37,18 @@ nav li {
 
 nav li:hover {
     background-color: #333;
+}
+
+.image-wrapper {
+    position: fixed;
+    top: 10px; /* Adjust as needed */
+    right: 10px; /* Adjust as needed */
+    z-index: 1001; /* Ensure it's on top of other content */
+}
+
+.image-wrapper img {
+    width: 100px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
 }
 
 .overskrift {
