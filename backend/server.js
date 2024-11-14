@@ -30,14 +30,9 @@ async function onGetAlbums(request, response) {
     const start = query.start;
     const end = query.end;
     const dbResult = await db.query(`
-        select   stage_name as "Artist",
-                 title as "Title",
-                 to_char(release_date, 'YYYY-MM-DD') as "Released",
-                 riaa_certificate as "RIAA"
-        from     albums
-        join     artists using (artist_id)
-        where    to_date($1, 'YYYY') <= release_date and release_date < to_date($2, 'YYYY')
-        order by release_date asc`,
+        select ocean_id, avg(measurement), extract(year from date) as year from samples
+where measurement is not null
+group by ocean_id, year;`,
         [start, end]);
     response.send(dbResult.rows);
 }
