@@ -3,18 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mikroplastik Quiz</title>
+    <title>Quiz om Mikroplastik</title>
+    <link rel="stylesheet" href="spil.css"> <!-- Link til CSS-fil -->
 </head>
 <body>
-    <h1>Mikroplastik Quiz i Verdenshavene</h1>
     <div id="quiz-container">
-        <p id="question"></p>
-        <div id="options"></div>
-        <button onclick="nextQuestion()" style="margin-top: 20px;">Næste Spørgsmål</button>
-        <p id="feedback"></p>
+        <h1>Quiz om Mikroplastik</h1>
+        <div id="question"></div> <!-- Spørgsmålsteksten bliver indsat her -->
+        <div id="options"></div>  <!-- Svarmuligheder bliver dynamisk tilføjet her -->
+        <div id="feedback"></div> <!-- Feedback til korrekt/forkert svar -->
+        <div id="score"></div>    <!-- Viser score under quizzen -->
+        <button onclick="nextQuestion()">Næste spørgsmål</button> <!-- Knap til næste spørgsmål -->
     </div>
-    <p id="score"></p>
-
-    <script src="fish-vis.js"></script>
+    <script src="fish-vis.js"></script> <!-- Link til JavaScript-fil -->
 </body>
 </html>

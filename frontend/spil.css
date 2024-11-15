@@ -1,0 +1,97 @@
+/* Generelle stylinger */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #020c23;
+    color: #fcffc7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Container til quizzen */
+#quiz-container {
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    background-color: #fcffc7;
+    color: #020c23;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* Titel */
+h1 {
+    color: #fcffc7;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Spørgsmålstekst */
+#question {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Knapper til svarmuligheder */
+.option {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #020c23;
+    color: #fcffc7;
+    border: 2px solid #fcffc7;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #fcffc7;
+    color: #020c23;
+}
+
+.option:active {
+    background-color: #d0d1a1;
+    color: #020c23;
+}
+
+/* Knap til næste spørgsmål */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #fcffc7;
+    color: #020c23;
+    border: 2px solid #020c23;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #020c23;
+    color: #fcffc7;
+}
+
+button:active {
+    background-color: #d0d1a1;
+    color: #020c23;
+}
+
+/* Feedback besked */
+#feedback {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+/* Score */
+#score {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+}
