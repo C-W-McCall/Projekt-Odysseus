@@ -31,6 +31,24 @@ d3.json(`/api/albums`).then((data) => {
     createBucket (1.25, 597, -75);
 
 
+
+    svg
+    .append("circle")
+    .attr('cx', 400)
+    .attr('cy', 280)
+    .attr('r', 10)
+    .attr('stroke', 'black')
+    .attr('fill', '#dfe3eb')
+
+    svg
+    .append("text")
+    .text("= 100 microplastics")
+    .attr("x", 420)
+    .attr("y", 285)
+    .style("fill", "#fcffc7")
+
+   
+
     function createPlasticAtla2019 () {
         // Runder til nærmeste 100 plastic (50 plastik bliver til 100, 49 bliver til 0)
         makeBalls = Math.round(data[2].max / 100);
@@ -55,16 +73,18 @@ d3.json(`/api/albums`).then((data) => {
     function createPlasticPacific2019 () {
         makeBalls = Math.round(data[3].max / 100);
         console.log(makeBalls);
+        let time = 2000;
+        let timeFactor = 1;
 
         for (i = 0; i<makeBalls; i++) {
             svg.append("circle")
-            .attr('cx', 800)
+            .attr('cx', 770)
             .attr('cy', -10)
             .attr('r', 10)
             .attr('stroke', 'black')
             .attr('fill', '#dfe3eb')
             .transition()
-            .duration(1000 * (i * 0.5))
+            .duration(time * (i * timeFactor))
             .attr('cx', 733 + (i * 20))
             .attr('cy', 288)
         }
@@ -300,7 +320,7 @@ function createPlasticPacific2021 () {
 
     if (i < 7){
     svg.append("circle")
-    .attr('cx', 185)
+    .attr('cx', 770)
     .attr('cy', -10)
     .attr('r', 10)
     .attr('stroke', 'black')
@@ -311,7 +331,7 @@ function createPlasticPacific2021 () {
     .attr('cy', 288)
    } else if (i >= 7 && i <= 13) {
     svg.append("circle")
-    .attr('cx', 185)
+    .attr('cx', 770)
     .attr('cy', -10)
     .attr('r', 10)
     .attr('stroke', 'black')
