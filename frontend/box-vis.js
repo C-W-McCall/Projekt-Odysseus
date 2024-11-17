@@ -31,7 +31,7 @@ d3.json(`/api/albums`).then((data) => {
     createBucket (1.25, 597, -75);
 
 
-
+    // Lille cirkel der skal vise hvor meget en cirkel er i plastik
     svg
     .append("circle")
     .attr('cx', 400)
@@ -40,6 +40,7 @@ d3.json(`/api/albums`).then((data) => {
     .attr('stroke', 'black')
     .attr('fill', '#dfe3eb')
 
+    // Teksten til cirklen der fortæller hvor meget plastik en cirkel er
     svg
     .append("text")
     .text("= 100 microplastics")
@@ -47,18 +48,90 @@ d3.json(`/api/albums`).then((data) => {
     .attr("y", 285)
     .style("fill", "#fcffc7")
 
+    // Teksten til Atlantic over bucket
+    svg
+    .append("text")
+    .text("Atlantic Ocean")
+    .attr("x", 105)
+    .attr("y", 170)
+    .attr("id", "pac")
+    .style("fill", "#fcffc7")
+    .style("font-size", 20)
+
+
+    // Teksten til Pacific over bucket
+    svg
+    .append("text")
+    .text("Pacific Ocean")
+    .attr("x", 710)
+    .attr("y", 170)
+    .style("fill", "#fcffc7")
+    .style("font-size", 20)
+
    
+    // Funktion til knappen 'btn2019'
+    function show2019 () {
+        svg.selectAll("#viz").remove();
+        svg.selectAll("#viz_year").remove();
+        createPlasticAtla2019 ();
+        createPlasticPacific2019 ();
+
+        svg
+        .append("text")
+        .text("2019")
+        .attr("x", 460)
+        .attr("y", 20)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 20);
+        
+        svg
+        .selectAll("#pac")
+        .transition()
+        .duration(2000)
+        .attr("x", 105)
+        .attr("y", 170);
+
+        svg
+        .selectAll(".text-21").remove();
+    };
+
+    // Funktion til knappen 'btn2021'
+    function show2021 () {
+        svg.selectAll("#viz").remove();
+        svg.selectAll("#viz_year").remove();
+        createPlasticAtla2021 ();
+        createPlasticPacific2021 ();
+
+        svg
+        .append("text")
+        .text("2021")
+        .attr("x", 460)
+        .attr("y", 20)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 20);
+
+        svg
+        .selectAll("#pac")
+        .transition()
+        .duration(5000)
+        .attr("x", 325)
+        .attr("y", 170)
+    };
+
 
     function createPlasticAtla2019 () {
         // Runder til nærmeste 100 plastic (50 plastik bliver til 100, 49 bliver til 0)
         makeBalls = Math.round(data[2].max / 100);
         console.log(makeBalls);
 
-       for (i = 1; i<makeBalls; i++) {
+       for (i = 1; i<=makeBalls; i++) {
         svg.append("circle")
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -73,19 +146,20 @@ d3.json(`/api/albums`).then((data) => {
     function createPlasticPacific2019 () {
         makeBalls = Math.round(data[3].max / 100);
         console.log(makeBalls);
-        let time = 2000;
+        let time = 1000;
         let timeFactor = 1;
 
-        for (i = 0; i<makeBalls; i++) {
+        for (i = 1; i<=makeBalls; i++) {
             svg.append("circle")
             .attr('cx', 770)
             .attr('cy', -10)
             .attr('r', 10)
+            .attr("id", "viz")
             .attr('stroke', 'black')
             .attr('fill', '#dfe3eb')
             .transition()
             .duration(time * (i * timeFactor))
-            .attr('cx', 733 + (i * 20))
+            .attr('cx', 713 + (i * 20))
             .attr('cy', 288)
         }
     }
@@ -98,7 +172,7 @@ d3.json(`/api/albums`).then((data) => {
         makeBalls = Math.round(data[7].max / 100);
         console.log(makeBalls);
 
-       for (i = 1; i<=makeBalls; i++) { // Kom til at starte i på 1, derfor kører den til <= makeBalls istedet for, så alle bolde bliver lavet
+       for (i = 1; i<=makeBalls; i++) { 
         let time = 1000;
         let timeFactor = 0.05;
 
@@ -107,6 +181,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -118,6 +193,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -129,6 +205,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -140,6 +217,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -151,6 +229,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -162,6 +241,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -173,6 +253,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -184,6 +265,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -195,6 +277,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -206,6 +289,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -217,6 +301,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -228,6 +313,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -239,6 +325,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -250,6 +337,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -261,6 +349,7 @@ d3.json(`/api/albums`).then((data) => {
         .attr('cx', 185)
         .attr('cy', -10)
         .attr('r', 10)
+        .attr("id", "viz")
         .attr('stroke', 'black')
         .attr('fill', '#dfe3eb')
         .transition()
@@ -273,6 +362,7 @@ d3.json(`/api/albums`).then((data) => {
         .text("There are 405 balls in this bucket")
         .attr("x", 350)
         .attr("y", 100)
+        .attr("class", "text-21")
         .style("fill", "#fcffc7")
         .style("opacity", 0)
         .transition()
@@ -283,6 +373,7 @@ d3.json(`/api/albums`).then((data) => {
         .append("text")
         .text("<----")
         .attr("transform", "translate(350,20)rotate(90)")
+        .attr("class", "text-21")
         .style("fill", "#fcffc7")
         .style("opacity", 0)
         .transition()
@@ -295,6 +386,7 @@ d3.json(`/api/albums`).then((data) => {
         .text("Continues...")
         .attr("x", 375)
         .attr("y", 55)
+        .attr("class", "text-21")
         .style("fill", "#fcffc7")
         .style("opacity", 0)
         .transition()
@@ -314,7 +406,7 @@ function createPlasticPacific2021 () {
     makeBalls = Math.round(data[7].max / 100);
     console.log(makeBalls);
 
-   for (i = 1; i<=makeBalls; i++) { // Kom til at starte i på 1, derfor kører den til <= makeBalls istedet for, så alle bolde bliver lavet
+   for (i = 1; i<=makeBalls; i++) {
     let time = 1000;
     let timeFactor = 0.45;
 
@@ -323,6 +415,7 @@ function createPlasticPacific2021 () {
     .attr('cx', 770)
     .attr('cy', -10)
     .attr('r', 10)
+    .attr("id", "viz")
     .attr('stroke', 'black')
     .attr('fill', '#dfe3eb')
     .transition()
@@ -334,6 +427,7 @@ function createPlasticPacific2021 () {
     .attr('cx', 770)
     .attr('cy', -10)
     .attr('r', 10)
+    .attr("id", "viz")
     .attr('stroke', 'black')
     .attr('fill', '#dfe3eb')
     .transition()
@@ -343,11 +437,30 @@ function createPlasticPacific2021 () {
 };
 }
 
+
+
+
+
+
+
 };
 
-createPlasticAtla2021();
-createPlasticPacific2021 ();
+// Tilføjer en 'eventListener' til knappen, som gør at når den bliver klikket kører den funktionen
+// else if attachEvent gør, at ældre browsere såsom Internet Explorer 8 og ældre
+// attachEvent er mere eller mindre ubrugelig for vores projekt
+const btn19 = document.getElementById("2019btn");
+if (btn19.addEventListener)
+    btn19.addEventListener("click", show2019, false);
+else if(btn19.attachEvent)
+    btn19.attachEvent("onclick", show2019);
 
+
+
+const btn21 = document.getElementById("2021btn");
+if (btn21.addEventListener)
+    btn21.addEventListener("click", show2021, false);
+else if(btn21.attachEvent)
+    btn21.attachEvent("onclick", show2021);
 
 
 });
