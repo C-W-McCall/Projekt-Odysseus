@@ -37,8 +37,12 @@ server.listen(port, onServerReady);
 async function onGetAlbums(request, response) {
     try {
         const dbResult = await db.query(
-            'SELECT measurement FROM samples'
-        );
+            `select ocean, max(measurement), extract(year from date) as year from samples
+join oceans using (ocean_id)
+where unit_id = 2
+group by ocean_id, ocean, year
+order by year;`
+    );
         response.json(dbResult.rows);
     } catch (error) {
         console.error('Error fetching data from database:', error);
