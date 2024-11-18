@@ -4,10 +4,10 @@ body {
     font-family: Arial, sans-serif;
     color: #fcffc7;
     background-color: #020c23;
-    
 }
 
-nav {
+/* Navigationsbaren */
+.menubar {
     position: fixed;
     top: 20px;
     left: 50%;
@@ -16,10 +16,10 @@ nav {
     padding: 10px 20px;
     border-radius: 15px;
     text-align: center;
-    z-index: 1000; 
+    z-index: 1000;
 }
 
-nav ul {
+.menubar ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -27,35 +27,43 @@ nav ul {
     gap: 20px;
 }
 
-nav li {
+.menubar li {
     padding: 10px 20px;
     background-color: #020c23;
     color: #fcffc7;
     border-radius: 8px;
     cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-nav li:hover {
+.menubar li:hover {
     background-color: #333;
 }
 
-.image-wrapper {
-    position: fixed;
-    top: 10px; /* Adjust as needed */
-    right: 10px; /* Adjust as needed */
-    z-index: 1001; /* Ensure it's on top of other content */
+.menubar a {
+    text-decoration: none;
+    color: #fcffc7;
 }
 
-.image-wrapper img {
-    width: 100px; /* Adjust size as needed */
-    height: auto; /* Maintain aspect ratio */
-}
+/* Billede */
+.image-class {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 600px; 
+    height: auto; 
+  }
+  
 
+/* Overskriften */
 .overskrift {
     padding: 50px 20px 10px 20px;
     text-align: left;
-    margin-left: 150px;
-    margin-top: 200px;
+    margin-left: 150px; 
+    margin-top: 100px; 
+    max-width: 600px; 
+    z-index: 1; 
+    position: relative;
 }
 
 .overskrift h1 {
@@ -73,79 +81,27 @@ nav li:hover {
     padding: 0 20px;
     margin-left: 150px;
     max-width: 600px;
-    line-height: 1.6;
+    line-height:  1.6;
 }
 
-.info-om-visualisering {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 300px; 
-    margin-top: 500px; 
-}
-
-.box-content {
-    background-color: #020c23;
-    color: #fcffc7;
-    padding: 20px;
-    border-radius: 10px;
-    max-width: 8000px; 
-    width: 80%; 
+/* Tekst over visualisering */
+.visualisering-tekst-container {
     text-align: center;
+    margin-top: 450px; /* Tilføjer afstand fra toppen af siden - justér efter behov */
+    margin-bottom: 20px; /* Afstand til placeholderen nedenfor */
 }
 
-.visualisering-boks {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 400px; 
-    margin-top: 100px; 
-}
-
-.visualisering-content {
-    background-color: #020c23;
-    color: #fcffc7;
+/* visualisering */
+.visualisering-tekstboks {
+    margin-top: 50px; 
     padding: 20px;
-    border: 2px solid #fcffc7;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 1000px;
+    border: 2px solid #fcffc7; 
+    background-color: #020c23; 
+    color: #fcffc7; 
+    border-radius: 5px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     text-align: center;
-}
-
-
-body {
-    background-color: #333333;
-    color: #cccccc;
-    font-family: monospace;
-}
-
-h1 {
-    color: #6495ed;
-}
-
-input, button {
-    font-family: inherit;
-}
-
-#visuals {
-    margin-top: 10px;
-}
-
-table {
-    border-collapse: collapse;
-}
-
-th {
-    color: #6495ed;
-    text-align: left;
-    border-bottom: 1px solid #6495ed;
-}
-
-th, td {
-    padding: 8px;
-}
-
-tr:nth-child(even) {
-    background-color: #444444;
+    font-size: 18px;
 }
