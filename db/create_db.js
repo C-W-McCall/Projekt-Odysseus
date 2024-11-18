@@ -118,11 +118,11 @@ insert into density_classes (density_class)
 
 
 insert into samples (ocean_id, sampling_method_id, measurement, date, unit_id, density_range, density_class_id, latitude, longitude)
-(select case when ocean = 'Pacific Ocean' then 1
-when ocean = 'Arctic Ocean' then 2
+(select case when ocean = 'Pacific Ocean' then 5
+when ocean = 'Arctic Ocean' then 1
 when ocean = 'Atlantic Ocean' then 3
-when ocean = 'Sounthern Ocean' then 4
-when ocean = 'Indian Ocean' then 5
+when ocean = 'Sounthern Ocean' then 2
+when ocean = 'Indian Ocean' then 6
 end,
 case when samplingmethod = 'Aluminum bucket' then 1
 when samplingmethod = 'stainless-steel sampler' then 2
@@ -155,21 +155,24 @@ when samplingmethod = 'Remotely operated vehicle' then 28
 end,
 measurement,
 date,
-case when unit = 'pieces/10 mins' then 1
-when unit = 'pieces kg-1 d.w.' then 2
-when unit = 'pieces/m3' then 3
+case when unit = 'pieces/10 mins' then 3
+when unit = 'pieces kg-1 d.w.' then 1
+when unit = 'pieces/m3' then 2
 end,
 densityrange,
-case when densityclass = 'Very Low' then 1
-when densityclass = 'High' then 2
-when densityclass = 'Medium' then 3
-when densityclass = 'Very High' then 4
+case when densityclass = 'Very Low' then 4
+when densityclass = 'High' then 3
+when densityclass = 'Medium' then 1
+when densityclass = 'Very High' then 2
 when densityclass = 'Low' then 5
 end,
 latitude,
 longitude
 from temp_table
-);`)
+);
+
+delete from samples
+where measurement = 0;`)
 	
 
 await db.end();
