@@ -1,4 +1,4 @@
-const svg = d3.selectAll(".visualisering-content").append("svg").attr("width", 1000).attr("height", 300);
+const svg = d3.selectAll(".visualisering-content").append("svg").attr("width", 1400).attr("height", 300);
 
 d3.json(`/api/albums`).then((data) => {
   
@@ -10,49 +10,35 @@ d3.json(`/api/albums`).then((data) => {
         .attr('y1', 200 * scaling + yShift)
         .attr('x2', 100 * scaling + xShift)
         .attr('y2', 300 * scaling + yShift)
-        .attr('stroke', 'blue')
+        .attr('stroke', '#fcffc7')
     
         svg.append("line")
         .attr('x1', 100 * scaling + xShift)
         .attr('y1', 300 * scaling + yShift)
         .attr('x2', 200 * scaling + xShift)
         .attr('y2', 300 * scaling + yShift)
-        .attr('stroke', 'blue')
+        .attr('stroke', '#fcffc7')
     
         svg.append("line")
         .attr('x1', 200 * scaling + xShift)
         .attr('y1', 300 * scaling + yShift)
         .attr('x2', 250 * scaling + xShift)
         .attr('y2', 200 * scaling + yShift)
-        .attr('stroke', 'blue')
+        .attr('stroke', '#fcffc7')
     };
 
-    createBucket (1.25, -3, -75);
-    createBucket (1.25, 597, -75);
+    createBucket (1.25, 50, -75);
+    createBucket (1.25, 350, -75);
+    createBucket (1.25, 650, -75);
+    createBucket (1.25, 950, -75);
 
 
-    // Lille cirkel der skal vise hvor meget en cirkel er i plastik
-    svg
-    .append("circle")
-    .attr('cx', 400)
-    .attr('cy', 280)
-    .attr('r', 10)
-    .attr('stroke', 'black')
-    .attr('fill', '#dfe3eb')
-
-    // Teksten til cirklen der fortæller hvor meget plastik en cirkel er
-    svg
-    .append("text")
-    .text("= 100 microplastics")
-    .attr("x", 420)
-    .attr("y", 285)
-    .style("fill", "#fcffc7")
 
     // Teksten til Atlantic over bucket
     svg
     .append("text")
     .text("Atlantic Ocean")
-    .attr("x", 105)
+    .attr("x", 470)
     .attr("y", 170)
     .attr("id", "pac")
     .style("fill", "#fcffc7")
@@ -63,379 +49,893 @@ d3.json(`/api/albums`).then((data) => {
     svg
     .append("text")
     .text("Pacific Ocean")
-    .attr("x", 710)
+    .attr("x", 1075)
     .attr("y", 170)
     .style("fill", "#fcffc7")
     .style("font-size", 20)
 
+    // Teksten til Arctic over bucket
+    svg
+    .append("text")
+    .text("Arctic Ocean")
+    .attr("x", 180)
+    .attr("y", 170)
+    .style("fill", "#fcffc7")
+    .style("font-size", 20)
+
+    // Teksten til Indian over buvket
+    svg
+    .append("text")
+    .text("Indian Ocean")
+    .attr("x", 780)
+    .attr("y", 170)
+    .style("fill", "#fcffc7")
+    .style("font-size", 20)
    
+    function show2014 () {
+      svg.selectAll("#viz").remove();
+        svg.selectAll("#viz_year").remove();
+        createPlasticAtla2014 (352);
+        createPlasticPacific2014 (952);
+
+        svg
+        .append("text")
+        .text("2014")
+        .attr("x", 665)
+        .attr("y", 20)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 20);
+    };
+   
+    function show2015 () {
+      svg.selectAll("#viz").remove();
+      svg.selectAll("#viz_year").remove();
+      createPlasticAtla2015 (352);
+      createPlasticPacific2015 (952);
+        
+
+        svg
+        .append("text")
+        .text("2015")
+        .attr("x", 665)
+        .attr("y", 20)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 20);
+    };
+
+
+    function show2016 () {
+      svg.selectAll("#viz").remove();
+      svg.selectAll("#viz_year").remove();
+      createPlasticAtla2016 (352)
+      createPlasticArc2016 (52)
+        
+
+        svg
+        .append("text")
+        .text("2016")
+        .attr("x", 665)
+        .attr("y", 20)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 20);
+    };
+
+
+    function show2017 () {
+      svg.selectAll("#viz").remove();
+      svg.selectAll("#viz_year").remove();
+      createPlasticAtla2017 (352);
+      createPlasticIndia2017 (652);
+      createPlasticPacific2017 (952);
+
+        svg
+        .append("text")
+        .text("2017")
+        .attr("x", 665)
+        .attr("y", 20)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 20);
+    }
+
+
+    function show2018 () {
+      svg.selectAll("#viz").remove();
+      svg.selectAll("#viz_year").remove();
+      createPlasticAtla2018 (352);
+      createPlasticPacific2018 (952);
+
+        svg
+        .append("text")
+        .text("2018")
+        .attr("x", 665)
+        .attr("y", 20)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 20);
+    }
+
     // Funktion til knappen 'btn2019'
     function show2019 () {
         svg.selectAll("#viz").remove();
         svg.selectAll("#viz_year").remove();
-        createPlasticAtla2019 ();
-        createPlasticPacific2019 ();
+        createPlasticAtla2019 (352);
+        createPlasticPacific2019 (952);
+        createPlasticArc2019 (52);
+        createPlasticIndia2019 (652);
 
         svg
         .append("text")
         .text("2019")
-        .attr("x", 460)
+        .attr("x", 665)
         .attr("y", 20)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 20);
         
-        svg
-        .selectAll("#pac")
-        .transition()
-        .duration(2000)
-        .attr("x", 105)
-        .attr("y", 170);
-
-        svg
-        .selectAll(".text-21").remove();
-    };
-
-    // Funktion til knappen 'btn2021'
-    function show2021 () {
-        svg.selectAll("#viz").remove();
-        svg.selectAll("#viz_year").remove();
-        createPlasticAtla2021 ();
-        createPlasticPacific2021 ();
-
-        svg
-        .append("text")
-        .text("2021")
-        .attr("x", 460)
-        .attr("y", 20)
-        .attr("id", "viz_year")
-        .style("fill", "#fcffc7")
-        .style("font-size", 20);
-
-        svg
-        .selectAll("#pac")
-        .transition()
-        .duration(5000)
-        .attr("x", 325)
-        .attr("y", 170)
     };
 
 
-    function createPlasticAtla2019 () {
-        // Runder til nærmeste 100 plastic (50 plastik bliver til 100, 49 bliver til 0)
-        makeBalls = Math.round(data[2].max / 100);
-        console.log(makeBalls);
+    function show2020 () {
+      svg.selectAll("#viz").remove();
+      svg.selectAll("#viz_year").remove();
+      createPlasticAtla2020 (352);
+      createPlasticIndia2020 (652);
+      createPlasticPacific2020 (952);
 
-       for (i = 1; i<=makeBalls; i++) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(1000 * (i * 0.5)) // Tiden bliver langsommere pr cirkel så de ikke alle falder på samme tid
-        .attr('cx', 115 + (i * 20)) // Fordelt ud baseret på deres radius gange 2
-        .attr('cy', 288)
-       }
 
+      svg
+      .append("text")
+      .text("2020")
+      .attr("x", 665)
+      .attr("y", 20)
+      .attr("id", "viz_year")
+      .style("fill", "#fcffc7")
+      .style("font-size", 20);
+    }
+
+
+// create 2014 cirklerne
+
+    function createPlasticPacific2014 (xShift) {
+      makeBalls = Math.round(data[3].avg_measurement / 0.10);
+      console.log(makeBalls);
+   
+         for (i = 1; i<=makeBalls; i++) { 
+          let time = 1000;
+          let timeFactor = 0.05;
+          let r = 5
+          let d = r * 2
+   
+          if (i < 12){
+          svg.append("circle")
+          .attr('cx', 185)
+          .attr('cy', -10)
+          .attr('r', r)
+          .attr("id", "viz")
+          .attr('stroke', 'black')
+          .attr('fill', '#dfe3eb')
+          .transition()
+          .duration(time * (i * timeFactor)) 
+          .attr('cx', 115 + (i * d) + xShift)
+          .attr('cy', 293)
+         }
+   
+     }
     };
 
 
-    function createPlasticPacific2019 () {
-        makeBalls = Math.round(data[3].max / 100);
-        console.log(makeBalls);
-        let time = 1000;
-        let timeFactor = 1;
+    function createPlasticAtla2014 (xShift) {
+      makeBalls = Math.round(data[1].avg_measurement / 0.10);
+      console.log(makeBalls);
+   
+         for (i = 1; i<=makeBalls; i++) { 
+          let time = 1000;
+          let timeFactor = 0.05;
+          let r = 5
+          let d = r * 2
+   
+          if (i < 12){
+          svg.append("circle")
+          .attr('cx', 185)
+          .attr('cy', -10)
+          .attr('r', r)
+          .attr("id", "viz")
+          .attr('stroke', 'black')
+          .attr('fill', '#dfe3eb')
+          .transition()
+          .duration(time * (i * timeFactor)) 
+          .attr('cx', 115 + (i * d) + xShift)
+          .attr('cy', 293)
+         }
+   
+     }
+    };
 
-        for (i = 1; i<=makeBalls; i++) {
+// create 2015 cirklerne
+
+    function createPlasticAtla2015 (xShift) {
+      makeBalls = Math.round(data[5].avg_measurement / 0.10);
+      console.log(makeBalls);
+
+      for (i = 1; i<=makeBalls; i++) { 
+      
+            for (i = 1; i<=makeBalls; i++) { 
+             let time = 1000;
+             let timeFactor = 0.05;
+             let r = 5
+             let d = r * 2
+      
+             if (i < 12){
+             svg.append("circle")
+             .attr('cx', 185)
+             .attr('cy', -10)
+             .attr('r', r)
+             .attr("id", "viz")
+             .attr('stroke', 'black')
+             .attr('fill', '#dfe3eb')
+             .transition()
+             .duration(time * (i * timeFactor)) 
+             .attr('cx', 115 + (i * d) + xShift)
+             .attr('cy', 293)
+             }
+        }
+    }};
+
+
+    function createPlasticPacific2015 (xShift) {
+      makeBalls = Math.round(data[7].avg_measurement / 100);
+      console.log(makeBalls);
+
+      for (i = 1; i<=makeBalls; i++) { 
+      
+         for (i = 1; i<=makeBalls; i++) { 
+            let time = 1000;
+            let timeFactor = 0.05;
+     
+            if (i < 7){
             svg.append("circle")
-            .attr('cx', 770)
+            .attr('cx', 185)
             .attr('cy', -10)
             .attr('r', 10)
             .attr("id", "viz")
             .attr('stroke', 'black')
-            .attr('fill', '#dfe3eb')
+            .attr('fill', '#FFFF00')
             .transition()
-            .duration(time * (i * timeFactor))
-            .attr('cx', 713 + (i * 20))
+            .duration(time * (i * timeFactor)) 
+            .attr('cx', 115 + (i * 20) + xShift)
             .attr('cy', 288)
+           }
+         }
+    }};
+
+
+// create 2016 cirklerne
+
+    function createPlasticArc2016 (xShift) {
+      makeBalls = Math.round(data[8].avg_measurement / 1);
+      console.log(makeBalls);
+      for (i = 1; i<=makeBalls; i++) { 
+         let time = 1000;
+         let timeFactor = 0.05;
+  
+         if (i < 7){
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#dfe3eb')
+         .transition()
+         .duration(time * (i * timeFactor)) 
+         .attr('cx', 115 + (i * 20) + xShift)
+         .attr('cy', 288)
+        } else if (i >= 7 && i <= 13) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#dfe3eb')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -13 + (i * 20) + xShift) 
+         .attr('cy', 268)
+        } else if (i > 13 && i <=21) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#dfe3eb')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -165 + (i * 20) + xShift) 
+         .attr('cy', 248)
+        } else if (i > 21 && i <= 30) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#dfe3eb')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -335 + (i * 20) + xShift) 
+         .attr('cy', 228)
+        }
+
+     }};
+
+
+    function createPlasticAtla2016 (xShift) {
+      makeBalls = Math.round(data[9].avg_measurement / 100);
+      console.log(makeBalls);
+      for (i = 1; i<=makeBalls; i++) { 
+         let time = 1000;
+         let timeFactor = 0.05;
+  
+         if (i < 7){
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FFFF00')
+         .transition()
+         .duration(time * (i * timeFactor)) 
+         .attr('cx', 115 + (i * 20) + xShift)
+         .attr('cy', 288)
+        }
+     }};
+
+
+// create 2017 cirklerne
+
+function createPlasticAtla2017 (xShift) {
+   makeBalls = Math.round(data[13].avg_measurement / 100);
+      console.log(makeBalls);
+      for (i = 1; i<=makeBalls; i++) { 
+         let time = 1000;
+         let timeFactor = 0.05;
+  
+         if (i < 7){
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FFFF00')
+         .transition()
+         .duration(time * (i * timeFactor)) 
+         .attr('cx', 115 + (i * 20) + xShift)
+         .attr('cy', 288)
+        }
+     }
+};
+
+function createPlasticIndia2017 (xShift) {
+   makeBalls = Math.round(data[14].avg_measurement / 1);
+   console.log(makeBalls);
+   for (i = 1; i<=makeBalls; i++) { 
+      let time = 1000;
+      let timeFactor = 0.05;
+
+      if (i < 7){
+      svg.append("circle")
+      .attr('cx', 185)
+      .attr('cy', -10)
+      .attr('r', 10)
+      .attr("id", "viz")
+      .attr('stroke', 'black')
+      .attr('fill', '#dfe3eb')
+      .transition()
+      .duration(time * (i * timeFactor)) 
+      .attr('cx', 115 + (i * 20) + xShift)
+      .attr('cy', 288)
+     } else if (i >= 7 && i <= 13) {
+      svg.append("circle")
+      .attr('cx', 185)
+      .attr('cy', -10)
+      .attr('r', 10)
+      .attr("id", "viz")
+      .attr('stroke', 'black')
+      .attr('fill', '#dfe3eb')
+      .transition()
+      .duration(time * (i * timeFactor))
+      .attr('cx', -13 + (i * 20) + xShift) 
+      .attr('cy', 268)
+     } else if (i > 13 && i <=21) {
+      svg.append("circle")
+      .attr('cx', 185)
+      .attr('cy', -10)
+      .attr('r', 10)
+      .attr("id", "viz")
+      .attr('stroke', 'black')
+      .attr('fill', '#dfe3eb')
+      .transition()
+      .duration(time * (i * timeFactor))
+      .attr('cx', -165 + (i * 20) + xShift) 
+      .attr('cy', 248)
+     };
+}};
+
+function createPlasticPacific2017 (xShift) {
+   makeBalls = Math.round(data[15].avg_measurement / 500);
+        console.log(makeBalls);
+        let time = 1000;
+        let timeFactor = 0.05;
+
+        for (i = 1; i<=makeBalls; i++) { 
+         if (i < 7){
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FF0000')
+         .transition()
+         .duration(time * (i * timeFactor)) 
+         .attr('cx', 115 + (i * 20) + xShift)
+         .attr('cy', 288)
+        } else if (i >= 7 && i <= 13) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FF0000')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -13 + (i * 20) + xShift) 
+         .attr('cy', 268)
+        } else if (i > 13 && i <=21) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FF0000')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -165 + (i * 20) + xShift) 
+         .attr('cy', 248)
+        } else if (i > 21 && i <= 30) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FF0000')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -335 + (i * 20) + xShift) 
+         .attr('cy', 228)
+        }
+        }
+    };
+
+
+// create 2018 cirklerne
+
+function createPlasticAtla2018 (xShift) {
+   makeBalls = Math.round(data[17].avg_measurement / 100);
+   console.log(makeBalls);
+   for (i = 1; i<=makeBalls; i++) { 
+      let time = 1000;
+      let timeFactor = 0.05;
+
+      if (i < 7){
+      svg.append("circle")
+      .attr('cx', 185)
+      .attr('cy', -10)
+      .attr('r', 10)
+      .attr("id", "viz")
+      .attr('stroke', 'black')
+      .attr('fill', '#FFFF00')
+      .transition()
+      .duration(time * (i * timeFactor)) 
+      .attr('cx', 115 + (i * 20) + xShift)
+      .attr('cy', 288)
+     }
+  }
+};
+
+
+function createPlasticPacific2018 (xShift) {
+   makeBalls = Math.round(data[19].avg_measurement / 100);
+   console.log(makeBalls);
+   for (i = 1; i<=makeBalls; i++) { 
+      let time = 1000;
+      let timeFactor = 0.05;
+
+      if (i < 7){
+      svg.append("circle")
+      .attr('cx', 185)
+      .attr('cy', -10)
+      .attr('r', 10)
+      .attr("id", "viz")
+      .attr('stroke', 'black')
+      .attr('fill', '#FFFF00')
+      .transition()
+      .duration(time * (i * timeFactor)) 
+      .attr('cx', 115 + (i * 20) + xShift)
+      .attr('cy', 288)
+     }else if (i >= 7 && i <= 13) {
+      svg.append("circle")
+      .attr('cx', 185)
+      .attr('cy', -10)
+      .attr('r', 10)
+      .attr("id", "viz")
+      .attr('stroke', 'black')
+      .attr('fill', '#FFFF00')
+      .transition()
+      .duration(time * (i * timeFactor))
+      .attr('cx', -13 + (i * 20) + xShift) 
+      .attr('cy', 268)
+     } else if (i > 13 && i <=21) {
+      svg.append("circle")
+      .attr('cx', 185)
+      .attr('cy', -10)
+      .attr('r', 10)
+      .attr("id", "viz")
+      .attr('stroke', 'black')
+      .attr('fill', '#FFFF00')
+      .transition()
+      .duration(time * (i * timeFactor))
+      .attr('cx', -165 + (i * 20) + xShift) 
+      .attr('cy', 248)
+     }
+  }
+};
+
+
+// create 2019 cirklerne
+
+    function createPlasticIndia2019 (xShift) {
+      makeBalls = Math.round(data[22].avg_measurement / 100);
+      console.log(makeBalls);
+
+      for (i = 1; i<=makeBalls; i++) { 
+       let time = 1000;
+       let timeFactor = 0.05;
+
+       if (i < 7){
+       svg.append("circle")
+       .attr('cx', 185)
+       .attr('cy', -10)
+       .attr('r', 10)
+       .attr("id", "viz")
+       .attr('stroke', 'black')
+       .attr('fill', '#FFFF00')
+       .transition()
+       .duration(time * (i * timeFactor)) 
+       .attr('cx', 115 + (i * 20) + xShift)
+       .attr('cy', 288)
+      } else if (i >= 7 && i <= 13) {
+       svg.append("circle")
+       .attr('cx', 185)
+       .attr('cy', -10)
+       .attr('r', 10)
+       .attr("id", "viz")
+       .attr('stroke', 'black')
+       .attr('fill', '#FFFF00')
+       .transition()
+       .duration(time * (i * timeFactor))
+       .attr('cx', -13 + (i * 20) + xShift) 
+       .attr('cy', 268)
+      } else if (i > 13 && i <=21) {
+       svg.append("circle")
+       .attr('cx', 185)
+       .attr('cy', -10)
+       .attr('r', 10)
+       .attr("id", "viz")
+       .attr('stroke', 'black')
+       .attr('fill', '#FFFF00')
+       .transition()
+       .duration(time * (i * timeFactor))
+       .attr('cx', -165 + (i * 20) + xShift) 
+       .attr('cy', 248)
+      } else if (i > 21 && i <= 30) {
+       svg.append("circle")
+       .attr('cx', 185)
+       .attr('cy', -10)
+       .attr('r', 10)
+       .attr("id", "viz")
+       .attr('stroke', 'black')
+       .attr('fill', '#FFFF00')
+       .transition()
+       .duration(time * (i * timeFactor))
+       .attr('cx', -335 + (i * 20) + xShift) 
+       .attr('cy', 228)
+      } else if (i > 30 && i <= 40) {
+       svg.append("circle")
+       .attr('cx', 185)
+       .attr('cy', -10)
+       .attr('r', 10)
+       .attr("id", "viz")
+       .attr('stroke', 'black')
+       .attr('fill', '#FFFF00')
+       .transition()
+       .duration(time * (i * timeFactor))
+       .attr('cx', -528 + (i * 20) + xShift) 
+       .attr('cy', 208)
+      } else if (i > 40 && i <=51) {
+       svg.append("circle")
+       .attr('cx', 185)
+       .attr('cy', -10)
+       .attr('r', 10)
+       .attr("id", "viz")
+       .attr('stroke', 'black')
+       .attr('fill', '#FFFF00')
+       .transition()
+       .duration(time * (i * timeFactor))
+       .attr('cx', -735 + (i * 20) + xShift) 
+       .attr('cy', 188)
+      }
+
+  }};
+
+
+    function createPlasticArc2019 (xShift) {
+      makeBalls = Math.round(data[20].avg_measurement / 0.10);
+      console.log(makeBalls);
+
+      for (i = 1; i<=makeBalls; i++) { 
+       let time = 1000;
+       let timeFactor = 0.05;
+       let r = 5
+       let d = r * 2
+
+       if (i < 7){
+       svg.append("circle")
+       .attr('cx', 185)
+       .attr('cy', -10)
+       .attr('r', r)
+       .attr("id", "viz")
+       .attr('stroke', 'black')
+       .attr('fill', '#dfe3eb')
+       .transition()
+       .duration(time * (i * timeFactor)) 
+       .attr('cx', 115 + (i * d) + xShift)
+       .attr('cy', 293)
+      }
+
+  }};
+
+
+
+    function createPlasticAtla2019 (xShift) {
+        makeBalls = Math.round(data[21].avg_measurement / 100);
+        console.log(makeBalls);
+
+        for (i = 1; i<=makeBalls; i++) { 
+         let time = 1000;
+         let timeFactor = 0.05;
+ 
+         if (i < 7){
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FFFF00')
+         .transition()
+         .duration(time * (i * timeFactor)) 
+         .attr('cx', 115 + (i * 20) + xShift)
+         .attr('cy', 288)
+        } else if (i >= 7 && i <= 13) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FFFF00')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -13 + (i * 20) + xShift) 
+         .attr('cy', 268)
+        } else if (i > 13 && i <=21) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FFFF00')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -165 + (i * 20) + xShift) 
+         .attr('cy', 248)
+        } else if (i > 21 && i <= 30) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FFFF00')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -335 + (i * 20) + xShift) 
+         .attr('cy', 228)
+        } else if (i > 30 && i <= 40) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FFFF00')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -528 + (i * 20) + xShift) 
+         .attr('cy', 208)
+        } else if (i > 40 && i <=51) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FFFF00')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -735 + (i * 20) + xShift) 
+         .attr('cy', 188)
+        }
+
+    }};
+
+
+    function createPlasticPacific2019 (xShift) {
+        makeBalls = Math.round(data[23].avg_measurement / 500);
+        console.log(makeBalls);
+        let time = 1000;
+        let timeFactor = 0.05;
+
+        for (i = 1; i<=makeBalls; i++) { 
+         let time = 1000;
+         let timeFactor = 0.05;
+ 
+         if (i < 7){
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FF0000')
+         .transition()
+         .duration(time * (i * timeFactor)) 
+         .attr('cx', 115 + (i * 20) + xShift)
+         .attr('cy', 288)
+        } else if (i >= 7 && i <= 13) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FF0000')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -13 + (i * 20) + xShift) 
+         .attr('cy', 268)
+        } else if (i > 13 && i <=21) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FF0000')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -165 + (i * 20) + xShift) 
+         .attr('cy', 248)
+        } else if (i > 21 && i <= 30) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FF0000')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -335 + (i * 20) + xShift) 
+         .attr('cy', 228)
+        }
         }
     }
 
 
+// create 2020 cirklerne
 
-
-    function createPlasticAtla2021 () {
-        // Runder til nærmeste 100 plastic (50 plastik bliver til 100, 49 bliver til 0)
-        makeBalls = Math.round(data[7].max / 100);
+    function createPlasticAtla2020 (xShift) {
+      makeBalls = Math.round(data[25].avg_measurement / 100);
         console.log(makeBalls);
 
-       for (i = 1; i<=makeBalls; i++) { 
-        let time = 1000;
-        let timeFactor = 0.05;
+        for (i = 1; i<=makeBalls; i++) { 
+         let time = 1000;
+         let timeFactor = 0.05;
+ 
+         if (i < 7){
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FFFF00')
+         .transition()
+         .duration(time * (i * timeFactor)) 
+         .attr('cx', 115 + (i * 20) + xShift)
+         .attr('cy', 288)
+        }
+    }};
 
-        if (i < 7){
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor)) // Tiden bliver langsommere pr cirkel så de ikke alle falder på samme tid
-        .attr('cx', 115 + (i * 20)) // Fordelt ud baseret på deres radius gange 2
-        .attr('cy', 288)
-       } else if (i >= 7 && i <= 13) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor))
-        .attr('cx', -13 + (i * 20)) 
-        .attr('cy', 268)
-       } else if (i > 13 && i <=21) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor))
-        .attr('cx', -165 + (i * 20)) 
-        .attr('cy', 248)
-       } else if (i > 21 && i <= 30) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor))
-        .attr('cx', -335 + (i * 20)) 
-        .attr('cy', 228)
-       } else if (i > 30 && i <= 40) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor))
-        .attr('cx', -528 + (i * 20)) 
-        .attr('cy', 208)
-       } else if (i > 40 && i <=51) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor))
-        .attr('cx', -735 + (i * 20)) 
-        .attr('cy', 188)
-       } else if (i > 51 && i <= 63) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor))
-        .attr('cx', -965 + (i * 20)) 
-        .attr('cy', 168)
-       } else if (i > 63 && i <= 75) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor))
-        .attr('cx', -1205 + (i * 20)) 
-        .attr('cy', 148)
-       } else if (i > 75 && i <= 87) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor))
-        .attr('cx', -1445 + (i * 20)) 
-        .attr('cy', 128)
-       } else if (i > 87 && i <= 99) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor))
-        .attr('cx', -1685 + (i * 20)) 
-        .attr('cy', 108)
-       } else if (i > 99 && i<=111) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor))
-        .attr('cx', -1925 + (i * 20)) 
-        .attr('cy', 88)
-       } else if (i> 111 && i<= 123) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor))
-        .attr('cx', -2165 + (i * 20)) 
-        .attr('cy', 68)
-       } else if (i > 123 && i <= 135) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor))
-        .attr('cx', -2405 + (i * 20)) 
-        .attr('cy', 48)
-       } else if (i > 135 && i <= 147) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor))
-        .attr('cx', -2645 + (i * 20)) 
-        .attr('cy', 28)
-       } else if (i > 147 && i <= 159) {
-        svg.append("circle")
-        .attr('cx', 185)
-        .attr('cy', -10)
-        .attr('r', 10)
-        .attr("id", "viz")
-        .attr('stroke', 'black')
-        .attr('fill', '#dfe3eb')
-        .transition()
-        .duration(time * (i * timeFactor))
-        .attr('cx', -2885 + (i * 20)) 
-        .attr('cy', 8)
-       } else if (i > 159) {
-        svg
-        .append("text")
-        .text("There are 405 balls in this bucket")
-        .attr("x", 350)
-        .attr("y", 100)
-        .attr("class", "text-21")
-        .style("fill", "#fcffc7")
-        .style("opacity", 0)
-        .transition()
-        .duration(4000)
-        .style("opacity", 1)
+    function createPlasticIndia2020 (xShift) {
+      makeBalls = Math.round(data[25].avg_measurement / 100);
+      console.log(makeBalls);
 
-        svg
-        .append("text")
-        .text("<----")
-        .attr("transform", "translate(350,20)rotate(90)")
-        .attr("class", "text-21")
-        .style("fill", "#fcffc7")
-        .style("opacity", 0)
-        .transition()
-        .delay(2000)
-        .duration(4000)
-        .style("opacity", 1)
+      for (i = 1; i<=makeBalls; i++) { 
+       let time = 1000;
+       let timeFactor = 0.05;
 
-        svg
-        .append("text")
-        .text("Continues...")
-        .attr("x", 375)
-        .attr("y", 55)
-        .attr("class", "text-21")
-        .style("fill", "#fcffc7")
-        .style("opacity", 0)
-        .transition()
-        .delay(5000)
-        .duration(4000)
-        .style("opacity", 1)
+       if (i < 7){
+       svg.append("circle")
+       .attr('cx', 185)
+       .attr('cy', -10)
+       .attr('r', 10)
+       .attr("id", "viz")
+       .attr('stroke', 'black')
+       .attr('fill', '#FFFF00')
+       .transition()
+       .duration(time * (i * timeFactor)) 
+       .attr('cx', 115 + (i * 20) + xShift)
+       .attr('cy', 288)
+      }
+    }};
 
-        break
-       }
+    function createPlasticPacific2020 (xShift) {
+      makeBalls = Math.round(data[27].avg_measurement / 100);
+        console.log(makeBalls);
 
-    };
-
-};
-
-
-function createPlasticPacific2021 () {
-    makeBalls = Math.round(data[7].max / 100);
-    console.log(makeBalls);
-
-   for (i = 1; i<=makeBalls; i++) {
-    let time = 1000;
-    let timeFactor = 0.45;
-
-    if (i < 7){
-    svg.append("circle")
-    .attr('cx', 770)
-    .attr('cy', -10)
-    .attr('r', 10)
-    .attr("id", "viz")
-    .attr('stroke', 'black')
-    .attr('fill', '#dfe3eb')
-    .transition()
-    .duration(time * (i * timeFactor)) // Tiden bliver langsommere pr cirkel så de ikke alle falder på samme tid
-    .attr('cx', 713 + (i * 20)) // Fordelt ud baseret på deres radius gange 2
-    .attr('cy', 288)
-   } else if (i >= 7 && i <= 13) {
-    svg.append("circle")
-    .attr('cx', 770)
-    .attr('cy', -10)
-    .attr('r', 10)
-    .attr("id", "viz")
-    .attr('stroke', 'black')
-    .attr('fill', '#dfe3eb')
-    .transition()
-    .duration(time * (i * timeFactor))
-    .attr('cx', 585 + (i * 20)) 
-    .attr('cy', 268)
-};
-}
+        for (i = 1; i<=makeBalls; i++) { 
+         let time = 1000;
+         let timeFactor = 0.05;
+ 
+         if (i < 7){
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FFFF00')
+         .transition()
+         .duration(time * (i * timeFactor)) 
+         .attr('cx', 115 + (i * 20) + xShift)
+         .attr('cy', 288)
+        }
+    }};
 
 
 
@@ -443,11 +943,47 @@ function createPlasticPacific2021 () {
 
 
 
-};
+
 
 // Tilføjer en 'eventListener' til knappen, som gør at når den bliver klikket kører den funktionen
 // else if attachEvent gør, at ældre browsere såsom Internet Explorer 8 og ældre
 // attachEvent er mere eller mindre ubrugelig for vores projekt
+
+const btn14 = document.getElementById("2014btn");
+if (btn14.addEventListener)
+    btn14.addEventListener("click", show2014, false);
+else if(btn14.attachEvent)
+    btn14.attachEvent("onclick", show2014);
+
+
+const btn15 = document.getElementById("2015btn");
+if (btn15.addEventListener)
+    btn15.addEventListener("click", show2015, false);
+else if(btn15.attachEvent)
+    btn15.attachEvent("onclick", show2015);
+
+
+const btn16 = document.getElementById("2016btn");
+if (btn16.addEventListener)
+    btn16.addEventListener("click", show2016, false);
+else if(btn16.attachEvent)
+    btn16.attachEvent("onclick", show2016);
+
+
+const btn17 = document.getElementById("2017btn");
+if (btn17.addEventListener)
+    btn17.addEventListener("click", show2017, false);
+else if(btn17.attachEvent)
+    btn17.attachEvent("onclick", show2017);
+
+
+const btn18 = document.getElementById("2018btn");
+if (btn18.addEventListener)
+    btn18.addEventListener("click", show2018, false);
+else if(btn18.attachEvent)
+    btn18.attachEvent("onclick", show2018);
+
+
 const btn19 = document.getElementById("2019btn");
 if (btn19.addEventListener)
     btn19.addEventListener("click", show2019, false);
@@ -455,12 +991,11 @@ else if(btn19.attachEvent)
     btn19.attachEvent("onclick", show2019);
 
 
-
-const btn21 = document.getElementById("2021btn");
-if (btn21.addEventListener)
-    btn21.addEventListener("click", show2021, false);
-else if(btn21.attachEvent)
-    btn21.attachEvent("onclick", show2021);
+const btn20 = document.getElementById("2020btn");
+if (btn20.addEventListener)
+    btn20.addEventListener("click", show2020, false);
+else if(btn20.attachEvent)
+    btn20.attachEvent("onclick", show2020);
 
 
 });
