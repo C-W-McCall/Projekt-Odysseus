@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="spil.css"> <!-- Link til quiz CSS -->
     <title>Document</title>
     <script src="d3.v7.js"></script>
 </head>
@@ -14,14 +15,14 @@
         <ul>
             <li><a href="#">Hjem</a></li>
             <li><a href="#">Visualisering</a></li>
-            <li><a href="#">Om</a></li>
+            <li><a href="#" onclick="showQuiz()">Quizzen</a></li> <!-- Knap til at vise quizzen -->
         </ul>
     </nav>
 
-<!-- Billede -->
-<img src="https://i.ibb.co/Zc7WY2g/Ody.png" alt="Description of the image" class="image-class">
+    <!-- Billede -->
+    <img src="https://i.ibb.co/Zc7WY2g/Ody.png" alt="Description of the image" class="image-class">
 
-<!-- Overskrift og underoverskrift -->
+    <!-- Overskrift og underoverskrift -->
     <main>
         <section class="overskrift">
             <h1>Plastic pollution</h1>
@@ -33,7 +34,6 @@
         </section>
     </main>
 
-
     <!-- Tekst over visualisering -->
     <section class="visualisering-tekst-container">
         <p class="visualisering-tekst">Dette er en tekst over placeholderen til visualiseringen</p>
@@ -41,14 +41,44 @@
 
     <section class="visualisering-boks">
         <div class="visualisering-content">
-            <!-- Til vores meget flotte box visualisering -->
-            
+            <!-- Visualisering indhold -->
         </div>
     </section>
         <button id="2019btn">Show 2019</button>
         <button id="2021btn">Show 2021</button>
     <div id="visuals"></div>
-<script src="script.js"></script>
-<script src="box-vis.js"></script>
-</body>
+
+
+<!-- Quiz-containeren, som bliver skjult -->
+<div id="quiz-overlay" style="display: none;">
+    <div id="quiz-container">
+        <div id="question-number"></div> <!-- Vis nuværende spørgsmål nummer -->
+        <div id="question"></div> <!-- Vis spørgsmålet -->
+        
+        <div id="options"></div> <!-- Vis svarmuligheder -->
+        
+        <!-- Feedback besked -->
+        <div id="feedback"></div>
+    
+        <!-- Box der viser forklaring på forkert svar -->
+        <div id="wrongAnswerBox" style="display: none;">
+            <p id="wrongAnswerExplanation"></p>
+        </div>
+    
+        <!-- Knap til næste spørgsmål -->
+        <div id="nextButtonContainer" style="display: none;">
+            <button onclick="nextQuestion()">Næste spørgsmål</button>
+        </div>
+    
+        <div id="restartButtonContainer" style="display: none;">
+            <button id="restartButton" onclick="resetQuiz()">Start forfra</button>
+        </div>
+    </div> <!-- Luk den oprindelige quiz-container -->
+</div> <!-- Luk quiz-overlay -->
+
+    <script src="script.js"></script>
+    <script src="box-vis.js"></script>
+    <script src="fish-vis.js"></script>
+
+</body> 
 </html>
