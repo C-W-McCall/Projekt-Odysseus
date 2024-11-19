@@ -39,7 +39,8 @@ async function onGetAlbums(request, response) {
         const dbResult = await db.query(
             `select ocean, avg(measurement) as avg_measurement, extract(year from date) as year from samples
 join oceans using (ocean_id)
-where date <= '2020-12-31' and date >= '2014-01-01'
+join units using (unit_id)
+where date <= '2020-12-31' and date >= '2014-01-01' and unit_id = 2
 group by ocean, year
 order by year;`
     );
