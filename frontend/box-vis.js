@@ -273,7 +273,7 @@ d3.json(`/api/albums`).then((data) => {
         let Indi2017 = data[14].avg_measurement
         svg
         .append("text")
-        .text(`${Indi2017.slice(0, 4)}`)
+        .text(`${Indi2017.slice(0, 2)}`)
         .attr("x", 818)
         .attr("y", 170)
         .attr("id", "viz_year")
@@ -302,6 +302,38 @@ d3.json(`/api/albums`).then((data) => {
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 20);
+
+        let Atl2018 = data[17].avg_measurement
+        svg
+        .append("text")
+        .text(`${Atl2018.slice(0, 3)}`)
+        .attr("x", 520)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 520)
+        .attr("y", 140 )
+        .style("opacity", 1);
+
+        let Pac2018 = data[19].avg_measurement
+        svg
+        .append("text")
+        .text(`${Pac2018.slice(0, 4)}`)
+        .attr("x", 1123)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 1123)
+        .attr("y", 140 )
+        .style("opacity", 1);
     }
 
     function show2019 () {
@@ -320,6 +352,54 @@ d3.json(`/api/albums`).then((data) => {
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 20);
+
+        let Atl2019 = data[21].avg_measurement
+        svg
+        .append("text")
+        .text(`${Atl2019.slice(0, 4)}`)
+        .attr("x", 520)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 520)
+        .attr("y", 140 )
+        .style("opacity", 1);
+
+        let Pac2019 = data[23].avg_measurement
+        svg
+        .append("text")
+        .text(`${Pac2019.slice(0, 5)}`)
+        .attr("x", 1123)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 1123)
+        .attr("y", 140 )
+        .style("opacity", 1);
+
+        let Indi2019 = data[22].avg_measurement
+        svg
+        .append("text")
+        .text(`${Indi2019.slice(0, 4)}`)
+        .attr("x", 818)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 818)
+        .attr("y", 140 )
+        .style("opacity", 1);
         
     };
 
@@ -340,6 +420,54 @@ d3.json(`/api/albums`).then((data) => {
       .attr("id", "viz_year")
       .style("fill", "#fcffc7")
       .style("font-size", 20);
+
+      let Atl2020 = data[25].avg_measurement
+        svg
+        .append("text")
+        .text(`${Atl2020.slice(0, 3)}`)
+        .attr("x", 520)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 520)
+        .attr("y", 140 )
+        .style("opacity", 1);
+
+        let Pac2020 = data[27].avg_measurement
+        svg
+        .append("text")
+        .text(`${Pac2020.slice(0, 2)}`)
+        .attr("x", 1123)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 1123)
+        .attr("y", 140 )
+        .style("opacity", 1);
+
+        let Indi2020 = data[26].avg_measurement
+        svg
+        .append("text")
+        .text(`${Indi2020.slice(0, 3)}`)
+        .attr("x", 818)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 818)
+        .attr("y", 140 )
+        .style("opacity", 1);
     }
 
 

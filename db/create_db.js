@@ -80,7 +80,7 @@ create table samples (
 sample_id serial primary key,
 ocean_id integer references oceans (ocean_id),
 sampling_method_id integer references sampling_methods (sampling_method_id),
-measurement numeric not null,
+measurement numeric not null check (measurement >= 0),
 date timestamp,
 unit_id integer references units (unit_id) not null,
 density_range text,
