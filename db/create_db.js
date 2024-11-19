@@ -80,9 +80,9 @@ create table samples (
 sample_id serial primary key,
 ocean_id integer references oceans (ocean_id),
 sampling_method_id integer references sampling_methods (sampling_method_id),
-measurement numeric,
+measurement numeric not null,
 date timestamp,
-unit_id integer references units (unit_id),
+unit_id integer references units (unit_id) not null,
 density_range text,
 density_class_id integer references density_classes (density_class_id),
 latitude real,
@@ -172,7 +172,9 @@ from temp_table
 );
 
 delete from samples
-where measurement = 0;`)
+where measurement = 0;
+
+create index samples_index on samples (measurement);`)
 	
 
 await db.end();

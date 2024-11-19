@@ -72,6 +72,7 @@ d3.json(`/api/albums`).then((data) => {
     .style("fill", "#fcffc7")
     .style("font-size", 20)
    
+    // Show buttons
     function show2014 () {
       svg.selectAll("#viz").remove();
         svg.selectAll("#viz_year").remove();
@@ -86,6 +87,38 @@ d3.json(`/api/albums`).then((data) => {
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 20);
+        
+        let Pac2014 = data[3].avg_measurement
+        svg
+        .append("text")
+        .text(`${Pac2014.slice(0, 4)}`)
+        .attr("x", 1123)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 1123)
+        .attr("y", 140 )
+        .style("opacity", 1);
+
+        let Atl2014 = data[1].avg_measurement
+        svg
+        .append("text")
+        .text(`${Atl2014.slice(0, 4)}`)
+        .attr("x", 520)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 520)
+        .attr("y", 140 )
+        .style("opacity", 1);
     };
    
     function show2015 () {
@@ -103,6 +136,39 @@ d3.json(`/api/albums`).then((data) => {
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 20);
+
+        let Pac2015 = data[7].avg_measurement
+        svg
+        .append("text")
+        .text(`${Pac2015.slice(0, 3)}`)
+        .attr("x", 1123)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 1123)
+        .attr("y", 140 )
+        .style("opacity", 1);
+
+        let Atl2015 = data[5].avg_measurement
+        svg
+        .append("text")
+        .text(`${Atl2015.slice(0, 4)}`)
+        .attr("x", 520)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 520)
+        .attr("y", 140 )
+        .style("opacity", 1);
+        
     };
 
 
@@ -121,6 +187,38 @@ d3.json(`/api/albums`).then((data) => {
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 20);
+
+        let Atl2016 = data[9].avg_measurement
+        svg
+        .append("text")
+        .text(`${Atl2016.slice(0, 3)}`)
+        .attr("x", 520)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 520)
+        .attr("y", 140 )
+        .style("opacity", 1);
+
+        let Arc2016 = data[8].avg_measurement
+        svg
+        .append("text")
+        .text(`${Arc2016.slice(0, 2)}`)
+        .attr("x", 225)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 225)
+        .attr("y", 140 )
+        .style("opacity", 1);
     };
 
 
@@ -139,6 +237,54 @@ d3.json(`/api/albums`).then((data) => {
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 20);
+
+        let Atl2017 = data[13].avg_measurement
+        svg
+        .append("text")
+        .text(`${Atl2017.slice(0, 3)}`)
+        .attr("x", 520)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 520)
+        .attr("y", 140 )
+        .style("opacity", 1);
+
+        let Pac2017 = data[15].avg_measurement
+        svg
+        .append("text")
+        .text(`${Pac2017.slice(0, 4)}`)
+        .attr("x", 1123)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 1123)
+        .attr("y", 140 )
+        .style("opacity", 1);
+
+        let Indi2017 = data[14].avg_measurement
+        svg
+        .append("text")
+        .text(`${Indi2017.slice(0, 4)}`)
+        .attr("x", 818)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 818)
+        .attr("y", 140 )
+        .style("opacity", 1);
     }
 
 
@@ -158,7 +304,6 @@ d3.json(`/api/albums`).then((data) => {
         .style("font-size", 20);
     }
 
-    // Funktion til knappen 'btn2019'
     function show2019 () {
         svg.selectAll("#viz").remove();
         svg.selectAll("#viz_year").remove();
@@ -470,7 +615,7 @@ function createPlasticIndia2017 (xShift) {
 }};
 
 function createPlasticPacific2017 (xShift) {
-   makeBalls = Math.round(data[15].avg_measurement / 500);
+   makeBalls = Math.round(data[15].avg_measurement / 100);
         console.log(makeBalls);
         let time = 1000;
         let timeFactor = 0.05;
@@ -483,7 +628,7 @@ function createPlasticPacific2017 (xShift) {
          .attr('r', 10)
          .attr("id", "viz")
          .attr('stroke', 'black')
-         .attr('fill', '#FF0000')
+         .attr('fill', '#FFFF00')
          .transition()
          .duration(time * (i * timeFactor)) 
          .attr('cx', 115 + (i * 20) + xShift)
@@ -495,7 +640,7 @@ function createPlasticPacific2017 (xShift) {
          .attr('r', 10)
          .attr("id", "viz")
          .attr('stroke', 'black')
-         .attr('fill', '#FF0000')
+         .attr('fill', '#FFFF00')
          .transition()
          .duration(time * (i * timeFactor))
          .attr('cx', -13 + (i * 20) + xShift) 
@@ -507,7 +652,7 @@ function createPlasticPacific2017 (xShift) {
          .attr('r', 10)
          .attr("id", "viz")
          .attr('stroke', 'black')
-         .attr('fill', '#FF0000')
+         .attr('fill', '#FFFF00')
          .transition()
          .duration(time * (i * timeFactor))
          .attr('cx', -165 + (i * 20) + xShift) 
@@ -519,11 +664,23 @@ function createPlasticPacific2017 (xShift) {
          .attr('r', 10)
          .attr("id", "viz")
          .attr('stroke', 'black')
-         .attr('fill', '#FF0000')
+         .attr('fill', '#FFFF00')
          .transition()
          .duration(time * (i * timeFactor))
          .attr('cx', -335 + (i * 20) + xShift) 
          .attr('cy', 228)
+        } else if (i > 30 && i <= 40) {
+         svg.append("circle")
+         .attr('cx', 185)
+         .attr('cy', -10)
+         .attr('r', 10)
+         .attr("id", "viz")
+         .attr('stroke', 'black')
+         .attr('fill', '#FFFF00')
+         .transition()
+         .duration(time * (i * timeFactor))
+         .attr('cx', -528 + (i * 20) + xShift) 
+         .attr('cy', 208)
         }
         }
     };
