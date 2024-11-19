@@ -110,3 +110,9 @@ svg {
     text-align: center;
     font-size: 18px;
 }
+
+#buttns-viz {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

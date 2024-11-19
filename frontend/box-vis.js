@@ -1,5 +1,14 @@
 const svg = d3.selectAll(".visualisering-content").append("svg").attr("width", 1400).attr("height", 300);
 
+svg
+.append("text")
+.text("Gennemsnitlig mikroplast pr. år siden 2014")
+.attr("x", 0)
+.attr("y", 20)
+.style("fill", "#fcffc7")
+.style("font-size", 14)
+
+
 d3.json(`/api/albums`).then((data) => {
   
     console.log(data);
@@ -398,6 +407,22 @@ d3.json(`/api/albums`).then((data) => {
         .transition()
         .duration(1000)
         .attr("x", 818)
+        .attr("y", 140 )
+        .style("opacity", 1);
+
+        let Arc2019 = data[20].avg_measurement
+        svg
+        .append("text")
+        .text(`${Arc2019.slice(0, 4)}`)
+        .attr("x", 225)
+        .attr("y", 170)
+        .attr("id", "viz_year")
+        .style("fill", "#fcffc7")
+        .style("font-size", 16)
+        .style("opacity", 0)
+        .transition()
+        .duration(1000)
+        .attr("x", 225)
         .attr("y", 140 )
         .style("opacity", 1);
         
