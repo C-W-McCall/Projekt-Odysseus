@@ -10,8 +10,8 @@
 </head>
 <body>
 
-    <!-- Navigations bar -->
-    <nav class="menubar">
+     <!-- Navigations bar -->
+     <nav class="menubar">
         <ul>
             <li><a href="#">Hjem</a></li>
             <li><a href="#">Visualisering</a></li>
@@ -44,42 +44,42 @@
             <!-- Visualisering indhold -->
         </div>
     </section>
-        <button id="2014btn">Show 2014</button>
-        <button id="2015btn">Show 2015</button>
-        <button id="2016btn">Show 2016</button>
-        <button id="2017btn">Show 2017</button>
-        <button id="2018btn">Show 2018</button>
-        <button id="2019btn">Show 2019</button>
-        <button id="2020btn">Show 2020</button>
+    <button id="2014btn">Show 2014</button>
+    <button id="2015btn">Show 2015</button>
+    <button id="2016btn">Show 2016</button>
+    <button id="2017btn">Show 2017</button>
+    <button id="2018btn">Show 2018</button>
+    <button id="2019btn">Show 2019</button>
+    <button id="2020btn">Show 2020</button>
     <div id="visuals"></div>
 
-
-<!-- Quiz-containeren, som bliver skjult -->
-<div id="quiz-overlay" style="display: none;">
-    <div id="quiz-container">
-        <div id="question-number"></div> <!-- Vis nuværende spørgsmål nummer -->
-        <div id="question"></div> <!-- Vis spørgsmålet -->
+    <!-- Quiz-containeren, som bliver skjult -->
+    <div id="quiz-overlay" style="display: none;">
+        <div id="quiz-container">
+            <div id="question-number"></div> <!-- Vis nuværende spørgsmål nummer -->
+            <div id="question"></div> <!-- Vis spørgsmålet -->
+            
+            <div id="options"></div> <!-- Vis svarmuligheder -->
+            
+            <!-- Feedback besked -->
+            <div id="feedback"></div>
         
-        <div id="options"></div> <!-- Vis svarmuligheder -->
+            <!-- Box der viser forklaring på forkert svar -->
+            <div id="wrongAnswerBox" style="display: none;">
+                <p id="wrongAnswerExplanation"></p>
+            </div>
         
-        <!-- Feedback besked -->
-        <div id="feedback"></div>
-    
-        <!-- Box der viser forklaring på forkert svar -->
-        <div id="wrongAnswerBox" style="display: none;">
-            <p id="wrongAnswerExplanation"></p>
-        </div>
-    
-        <!-- Knap til næste spørgsmål -->
-        <div id="nextButtonContainer" style="display: none;">
-            <button onclick="nextQuestion()">Næste spørgsmål</button>
-        </div>
-    
-        <div id="restartButtonContainer" style="display: none;">
-            <button id="restartButton" onclick="resetQuiz()">Start forfra</button>
-        </div>
-    </div> <!-- Luk den oprindelige quiz-container -->
-</div> <!-- Luk quiz-overlay -->
+            <!-- Knap til næste spørgsmål -->
+            <div id="nextButtonContainer" style="display: none;">
+                <button onclick="nextQuestion()">Næste spørgsmål</button>
+            </div>
+        
+            <!-- Knap til at lukke quiz -->
+            <div id="restartButtonContainer" style="display: none;">
+                <button id="restartButton" onclick="closeQuiz()">Luk quiz</button>
+            </div>
+        </div> <!-- Luk den oprindelige quiz-container -->
+    </div> <!-- Luk quiz-overlay -->
 
     <script src="script.js"></script>
     <script src="box-vis.js"></script>
