@@ -91,6 +91,11 @@ body {
     margin-bottom: 20px; /* Afstand til placeholderen nedenfor */
 }
 
+svg {
+    display: block;
+    margin: auto;
+}
+
 /* visualisering */
 .visualisering-tekstboks {
     margin-top: 50px; 
