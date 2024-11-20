@@ -128,6 +128,14 @@ svg {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Skyggeeffekt for dybde */
     border: 3px solid #fcffc7;  /* Lys kant rundt om kassen */
 }
+.counter-box .skrald-text {
+    font-size: 12px;             /* Justér størrelsen på teksten */
+    font-style: italic;          /* Gør teksten kursiv */
+    color: #fcffc7;              /* Rød tekstfarve */
+    margin-top: 10px;            /* Tilføj lidt afstand over teksten */
+    margin-bottom: 15px;         /* Tilføj lidt afstand under teksten */
+}
+
 #fcffc7
 /* Stil på overskrift */
 .counter-box h2 {
