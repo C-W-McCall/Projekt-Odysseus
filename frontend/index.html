@@ -5,14 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="spil.css"> <!-- Link til quiz CSS -->
+    <link rel="stylesheet" href="textbox.css"> <!-- Link til CSS for tekstbokse -->
     <title>Mikroplast</title>
     <script src="d3.v7.js"></script>
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQppWOPCGLhC373kGAjuMu3GD2qyW2KBugyRQ&s">
 </head>
 <body>
 
-     <!-- Navigations bar -->
-     <nav class="menubar">
+    <!-- Navigations bar -->
+    <nav class="menubar">
         <ul>
             <li><a href="#">Hjem</a></li>
             <li><a href="#">Visualisering</a></li>
@@ -37,7 +38,10 @@
 
     <!-- Tekst over visualisering -->
     <section class="visualisering-tekst-container">
-        <p class="visualisering-tekst">Dette er en tekst over placeholderen til visualiseringen</p>
+        <p class="visualisering-tekst">
+            <strong>Visualisering af Mikroplastforurening Over Tid</strong>
+            <br>Denne visualiseringen illustrerer den gennemsnitlige mængde mikroplast, der akkumuleres i en kubikmeter havvand over årene. Hvert element i skitsen repræsenterer en specifik tidsperiode, og blokkenes fyldningsniveau demonstrerer væksten af mikroplastikforurening.
+        </p>
     </section>
     
 
@@ -46,17 +50,35 @@
             <!-- Visualisering indhold -->
         </div>
 
-        
-    <div id="visuals"></div>  <!-- Cirklerne vil blive tilføjet her -->
+        <div id="visuals"></div>  <!-- Cirklerne vil blive tilføjet her -->
     </section>
-    <button id="2014btn">Show 2014</button>
-    <button id="2015btn">Show 2015</button>
-    <button id="2016btn">Show 2016</button>
-    <button id="2017btn">Show 2017</button>
-    <button id="2018btn">Show 2018</button>
-    <button id="2019btn">Show 2019</button>
-    <button id="2020btn">Show 2020</button>
 
+    <!-- Show knapper -->
+    <div id="buttns-viz">
+        <button id="2014btn">Show 2014</button>
+        <button id="2015btn">Show 2015</button>
+        <button id="2016btn">Show 2016</button>
+        <button id="2017btn">Show 2017</button>
+        <button id="2018btn">Show 2018</button>
+        <button id="2019btn">Show 2019</button>
+        <button id="2020btn">Show 2020</button>
+    </div>
+
+    <!-- Tre tekstbokse -->
+    <div class="text-box-container">
+        <div class="text-box">
+            <h3>Mikroplastik i verdenshavene</h3>
+            <p>Mikroplastik stammer fra nedbrydning af større plastikemner og kan findes overalt i verdenshavene. Det påvirker både havdyr og økosystemer negativt ved at forstyrre fødekæderne og ophobe giftstoffer.</p>
+        </div>
+        <div class="text-box">
+            <h3>Kilder til mikroplastik</h3>
+            <p>De største kilder til mikroplastik inkluderer tekstilfibre fra vask, kosmetik og nedbrydning af plastaffald. Transport og slid fra bildæk bidrager også betydeligt til forureningen.</p>
+        </div>
+        <div class="text-box">
+            <h3>Effekter på marine organismer</h3>
+            <p>Mikroplastik kan trænge ind i fødekæden, når marine organismer indtager det. Dette kan føre til væksthæmning, reproduktionsproblemer og akkumulation af skadelige stoffer i fisk og skaldyr, som også kan påvirke mennesker.</p>
+        </div>
+    </div>
 
     <!-- Quiz-containeren, som bliver skjult -->
     <div id="quiz-overlay" style="display: none;">
@@ -90,5 +112,5 @@
     <script src="box-vis.js"></script>
     <script src="fish-vis.js"></script>
 
-</body> 
+</body>
 </html>

@@ -90,23 +90,20 @@ body {
     margin-top: 450px; /* Tilføjer afstand fra toppen af siden - justér efter behov */
     margin-bottom: 20px; /* Afstand til placeholderen nedenfor */
 }
+.visualisering-tekst {
+    font-size: 18px; /* Gør teksten lidt større */
+    line-height: 1.6; /* Tilføjer passende linjeafstand */
+    text-align: center; /* Centrer teksten */
+    color: #fcffc7; /* Beholder den eksisterende tekstfarve */
+}
 
 svg {
     display: block;
     margin: auto;
 }
 
-/* visualisering */
-.visualisering-tekstboks {
-    margin-top: 50px; 
-    padding: 20px;
-    border: 2px solid #fcffc7; 
-    background-color: #020c23; 
-    color: #fcffc7; 
-    border-radius: 5px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-size: 18px;
+#buttns-viz {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
