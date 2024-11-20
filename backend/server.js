@@ -32,8 +32,7 @@ const server = express();
 server.use(express.static('frontend'));
 server.use(onEachRequest);
 server.get('/api/albums', onGetAlbums);
-server.get('/api/veryHigh', onGetClassVeryHigh);
-server.get('/api/High', onGetClassHigh);
+server.get('/api/density', onGetDensity);
 server.listen(port, onServerReady);
 
 async function onGetAlbums(request, response) {
@@ -53,28 +52,19 @@ order by year;`
     }
 }
 
-async function onGetClassHigh(request, response) {
+async function onGetDensity(request, response) {
     try {
         const dbResult = await db.query(
-            `select count(density_class) as High, extract(year from date) as year from samples
+            `select density_class, count(density_class) as High, extract(year from date) as year from samples
 join density_classes using (density_class_id)
 where density_class = 'High' and date >= '2002-01-01' and date < '2021-01-01'
-group by year;`
-    );
-        response.json(dbResult.rows);
-    } catch (error) {
-        console.error('Error fetching data from database:', error);
-        response.status(500).json({ error: 'Failed to retrieve data' });
-    }
-}
-
-async function onGetClassVeryHigh(request, response) {
-    try {
-        const dbResult = await db.query(
-            `select count(density_class) as VeryHigh, extract(year from date) as year from samples
+group by year, density_class
+union
+select density_class, count(density_class) as VeryHigh, extract(year from date) as year from samples
 join density_classes using (density_class_id)
 where density_class = 'Very High' and date >= '2012-01-01' and date < '2021-01-01'
-group by year;`
+group by year, density_class
+order by year, density_class;`
     );
         response.json(dbResult.rows);
     } catch (error) {

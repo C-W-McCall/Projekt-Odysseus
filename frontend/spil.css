@@ -163,9 +163,9 @@ button:active {
     transform: translate(140%, -50%);
     background-color: #fcffc7;
     border: 2px solid red;
-    padding: 20px; /* Ændre padding for at øge afstand til kanten */
-    width: 200px; /* Ændre bredden */
-    height: 200px; /* Ændre højden */
+    padding: 20px;
+    width: 200px; 
+    height: 200px; 
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     z-index: 1000;
     text-align: center;
