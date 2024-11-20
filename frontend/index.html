@@ -9,6 +9,11 @@
     <title>Mikroplast</title>
     <script src="d3.v7.js"></script>
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQppWOPCGLhC373kGAjuMu3GD2qyW2KBugyRQ&s">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster/dist/MarkerCluster.Default.css" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 </head>
 <body>
 
@@ -38,6 +43,19 @@
         </section>
     </main>
 
+    <!-- Live tæller for plastikforurening -->
+<section class="live-counter">
+    <div class="counter-box">
+        <h2><span class="live-text">Live</span> : Plastik i Verdenshavene</h2>
+
+        <p>Der bliver smidt 15 ton plastik i havene hver minut. Se live herunder:</p>
+        <div id="plasticCounter" class="counter">0,00 ton</div>
+        <p class="skrald-text">skrald fra du åbnede siden</p>
+        <p>Siden 1. Januar er over <span class="ton">7.000.000 ton</span> plastik smidt i Havet</p>
+    </div>
+    
+</section>
+
     <!-- Tekst over visualisering -->
     <section class="visualisering-tekst-container">
         <p class="visualisering-tekst">
@@ -47,6 +65,7 @@
         </p>
     </section>
     
+
 
     <section class="visualisering-boks">
         <div class="visualisering-content">
@@ -119,7 +138,12 @@
     <script src="kugler.js"></script>  <!-- Link til kuglerne -->
     <script src="box-vis.js"></script>
     <script src="fish-vis.js"></script>
+<<<<<<< HEAD
     <script src="LineGraph.js"></script>
+=======
+    <script src="LineChart.js"></script>
+    <script src="tæller.js"></script>
+>>>>>>> 34919f69e949e731cff370e2588f356250fa6f77
 
 </body>
 </html>
