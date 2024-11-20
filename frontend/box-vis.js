@@ -2,7 +2,7 @@ const svg = d3.selectAll(".visualisering-content").append("svg").attr("width", 1
 
 svg
 .append("text")
-.text("Gennemsnitlig mikroplast pr. år siden 2014")
+.text("Gennemsnitlig mikroplast pr. m3 pr. år siden 2014")
 .attr("x", 0)
 .attr("y", 20)
 .style("fill", "#fcffc7")
@@ -1029,7 +1029,7 @@ function createPlasticPacific2018 (xShift) {
 
 
     function createPlasticAtla2019 (xShift) {
-        makeBalls = Math.round(data[21].avg_measurement / 100);
+        makeBalls = Math.round(data[21].avg_measurement / 500);
         console.log(makeBalls);
 
         for (i = 1; i<=makeBalls; i++) { 
@@ -1043,7 +1043,7 @@ function createPlasticPacific2018 (xShift) {
          .attr('r', 10)
          .attr("id", "viz")
          .attr('stroke', 'black')
-         .attr('fill', '#FFFF00')
+         .attr('fill', '#FF0000')
          .transition()
          .duration(time * (i * timeFactor)) 
          .attr('cx', 115 + (i * 20) + xShift)
@@ -1055,7 +1055,7 @@ function createPlasticPacific2018 (xShift) {
          .attr('r', 10)
          .attr("id", "viz")
          .attr('stroke', 'black')
-         .attr('fill', '#FFFF00')
+         .attr('fill', '#FF0000')
          .transition()
          .duration(time * (i * timeFactor))
          .attr('cx', -13 + (i * 20) + xShift) 
@@ -1067,7 +1067,7 @@ function createPlasticPacific2018 (xShift) {
          .attr('r', 10)
          .attr("id", "viz")
          .attr('stroke', 'black')
-         .attr('fill', '#FFFF00')
+         .attr('fill', '#FF0000')
          .transition()
          .duration(time * (i * timeFactor))
          .attr('cx', -165 + (i * 20) + xShift) 
@@ -1079,35 +1079,11 @@ function createPlasticPacific2018 (xShift) {
          .attr('r', 10)
          .attr("id", "viz")
          .attr('stroke', 'black')
-         .attr('fill', '#FFFF00')
+         .attr('fill', '#FF0000')
          .transition()
          .duration(time * (i * timeFactor))
          .attr('cx', -335 + (i * 20) + xShift) 
          .attr('cy', 228)
-        } else if (i > 30 && i <= 40) {
-         svg.append("circle")
-         .attr('cx', 185)
-         .attr('cy', -10)
-         .attr('r', 10)
-         .attr("id", "viz")
-         .attr('stroke', 'black')
-         .attr('fill', '#FFFF00')
-         .transition()
-         .duration(time * (i * timeFactor))
-         .attr('cx', -528 + (i * 20) + xShift) 
-         .attr('cy', 208)
-        } else if (i > 40 && i <=51) {
-         svg.append("circle")
-         .attr('cx', 185)
-         .attr('cy', -10)
-         .attr('r', 10)
-         .attr("id", "viz")
-         .attr('stroke', 'black')
-         .attr('fill', '#FFFF00')
-         .transition()
-         .duration(time * (i * timeFactor))
-         .attr('cx', -735 + (i * 20) + xShift) 
-         .attr('cy', 188)
         }
 
     }};
@@ -1179,7 +1155,7 @@ function createPlasticPacific2018 (xShift) {
 // create 2020 cirklerne
 
     function createPlasticAtla2020 (xShift) {
-      makeBalls = Math.round(data[25].avg_measurement / 100);
+      makeBalls = Math.round(data[25].avg_measurement / 1);
         console.log(makeBalls);
 
         for (i = 1; i<=makeBalls; i++) { 
@@ -1193,7 +1169,7 @@ function createPlasticPacific2018 (xShift) {
          .attr('r', 10)
          .attr("id", "viz")
          .attr('stroke', 'black')
-         .attr('fill', '#FFFF00')
+         .attr('fill', '#dfe3eb')
          .transition()
          .duration(time * (i * timeFactor)) 
          .attr('cx', 115 + (i * 20) + xShift)
@@ -1202,7 +1178,7 @@ function createPlasticPacific2018 (xShift) {
     }};
 
     function createPlasticIndia2020 (xShift) {
-      makeBalls = Math.round(data[25].avg_measurement / 100);
+      makeBalls = Math.round(data[26].avg_measurement / 100);
       console.log(makeBalls);
 
       for (i = 1; i<=makeBalls; i++) { 

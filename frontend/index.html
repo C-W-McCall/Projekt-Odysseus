@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="spil.css"> <!-- Link til quiz CSS -->
+    <link rel="stylesheet" href="textbox.css"> <!-- Link til CSS for tekstbokse -->
     <title>Mikroplast</title>
     <script src="d3.v7.js"></script>
     <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQppWOPCGLhC373kGAjuMu3GD2qyW2KBugyRQ&s">
@@ -16,11 +17,13 @@
 </head>
 <body>
 
-     <!-- Navigations bar -->
-     <nav class="menubar">
+    <!-- Navigations bar -->
+    <nav class="menubar">
         <ul>
             <li><a href="#">Hjem</a></li>
-            <li><a href="#">Visualisering</a></li>
+            <li><a href="#">Spand Chart</a></li>
+            <li><a href="#">Line Chart</a></li> 
+            <li><a href="#">Bar Chart</a></li> 
             <li><a href="#" onclick="showQuiz()">Quizzen</a></li> <!-- Knap til at vise quizzen -->
         </ul>
     </nav>
@@ -40,9 +43,25 @@
         </section>
     </main>
 
+    <!-- Live tæller for plastikforurening -->
+<section class="live-counter">
+    <div class="counter-box">
+        <h2><span class="live-text">Live</span> : Plastik i Verdenshavene</h2>
+
+        <p>Der bliver smidt 15 ton plastik i havene hver minut. Se live herunder:</p>
+        <div id="plasticCounter" class="counter">0,00 ton</div>
+        <p>Siden 1. Januar er over <span class="ton">7.000.000 ton</span> plastik smidt i Havet</p>
+    </div>
+    
+</section>
+
     <!-- Tekst over visualisering -->
     <section class="visualisering-tekst-container">
-        <p class="visualisering-tekst">Dette er en tekst over placeholderen til visualiseringen</p>
+        <p class="visualisering-tekst">
+            <strong>Visualisering af Mikroplastforurening Over Tid</strong>
+            <br>Denne visualiseringen illustrerer den gennemsnitlige mængde mikroplast, der akkumuleres i en kubikmeter havvand i 4 udvalgte verdenshave.
+            <br>Hver spand illustrerer en kubikmeter vand i det givne hav. 
+        </p>
     </section>
     
 
@@ -52,17 +71,35 @@
             <!-- Visualisering indhold -->
         </div>
 
-        
-    <div id="visuals"></div>  <!-- Cirklerne vil blive tilføjet her -->
+        <div id="visuals"></div>  <!-- Cirklerne vil blive tilføjet her -->
     </section>
+
+    <!-- Show knapper -->
     <div id="buttns-viz">
-    <button id="2014btn">Show 2014</button>
-    <button id="2015btn">Show 2015</button>
-    <button id="2016btn">Show 2016</button>
-    <button id="2017btn">Show 2017</button>
-    <button id="2018btn">Show 2018</button>
-    <button id="2019btn">Show 2019</button>
-    <button id="2020btn">Show 2020</button>
+        <button id="2014btn">Show 2014</button>
+        <button id="2015btn">Show 2015</button>
+        <button id="2016btn">Show 2016</button>
+        <button id="2017btn">Show 2017</button>
+        <button id="2018btn">Show 2018</button>
+        <button id="2019btn">Show 2019</button>
+        <button id="2020btn">Show 2020</button>
+    </div>
+
+    <!-- Tre tekstbokse -->
+    <div class="text-box-container">
+        <div class="text-box">
+            <h3>Mikroplastik i verdenshavene</h3>
+            <p>Mikroplastik er små plastikpartikler, der dannes, når større plastikgenstande nedbrydes. Det findes overalt i havene og skader både havdyr og økosystemer ved at forstyrre fødekæder og skabe giftstoffer.</p>
+        </div>
+        <div class="text-box">
+            <h3>Kilder til mikroplastik</h3>
+            <p>De største kilder til mikroplastik er tekstilfibre fra tøj, kosmetik og nedbrydning af plastaffald. Derudover bidrager rester af bildæk også meget til plastforureningen.</p>
+        </div>
+        <div class="text-box">
+            <h3>Virkninger på havdyr</h3>
+            <p>Mikroplastik kan komme ind i fødekæden, når havdyr spiser det. Det kan skade dyrene ved at forstyrre deres vækst og evne til at formere sig. Desuden kan det samle farlige stoffer, som også kan ende i fisk og skaldyr, der spises af mennesker.
+            </p>
+        </div>
     </div>
 
     <!-- Quiz-containeren, som bliver skjult -->
@@ -96,6 +133,8 @@
     <script src="kugler.js"></script>  <!-- Link til kuglerne -->
     <script src="box-vis.js"></script>
     <script src="fish-vis.js"></script>
-    <script src="map.js"></script>
-</body> 
+    <script src="LineChart.js"></script>
+    <script src="tæller.js"></script>
+
+</body>
 </html>
