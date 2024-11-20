@@ -41,6 +41,8 @@ body {
 }
 
 .menubar a {
+    display: block; /* Linket fylder hele knappen */
+    white-space: nowrap; /* IK LINJE SKIFT*/
     text-decoration: none;
     color: #fcffc7;
 }
