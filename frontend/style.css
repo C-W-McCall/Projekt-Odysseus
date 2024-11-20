@@ -96,7 +96,7 @@ svg {
     margin: auto;
 }
 
-/* visualisering */
+/* visualisering box */
 .visualisering-tekstboks {
     margin-top: 50px; 
     padding: 20px;
@@ -115,4 +115,17 @@ svg {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+/* Kort */
+.map-wrapper {
+    position: relative;
+    margin: 0 auto; /* Center by default */
+    border: 1px solid #ddd; /* Optional border for visualization */
+}
+
+/* Style for the map container */
+#map {
+    width: 100%;
+    height: 100%;
 }
