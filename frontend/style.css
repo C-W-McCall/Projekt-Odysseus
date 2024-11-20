@@ -109,3 +109,57 @@ svg {
     align-items: center;
     justify-content: center;
 }
+
+/* Live Tæller Sektion */
+.live-counter {
+    margin-top: 100px; /* Justér afstanden fra toppen af siden */
+    text-align: left; /* Justér teksten til venstre */
+}
+
+/* Kasse der indeholder tælleren og teksten */
+.counter-box {
+    background-color: #020c23;  /* Mørk baggrund */
+    color: #fcffc7;  /* Lys tekstfarve */
+    border-radius: 15px;  /* Afrundede hjørner */
+    padding: 30px;  /* Afstand rundt om indholdet */
+    width: 80%;  /* Juster bredden af kassen */
+    max-width: 600px;  /* Maksimal bredde */
+    margin-left: 20px;  /* Afstand fra venstre side */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Skyggeeffekt for dybde */
+    border: 3px solid #fcffc7;  /* Lys kant rundt om kassen */
+}
+#fcffc7
+/* Stil på overskrift */
+.counter-box h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Stil på paragrafen med beskrivelsen */
+.counter-box p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Stil på tælleren */
+.counter {
+    font-size: 30px;  /* Større tekst for tælleren */
+    font-weight: bold;  /* Gør tælleren fed */
+    color: #ff6f61;  /* Farve på tælleren */
+}
+/* Stil på "Live Tæller" teksten i h2 */
+.live-text {
+  color: #ff6f61;           /* Rød tekstfarve */
+    font-weight: bold;        /* Gør teksten fed */
+    border: 2px solid #ff6f61; /* Rød kant */
+    padding: 2px 6px;         /* Indvendig afstand for at skabe plads til kanten */
+    border-radius: 5px;       /* Bløde hjørner på kassen */
+    background-color:#fcffc7;   /* Hvid baggrund for at fremhæve kassen */
+    display: inline-block;    /* Sørg for, at kassen passer præcist til teksten */
+}
+.ton {
+    color: #ff6f61;    /* Fremhæv tallet i rød */
+    font-weight: bold; /* Gør teksten fed */
+    font-size: 22px;   /* Gør teksten lidt større */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Tilføj en skygge for effekt */
+}
