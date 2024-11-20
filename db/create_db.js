@@ -53,6 +53,8 @@ x real,
 y real
 );
 
+/* Har importeret csv fil ind i temp table gennem PSQL */
+
 create table oceans (
 ocean_id serial primary key,
 ocean text

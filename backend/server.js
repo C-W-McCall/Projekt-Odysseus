@@ -32,6 +32,8 @@ const server = express();
 server.use(express.static('frontend'));
 server.use(onEachRequest);
 server.get('/api/albums', onGetAlbums);
+server.get('/api/veryHigh', onGetClassVeryHigh);
+server.get('/api/High', onGetClassHigh);
 server.listen(port, onServerReady);
 
 async function onGetAlbums(request, response) {
@@ -39,7 +41,8 @@ async function onGetAlbums(request, response) {
         const dbResult = await db.query(
             `select ocean, avg(measurement) as avg_measurement, extract(year from date) as year from samples
 join oceans using (ocean_id)
-where date <= '2020-12-31' and date >= '2014-01-01'
+join units using (unit_id)
+where date <= '2020-12-31' and date >= '2014-01-01' and unit_id = 2
 group by ocean, year
 order by year;`
     );
@@ -49,6 +52,37 @@ order by year;`
         response.status(500).json({ error: 'Failed to retrieve data' });
     }
 }
+
+async function onGetClassHigh(request, response) {
+    try {
+        const dbResult = await db.query(
+            `select count(density_class) as High, extract(year from date) as year from samples
+join density_classes using (density_class_id)
+where density_class = 'High' and date >= '2002-01-01' and date < '2021-01-01'
+group by year;`
+    );
+        response.json(dbResult.rows);
+    } catch (error) {
+        console.error('Error fetching data from database:', error);
+        response.status(500).json({ error: 'Failed to retrieve data' });
+    }
+}
+
+async function onGetClassVeryHigh(request, response) {
+    try {
+        const dbResult = await db.query(
+            `select count(density_class) as VeryHigh, extract(year from date) as year from samples
+join density_classes using (density_class_id)
+where density_class = 'Very High' and date >= '2012-01-01' and date < '2021-01-01'
+group by year;`
+    );
+        response.json(dbResult.rows);
+    } catch (error) {
+        console.error('Error fetching data from database:', error);
+        response.status(500).json({ error: 'Failed to retrieve data' });
+    }
+}
+
 
 function onEachRequest(request, response, next) {
     console.log(new Date(), request.method, request.url);
