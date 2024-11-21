@@ -189,3 +189,249 @@ svg {
     border: 2px solid #ccc; /* Optional: Border around the map */
 }
 
+.text-box-container {
+    display: flex; /* Placerer boksene vandret */
+    gap: 20px; /* Afstand mellem boksene */
+    justify-content: center; /* Centrer boksene horisontalt */
+    align-items: flex-start; /* Justerer boksene langs toppen */
+    margin-top: 30px;
+    padding: 20px;
+    max-width: 100%; /* Sørger for, at de ikke går uden for visningen */
+    overflow-x: auto; /* Tilføjer scroll, hvis der ikke er plads nok */
+}
+
+.text-box {
+    background-color: #020c23; /* Matcher sidens baggrund */
+    padding: 20px;
+    border: 2px solid #fcffc7; /* Samme farve som navigationsbaren */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Diskret skygge */
+    text-align: left;
+    min-width: 250px; /* Minimum bredde på hver tekstboks */
+    max-width: 300px; /* Gør boksene en passende størrelse */
+    flex: 1; /* Sørger for, at de deler plads ligeligt */
+}
+
+.text-box h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+    color: #fcffc7; /* Samme farve som teksten */
+}
+
+.text-box p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #fcffc7; /* Samme farve som teksten */
+}
+/* Style til spillet /*
+/* Sløring af baggrund, når quizzen vises */
+#quiz-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Mørk semi-transparent baggrund */
+    z-index: 999; /* Sørg for, at quizzen vises over alt andet */
+    display: flex;
+    justify-content: center;  /* Centrer horisontalt */
+    align-items: center;      /* Centrer vertikalt */
+}
+
+/* Quiz-containeren i overlay */
+#quiz-container {
+    background-color: #fcffc7;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #020c23;
+    text-align: center;
+    width: 90%;
+    max-width: 600px;  /* Max bredde for quiz-containeren */
+    margin: 0;         /* Sørger for at containeren ikke har ekstra margin */
+    box-sizing: border-box;  /* Sørger for, at padding og border ikke påvirker bredde og højde */
+}
+
+/* Styling af quiz-knapper (De er i spil.css) */
+.option {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #020c23;
+    color: #fcffc7;
+    border: 2px solid #fcffc7;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #fcffc7;
+    color: #020c23;
+}
+
+/* Titel */
+h1 {
+    color: #fcffc7;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Spørgsmålstekst */
+#question {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Knapper til svarmuligheder */
+.option {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #020c23;
+    color: #fcffc7;
+    border: 2px solid #fcffc7;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #fcffc7;
+    color: #020c23;
+}
+
+.option:active {
+    background-color: #d0d1a1;
+    color: #020c23;
+}
+
+/* Knap til næste spørgsmål */
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #fcffc7;
+    color: #020c23;
+    border: 2px solid #020c23;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+button:hover {
+    background-color: #020c23;
+    color: #fcffc7;
+}
+
+button:active {
+    background-color: #d0d1a1;
+    color: #020c23;
+}
+
+/* Feedback besked */
+#feedback {
+    margin-top: 15px;
+    font-size: 18px;
+}
+
+/* Score */
+#score {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+#Quizzen {
+    position: absolute; /* Absolut positionering */
+    top: 45%; /* Placér 40% fra toppen, lige over knappen */
+    left: 50%; /* Placér 50% fra venstre */
+    transform: translate(-50%, -50%); /* Juster for centreret placering */
+    font-size: 24px; /* Størrelse på overskriften */
+    font-family: Arial, sans-serif; /* Skrifttype */
+    text-align: center; /* Juster tekst til midten */
+    color: #020c23; /* Mørkegrå farve */
+    margin: 0; /* Fjern margin for præcis placering */
+}
+
+#startBtn {
+    position: absolute;
+    top: 50%; /* Placér knappen under overskriften */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 4px #2e7d32;
+    transition: all 0.3s ease;
+}
+
+#startBtn:hover {
+    background-color: #45a049;
+}
+
+#startBtn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px #1b5e20;
+    transform: translate(-50%, -48%);
+}
+#wrongAnswerBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(140%, -50%);
+    background-color: #fcffc7;
+    border: 2px solid red;
+    padding: 20px;
+    width: 200px; 
+    height: 200px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+}
+/* Knap til næste spørgsmål */
+
+#nextButtonContainer button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#nextButtonContainer button:hover {
+    background-color: #45a049;
+}
+#question-number {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;   /* Justerer teksten til venstre */
+   
+}
+#nextButtonContainer button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#nextButtonContainer button:hover {
+    background-color: #45a049;
+}
