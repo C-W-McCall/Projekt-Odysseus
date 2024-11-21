@@ -189,3 +189,8 @@ svg {
     border: 2px solid #ccc; /* Optional: Border around the map */
 }
 
+
+.colorChange {
+    background-color: rgb(69, 111, 225);
+}
+

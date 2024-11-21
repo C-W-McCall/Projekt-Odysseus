@@ -37,5 +37,5 @@ for (let i = 0; i < 4; i++) {
         .attr("y", offsetY)    // Samme Y-position som cirklen
         .attr("font-size", "14px")  // Tekststørrelse
         .attr("fill", "#fcffc7")    // Tekstfarve #fcffc7 (lys gul)
-        .text(values[i]);           // Teksten afhænger af værdien i arrayet 'values'
+        .text(values[i] + ' stk. plastik');           // Teksten afhænger af værdien i arrayet 'values'
 }
