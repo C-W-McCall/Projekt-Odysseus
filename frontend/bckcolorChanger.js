@@ -1,4 +1,4 @@
-const [red, green, blue] = [69, 111, 225]  // declare 3 variable med 3 værdier
+const [red, green, blue] = [0, 75, 173]  // declare 3 variable med 3 værdier
 const background = document.querySelector('.colorChange')
 
 window.addEventListener('scroll', () => { // når eventen 'scroll' sker, gør det her

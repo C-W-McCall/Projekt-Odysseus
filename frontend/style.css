@@ -6,6 +6,8 @@ body {
     background-color: #020c23;
 }
 
+
+
 /* Navigationsbaren */
 .menubar {
     position: fixed;
@@ -189,11 +191,6 @@ svg {
     border: 2px solid #ccc; /* Optional: Border around the map */
 }
 
-
-.colorChange {
-    background-color: rgb(69, 111, 225);
-}
-
 .text-box-container {
     display: flex; /* Placerer boksene vandret */
     gap: 20px; /* Afstand mellem boksene */
@@ -221,6 +218,11 @@ svg {
     margin: 0 0 10px 0;
     font-size: 20px;
     color: #fcffc7; /* Samme farve som teksten */
+}
+
+#oceanimg {
+    height: 300px;
+    width: 4000px;
 }
 
 .text-box p {
