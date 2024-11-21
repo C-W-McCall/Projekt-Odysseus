@@ -1,5 +1,5 @@
 // Initialize the map and set its view to a specific location and zoom level
-const map = L.map('map').setView([0, 0], 2); // Starting at coordinates [0, 0] with a zoom of 2
+const map = L.map('map').setView([56.1629, 10.2039], 7); // Starting at coordinates [0, 0] with a zoom of 2
 
 // Add a tile layer to add to the map (using OpenStreetMap tiles)
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -20,7 +20,7 @@ fetch('Geo.geojson')
             },
             onEachFeature: function (feature, layer) {
                 if (feature.properties) {
-                    let popupContent = "<b>Properties:</b><br>";
+                    let popupContent = "<b>Detaljer:</b><br>";
                     for (const key in feature.properties) {
                         popupContent += `${key}: ${feature.properties[key]}<br>`;
                     }
