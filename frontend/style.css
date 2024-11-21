@@ -163,3 +163,11 @@ svg {
     font-size: 22px;   /* Gør teksten lidt større */
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Tilføj en skygge for effekt */
 }
+
+/* Kort */ 
+#map {
+    width: 60%;
+    height: 500px; /* Adjust height as needed */
+    background: #f0f0f0; /* Optional: Helps visualize the container before map loads */
+}
+
