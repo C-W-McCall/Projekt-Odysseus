@@ -6,7 +6,37 @@ const marginBottom = 30;
 const marginRight = 30;
 const marginTop = 10;
 
-const svgLine = d3.select("#line-viz").append("svg").attr("width", width + marginLeft + marginRight + 70).attr("height", height + marginTop + marginBottom).append("g").attr("transform", `translate(${marginLeft}, ${marginTop})`)
+const svgLine = d3.select("#line-viz").append("svg").attr("width", width + marginLeft + marginRight + 90).attr("height", height + marginTop + marginBottom).append("g").attr("transform", `translate(${75}, ${marginTop})`)
+
+const explainerStart = svgLine
+                  .append("text")
+                  .text("Hyppigheden af samples med density class")
+                  .attr("fill", "#fcffc7")
+                  .attr("x", 50)
+                  .attr("y", 20)
+                  
+                  
+
+const explainerH = svgLine
+                  .append("text")
+                  .text("'High'")
+                  .attr("fill", "#FFFF00")
+                  .attr("x", 362)
+                  .attr("y", 20)
+
+const og = svgLine
+                  .append("text")
+                  .text("og")
+                  .attr("fill", "#fcffc7")
+                  .attr("x", 405)
+                  .attr("y", 20)
+
+const explainerVH = svgLine
+                  .append("text")
+                  .text("'Very High'")
+                  .attr("fill", "#ff0000")
+                  .attr("x", 427)
+                  .attr("y", 20)
 
 const veryHighTxt = svgLine
                     .append("text")
@@ -38,14 +68,14 @@ d3.json(`/api/density`).then((data) => {
     
     svgLine.append("g")
     .attr("transform", `translate(0, ${height})`) // Sætter x og y værdien for vores g element
-    .call(d3.axisBottom(xAxis).ticks(19));  // axisBottom bestemmer hvor ticks' skal stritte ud. xAxis scaler g elementet
+    .call(d3.axisBottom(xAxis).ticks(19).tickFormat(d => `år ${d}`));  // axisBottom bestemmer hvor ticks' skal stritte ud. xAxis scaler g elementet. tickFormat() bruges til at sætte prefix foran året
 
     // Tilføjer y-akse
     const yAxis = d3.scaleLinear()
-                    .domain([0, d3.max(data, function(d) { return +d.high})]) // der er '+' foran d.high, da '+' i JS sørger for at det bliver konverteret til et nummer
+                    .domain([0, 400]) // Istedet for at lave max af data, laver jeg max statisk, så vi får den øverste tick med (hvis max bliver max af data kommer sidste tick ikke med)
                     .range([height, 0]);
     svgLine.append("g")
-           .call(d3.axisLeft(yAxis)); // yAxis scaler g elementet
+           .call(d3.axisLeft(yAxis).tickFormat(d => `Samples ${d}`)); // yAxis scaler g elementet
 
     // Farven til hver gruppering
     const color = d3.scaleOrdinal()
