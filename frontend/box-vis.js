@@ -1155,25 +1155,28 @@ function createPlasticPacific2018 (xShift) {
 // create 2020 cirklerne
 
     function createPlasticAtla2020 (xShift) {
-      makeBalls = Math.round(data[25].avg_measurement / 1);
+      makeBalls = Math.round(data[25].avg_measurement / 0.1);
         console.log(makeBalls);
 
         for (i = 1; i<=makeBalls; i++) { 
          let time = 1000;
          let timeFactor = 0.05;
  
-         if (i < 7){
+         let r = 5
+         let d = r * 2
+  
+         if (i < 12){
          svg.append("circle")
          .attr('cx', 185)
          .attr('cy', -10)
-         .attr('r', 10)
+         .attr('r', r)
          .attr("id", "viz")
          .attr('stroke', 'black')
          .attr('fill', '#dfe3eb')
          .transition()
          .duration(time * (i * timeFactor)) 
-         .attr('cx', 115 + (i * 20) + xShift)
-         .attr('cy', 288)
+         .attr('cx', 115 + (i * d) + xShift)
+         .attr('cy', 293)
         }
     }};
 
