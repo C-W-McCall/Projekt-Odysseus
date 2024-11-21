@@ -1,12 +1,27 @@
 const width = 1400;
 const height = 600;
 
-const marginLeft = 60;
+const marginLeft = 30;
 const marginBottom = 30;
 const marginRight = 30;
 const marginTop = 10;
 
-const svgLine = d3.select("#line-viz").append("svg").attr("width", width + marginLeft + marginRight).attr("height", height + marginTop + marginBottom).append("g").attr("transform", `translate(${marginLeft}, ${marginTop})`)
+const svgLine = d3.select("#line-viz").append("svg").attr("width", width + marginLeft + marginRight + 70).attr("height", height + marginTop + marginBottom).append("g").attr("transform", `translate(${marginLeft}, ${marginTop})`)
+
+const veryHighTxt = svgLine
+                    .append("text")
+                    .text("Very High")
+                    .attr("fill", "#ff0000")
+                    .attr("x", 1400)
+                    .attr("y", 510)
+
+const HighTxt = svgLine
+                    .append("text")
+                    .text("High")
+                    .attr("fill", "#FFFF00")
+                    .attr("x", 1400)
+                    .attr("y", 460)
+
 
 d3.json(`/api/density`).then((data) => {
     console.log(data);
@@ -27,10 +42,10 @@ d3.json(`/api/density`).then((data) => {
 
     // Tilføjer y-akse
     const yAxis = d3.scaleLinear()
-                    .domain([0, d3.max(data, function(d) { return +d.high})])
+                    .domain([0, d3.max(data, function(d) { return +d.high})]) // der er '+' foran d.high, da '+' i JS sørger for at det bliver konverteret til et nummer
                     .range([height, 0]);
     svgLine.append("g")
-           .call(d3.axisLeft(yAxis));
+           .call(d3.axisLeft(yAxis)); // yAxis scaler g elementet
 
     // Farven til hver gruppering
     const color = d3.scaleOrdinal()
@@ -39,14 +54,14 @@ d3.json(`/api/density`).then((data) => {
     // Tegn linjerne
     svgLine.selectAll(".line")
     .data(sumstat)
-    .join("path")
-      .attr("fill", "none")
-      .attr("stroke", function(d){ return color(d[0]) })
+    .join("path")  // Laver en <path> for hvert group i sumstat
+      .attr("fill", "none") // Ingen fill, da fill fylder pladsen under grafen (som noget integral noget). uden .attr("fill") vil den alligevel fylde ud med sort farve.
+      .attr("stroke", function(d){ return color(d[0]) })  // Her bliver farverne sat på, baseret på d[0] som er group keys i vores InternMap
       .attr("stroke-width", 1.5)
-      .attr("d", function(d){
-        return d3.line()
-                .x(function(d) {return xAxis(d.year); })
-                .y(function(d) {return yAxis(+d.high); })
-                (d[1])
+      .attr("d", function(d){   // "d" bestemmer 'formen' på vores linjer
+        return d3.line()  // Line funktionen laver linjer baseret på datasæt
+                .x(function(d) {return xAxis(d.year); })  // Linjens x-værdi lig med datasættets år
+                .y(function(d) {return yAxis(+d.high); })  // Linjens y-værdi lig med datasættets 'high' værdi som er mængden af samples med enten 'high' eller 'very high' i density
+                (d[1])  // d[1] er et array af data som tilhører gruppen (her ved os er det 'high' og 'very high')
       })
 });
