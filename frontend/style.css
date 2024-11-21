@@ -172,10 +172,20 @@ svg {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Tilføj en skygge for effekt */
 }
 
-/* Kort */ 
+#map-wrapper {
+    display: flex;
+    justify-content: center; /* Centers the map horizontally */
+    align-items: center;    /* Centers the map vertically if it has a height */
+    width: 100%;            /* Ensure the wrapper takes the full width of the page */
+}
+
 #map {
-    width: 60%;
-    height: 500px; /* Adjust height as needed */
-    background: #f0f0f0; /* Optional: Helps visualize the container before map loads */
+    width: 60%; /* Adjust as needed */
+    height: 500px; /* Adjust as needed */
+    margin: 0 auto; /* Center the map horizontally */
+    background: #f0f0f0; /* Optional: Background for visibility */
+    border-radius: 15px; /* Adjust the value for more or less rounding */
+    overflow: hidden; /* Ensures map tiles don’t spill outside rounded corners */
+    border: 2px solid #ccc; /* Optional: Border around the map */
 }
 
