@@ -7,7 +7,8 @@
     <link rel="stylesheet" href="spil.css"> <!-- Link til quiz CSS -->
     <title>Document</title>
     <script src="d3.v7.js"></script>
-</head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 <body>
 
     <!-- Navigations bar -->
@@ -15,7 +16,6 @@
         <ul>
             <li><a href="#">Hjem</a></li>
             <li><a href="#">Visualisering</a></li>
-            <li><a href="#">Spil</a></li>
             <li><a href="#" onclick="showQuiz()">Quizzen</a></li> <!-- Knap til at vise quizzen -->
         </ul>
     </nav>
@@ -37,7 +37,8 @@
 
     <!-- Tekst over visualisering -->
     <section class="visualisering-tekst-container">
-        <p class="visualisering-tekst">Dette er en tekst over placeholderen til visualiseringen</p>
+        <p class="visualisering-tekst">Denne interaktive visualisering viser koncentrationen af mikroplastik i verdenshavene over tid. Når du klikker på et specifikt årstal, vil kasserne for de forskellige have blive fyldt med "bolde", som repræsenterer den gennemsnitlige mængde mikroplastik målt i én kubikmeter vand for det valgte år. 
+            Mængden af fyld i hver kasse giver et visuelt billede af forureningsniveauet og gør det nemt at sammenligne mikroplastikforurening på tværs af de forskellige have og år.</p>
     </section>
 
     <section class="visualisering-boks">
@@ -85,6 +86,5 @@
     <script src="script.js"></script>
     <script src="box-vis.js"></script>
     <script src="fish-vis.js"></script>
-
 </body> 
 </html>

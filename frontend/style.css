@@ -84,11 +84,15 @@ body {
     line-height:  1.6;
 }
 
+
 /* Tekst over visualisering */
 .visualisering-tekst-container {
     text-align: center;
-    margin-top: 450px; /* Tilføjer afstand fra toppen af siden - justér efter behov */
-    margin-bottom: 20px; /* Afstand til placeholderen nedenfor */
+    margin-top: 450px; 
+    margin-bottom: 20px; 
+    max-width: 80%; 
+    margin-left: auto; 
+    margin-right: auto; 
 }
 
 svg {
@@ -96,17 +100,3 @@ svg {
     margin: auto;
 }
 
-/* visualisering */
-.visualisering-tekstboks {
-    margin-top: 50px; 
-    padding: 20px;
-    border: 2px solid #fcffc7; 
-    background-color: #020c23; 
-    color: #fcffc7; 
-    border-radius: 5px;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    font-size: 18px;
-}
