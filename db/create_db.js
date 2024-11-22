@@ -89,10 +89,7 @@ density_range text,
 density_class_id integer references density_classes (density_class_id),
 latitude real,
 longitude real
-);
-
-
-`);
+);`);
 console.log('Tables recreated.');
 
 console.log('Copying data from CSV files...');
