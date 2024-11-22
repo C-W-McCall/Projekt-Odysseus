@@ -71,7 +71,7 @@ const questions = [
 function loadQuestion() {
     document.getElementById("question-number").innerText = `${currentQuestion + 1} af ${questions.length}`;
     document.getElementById("question").innerText = questions[currentQuestion].question;
-    
+
     const optionsContainer = document.getElementById("options");
     optionsContainer.innerHTML = "";
     questions[currentQuestion].options.forEach((option, index) => {
@@ -83,25 +83,24 @@ function loadQuestion() {
     });
 }
 
-// Vis quizzen, når knappen trykkes
+// Vis quizzen
 function showQuiz() {
-    // Skjul resten af siden og vis quizzen
     document.getElementById("quiz-overlay").style.display = "flex";
     startQuiz();
 }
 
-// Funktion til at lukke quizzen
+// Luk quizzen
 function closeQuiz() {
     document.getElementById("quiz-overlay").style.display = "none";
 }
 
 // Start quizzen
 function startQuiz() {
-    document.getElementById("quiz-container").style.display = "block"; // Sørg for, at quiz-container er synlig
-    loadQuestion(); // Indlæs første spørgsmål
+    document.getElementById("quiz-container").style.display = "block";
+    loadQuestion();
 }
 
-// Funktion til at kontrollere svaret
+// Tjek svaret
 function checkAnswer(selectedIndex) {
     const correctIndex = questions[currentQuestion].answer;
     const feedback = document.getElementById("feedback");
@@ -126,34 +125,34 @@ function checkAnswer(selectedIndex) {
         button.disabled = true;
     }
 
-    nextButtonContainer.style.display = "block"; // Vis knappen til næste spørgsmål
+    nextButtonContainer.style.display = "block";
     document.getElementById("score").innerText = `Score: ${score} / ${questions.length}`;
 }
 
-// Funktion til at gå videre til næste spørgsmål
-// Funktion til at gå videre til næste spørgsmål
+// Gå til næste spørgsmål
 function nextQuestion() {
     const nextButtonContainer = document.getElementById("nextButtonContainer");
-    nextButtonContainer.style.display = "none"; // Skjul næste-knap
+    nextButtonContainer.style.display = "none";
 
     const feedback = document.getElementById("feedback");
-    feedback.innerText = ""; // Ryd feedback
+    feedback.innerText = "";
 
     const wrongAnswerBox = document.getElementById("wrongAnswerBox");
-    wrongAnswerBox.style.display = "none"; // Skjul forklaringsboksen
+    wrongAnswerBox.style.display = "none";
 
     if (currentQuestion < questions.length - 1) {
         currentQuestion++;
-        loadQuestion(); // Indlæs næste spørgsmål
+        loadQuestion();
     } else {
         feedback.innerText = `Quizzen er slut! Din endelige score er ${score} ud af ${questions.length}.`;
         feedback.style.color = "blue";
 
         const restartButtonContainer = document.getElementById("restartButtonContainer");
-        restartButtonContainer.style.display = "block"; // Vis restart-knap
+        restartButtonContainer.style.display = "block";
     }
 }
-// Funktion til at nulstille quizzen
+
+// Nulstil quizzen
 function resetQuiz() {
     currentQuestion = 0;
     score = 0;
@@ -168,5 +167,12 @@ function resetQuiz() {
     const restartButtonContainer = document.getElementById("restartButtonContainer");
     restartButtonContainer.style.display = "none";
 
-    loadQuestion(); // Start quizzen fra begyndelsen
+    loadQuestion();
 }
+// Luk quiz-kassen, når der trykkes udenfor den
+document.getElementById("quiz-overlay").addEventListener("click", function (event) {
+    // Hvis der klikkes direkte på overlayet (ikke quiz-containeren), lukkes quizzen
+    if (event.target.id === "quiz-overlay") {
+        closeQuiz();
+    }
+});
