@@ -63,7 +63,7 @@ d3.json(`/api/density`).then((data) => {
 
     // Tilføjer x-akse
     const xAxis = d3.scaleLinear()
-                    .domain(d3.extent(data, function(d) { return d.year}))  // Domain er 'range' for data
+                    .domain(d3.extent(data, function(d) { return d.year}))  // Domain er 'range' for data  d3.extent sætter både min og maks i en funktion
                     .range([0, width]);  // Range er den aktuelle range som data skal vises i (normalt svg'ets størrelse i pixels)
     
     svgLine.append("g")
@@ -81,8 +81,8 @@ d3.json(`/api/density`).then((data) => {
     const color = d3.scaleOrdinal()
                     .range(["#FFFF00", "#ff0000"])
 
-    // Tegn linjerne
-    svgLine.selectAll(".line")
+    // Lav linjerne baseret på data
+    const path = svgLine.selectAll(".line")
     .data(sumstat)
     .join("path")  // Laver en <path> for hvert group i sumstat
       .attr("fill", "none") // Ingen fill, da fill fylder pladsen under grafen (som noget integral noget). uden .attr("fill") vil den alligevel fylde ud med sort farve.
@@ -94,4 +94,19 @@ d3.json(`/api/density`).then((data) => {
                 .y(function(d) {return yAxis(+d.high); })  // Linjens y-værdi lig med datasættets 'high' værdi som er mængden af samples med enten 'high' eller 'very high' i density
                 (d[1])  // d[1] er et array af data som tilhører gruppen (her ved os er det 'high' og 'very high')
       })
+
+      const pathLength = path.node().getTotalLength();
+
+      function drawPath(){
+      path.attr("stroke-dashoffset", pathLength)
+      .attr("stroke-dasharray", pathLength)
+      .transition()
+      .duration(2500)
+      .attr("stroke-dashoffset", 0);
+      };
+
+     
+      drawPath();
+      
+      
 });
