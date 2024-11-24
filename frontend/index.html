@@ -66,6 +66,7 @@
 
 
     <section class="visualisering-boks">
+        <svg width="1200" height="400" id="svg-container"></svg>
         <div class="visualisering-content">
             <!-- Visualisering indhold -->
         </div>
@@ -82,6 +83,7 @@
         <button id="2018btn">Show 2018</button>
         <button id="2019btn">Show 2019</button>
         <button id="2020btn">Show 2020</button>
+<<<<<<< HEAD
     </div>
 
      <!-- Tekst over visualisering -->
@@ -97,6 +99,17 @@
   <div id="map-wrapper" class="map-wrapper">
     <div id="map"></div>
 </div>
+=======
+    
+          
+        <div id="controls"></div>
+        <div class="visualisering-content2"></div>
+            <button id="comparisonButton">Sammenligning</button>
+            <button id="rankingButton">Rank År</button>
+            <div id="chartContainer"></div>
+        </div>
+        
+>>>>>>> cacb747 (Barchart færdig)
 
 
     <!-- Tre tekstbokse -->
@@ -155,4 +168,27 @@
     <script src="tæller.js"></script>
     <script src="map.js"></script> <!-- Link til Kortet -->
 </body>
+        <!-- Feedback besked -->
+        <div id="feedback"></div>
+    
+        <!-- Box der viser forklaring på forkert svar -->
+        <div id="wrongAnswerBox" style="display: none;">
+            <p id="wrongAnswerExplanation"></p>
+        </div>
+    
+        <!-- Knap til næste spørgsmål -->
+        <div id="nextButtonContainer" style="display: none;">
+            <button onclick="nextQuestion()">Næste spørgsmål</button>
+        </div>
+    
+        <div id="restartButtonContainer" style="display: none;">
+            <button id="restartButton" onclick="resetQuiz()">Start forfra</button>
+        </div>
+    </div> <!-- Luk den oprindelige quiz-container -->
+</div> <!-- Luk quiz-overlay -->
+    <script src="box-vis.js"></script>
+    <script src="fish-vis.js"></script>
+    <script src="Barchart.js"></script>
+
+</body> 
 </html>

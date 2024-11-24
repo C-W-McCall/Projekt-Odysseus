@@ -1,4 +1,4 @@
-const width = 1400;
+const width = 1200;
 const height = 600;
 
 const marginLeft = 30;
@@ -42,15 +42,15 @@ const veryHighTxt = svgLine
                     .append("text")
                     .text("Very High")
                     .attr("fill", "#ff0000")
-                    .attr("x", 1400)
-                    .attr("y", 510)
+                    .attr("x", 1200)
+                    .attr("y", 515)
 
 const HighTxt = svgLine
                     .append("text")
                     .text("High")
                     .attr("fill", "#FFFF00")
-                    .attr("x", 1400)
-                    .attr("y", 460)
+                    .attr("x", 1200)
+                    .attr("y", 465)
 
 
 d3.json(`/api/density`).then((data) => {
