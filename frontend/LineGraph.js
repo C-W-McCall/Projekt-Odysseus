@@ -91,8 +91,8 @@ d3.json(`/api/density`).then((data) => {
       .attr("d", function(d){   // "d" bestemmer 'formen' på vores linjer
         return d3.line()  // Line funktionen laver linjer baseret på datasæt
                 .x(function(d) {return xAxis(d.year); })  // Linjens x-værdi lig med datasættets år
-                .y(function(d) {return yAxis(+d.high); })  // Linjens y-værdi lig med datasættets 'high' værdi som er mængden af samples med enten 'high' eller 'very high' i density
-                (d[1])  // d[1] er et array af data som tilhører gruppen (her ved os er det 'high' og 'very high')
+                .y(function(d) {return yAxis(+d.high); })  // Linjens y-værdi lig med datasættets 'high' værdi som er mængden af samples med enten 'high' eller 'very high' i density. '+' er der for at konvertere værdierne til et nummer
+                (d[1])  // d[1] er et array af data som tilhører gruppen (her ved os er det 'high' og 'very high') hvor d[0] er group keys, altså 'high' og 'very high' i vores tilfælde
       })
 
       const pathLength = path.node().getTotalLength();

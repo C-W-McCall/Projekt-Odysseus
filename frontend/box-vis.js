@@ -100,7 +100,7 @@ d3.json(`/api/albums`).then((data) => {
         let Pac2014 = data[3].avg_measurement
         svg
         .append("text")
-        .text(`${Pac2014.slice(0, 4)}`)
+        .text(`${Pac2014.slice(0, 4)}`)  // .slice 'cutter' en værdi (tal eller string) hvor 0 er start på cut (altså starten) og 4 er der hvor cuttet skal gå exclusiv den værdi
         .attr("x", 1123)
         .attr("y", 170)
         .attr("id", "viz_year")
@@ -1235,12 +1235,12 @@ function createPlasticPacific2018 (xShift) {
 
 
 // Tilføjer en 'eventListener' til knappen, som gør at når den bliver klikket kører den funktionen
-// else if attachEvent gør, at ældre browsere såsom Internet Explorer 8 og ældre
+// else if attachEvent gør, at ældre browsere såsom Internet Explorer 8 og ældre også kan kalde funktionen
 // attachEvent er mere eller mindre ubrugelig for vores projekt
 
 const btn14 = document.getElementById("2014btn");
 if (btn14.addEventListener)
-    btn14.addEventListener("click", show2014, false);
+    btn14.addEventListener("click", show2014, false);   // Tredje paratemer i addEventListener er optionel, og bruges ikke i vores projekt
 else if(btn14.attachEvent)
     btn14.attachEvent("onclick", show2014);
 
