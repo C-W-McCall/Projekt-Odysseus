@@ -137,7 +137,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .attr("y", 15)
             .attr("text-anchor", "middle")
             .attr("fill", "white")
-            .text("Average Measurement (Tons of Plastic)");
+            .text("Overall Average Measurement");
     }
 
     // Knappernes event listeners
