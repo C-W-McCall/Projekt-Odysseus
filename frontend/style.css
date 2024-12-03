@@ -3,8 +3,24 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     color: #fcffc7;
-    background-color: #020c23;
+    background: linear-gradient(45deg, #011F4B, #03396C, #005B96, #6497B1, #B3CDE0);
+    background-size: 200% 200%; /* Gør baggrunden større for animation */
+    animation: wave 5s ease-in-out infinite; /* Havbevægelse */
 }
+
+/* Animationen */
+@keyframes wave {
+    0% {
+        background-position: 0% 50%; /* Start */
+    }
+    50% {
+        background-position: 100% 50%; /* Midtvejs */
+    }
+    100% {
+        background-position: 0% 50%; /* Tilbage til start */
+    }
+}
+
 
 
 
@@ -14,11 +30,15 @@ body {
     top: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #fcffc7;
     padding: 10px 20px;
-    border-radius: 15px;
     text-align: center;
     z-index: 1000;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 15px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .menubar ul {
@@ -31,15 +51,18 @@ body {
 
 .menubar li {
     padding: 10px 20px;
-    background-color: #020c23;
-    color: #fcffc7;
     border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.3s;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .menubar li:hover {
-    background-color: #333;
+    background-color: #020c236f;
 }
 
 .menubar a {
@@ -54,7 +77,7 @@ body {
     position: absolute;
     top: 0;
     right: 0;
-    width: 600px; 
+    width: 800px; 
     height: auto; 
   }
   
@@ -124,7 +147,6 @@ svg {
 
 /* Kasse der indeholder tælleren og teksten */
 .counter-box {
-    background-color: #020c23;  /* Mørk baggrund */
     color: #fcffc7;  /* Lys tekstfarve */
     border-radius: 15px;  /* Afrundede hjørner */
     padding: 30px;  /* Afstand rundt om indholdet */
@@ -133,7 +155,14 @@ svg {
     margin-left: 20px;  /* Afstand fra venstre side */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Skyggeeffekt for dybde */
     border: 3px solid #fcffc7;  /* Lys kant rundt om kassen */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
+
 .counter-box .skrald-text {
     font-size: 12px;             /* Justér størrelsen på teksten */
     font-style: italic;          /* Gør teksten kursiv */
@@ -168,7 +197,6 @@ svg {
     border: 2px solid #ff6f61; /* Rød kant */
     padding: 2px 6px;         /* Indvendig afstand for at skabe plads til kanten */
     border-radius: 5px;       /* Bløde hjørner på kassen */
-    background-color:#fcffc7;   /* Hvid baggrund for at fremhæve kassen */
     display: inline-block;    /* Sørg for, at kassen passer præcist til teksten */
 }
 .ton {
@@ -199,15 +227,18 @@ svg {
 }
 
 .text-box {
-    background-color: #020c23; /* Matcher sidens baggrund */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); /* Matcher sidens baggrund */
     padding: 20px;
     border: 2px solid #fcffc7; /* Samme farve som navigationsbaren */
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Diskret skygge */
     text-align: left;
     min-width: 250px; /* Minimum bredde på hver tekstboks */
     max-width: 300px; /* Gør boksene en passende størrelse */
     flex: 1; /* Sørger for, at de deler plads ligeligt */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .text-box h3 {
@@ -315,16 +346,29 @@ h1 {
 
 /* Knap til næste spørgsmål */
 button {
-    margin-top: 20px;
+    margin: 20px 10px; /* Mellemrum: 20px vertikalt, 10px horisontalt */
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #fcffc7;
-    color: #020c23;
+    color: #ffffff;
     border: 2px solid #020c23;
-    border-radius: 4px;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
+
+/* Container til centrering og yderligere styling */
+.button-container {
+    display: flex;
+    justify-content: center; /* Centrerer knapper horisontalt */
+    gap: 15px; /* Mellemrum mellem knapper */
+    flex-wrap: wrap; /* Tillader linjebrud ved små skærme */
+}
+
 
 button:hover {
     background-color: #020c23;

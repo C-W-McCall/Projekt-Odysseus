@@ -128,6 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .attr("x", w / 2)
             .attr("y", h - 10)
             .attr("text-anchor", "middle")
+            .attr("fill", "white")
             .text("Year");
 
         svg.append("text")
@@ -135,6 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .attr("x", -h / 2)
             .attr("y", 15)
             .attr("text-anchor", "middle")
+            .attr("fill", "white")
             .text("Average Measurement (Tons of Plastic)");
     }
 
