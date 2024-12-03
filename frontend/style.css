@@ -5,7 +5,7 @@ body {
     color: #fcffc7;
     background: linear-gradient(45deg, #011F4B, #03396C, #005B96, #6497B1, #B3CDE0);
     background-size: 200% 200%; /* Gør baggrunden større for animation */
-    animation: wave 5s ease-in-out infinite; /* Havbevægelse */
+    animation: wave 10s ease-in-out infinite; /* Havbevægelse */
 }
 
 /* Animationen */
@@ -232,7 +232,7 @@ svg {
     border: 2px solid #fcffc7; /* Samme farve som navigationsbaren */
     text-align: left;
     min-width: 250px; /* Minimum bredde på hver tekstboks */
-    max-width: 300px; /* Gør boksene en passende størrelse */
+    max-width: 350px; /* Gør boksene en passende størrelse */
     flex: 1; /* Sørger for, at de deler plads ligeligt */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
