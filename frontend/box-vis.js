@@ -1,13 +1,5 @@
 const svg = d3.selectAll(".visualisering-content").append("svg").attr("width", 1400).attr("height", 300);
 
-svg
-.append("text")
-.text("Gennemsnitlig mikroplast pr. m3 pr. år siden 2014")
-.attr("x", 0)
-.attr("y", 20)
-.style("fill", "#fcffc7")
-.style("font-size", 14)
-
 
 d3.json(`/api/albums`).then((data) => {
   

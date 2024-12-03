@@ -143,6 +143,10 @@ svg {
 .live-counter {
     margin-top: 100px; /* Justér afstanden fra toppen af siden */
     text-align: left; /* Justér teksten til venstre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 
 /* Kasse der indeholder tælleren og teksten */
