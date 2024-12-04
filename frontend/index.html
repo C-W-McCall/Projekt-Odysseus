@@ -20,12 +20,14 @@
     <nav class="menubar">
         <ul>
             <li><a href="#hjem">Hjem</a></li>
-            <li><a href="#spandChart">Spand Chart</a></li>
-            <li><a href="#line-viz">Line Chart</a></li> 
-            <li><a href="#chartContainer">Bar Chart</a></li> 
-            <li><a href="#" onclick="showQuiz()">Quizzen</a></li> <!-- Knap til at vise quizzen -->
+            <li><a href="#spandChart" onclick="scrollToElement(event, 'spandChart')">Spand Chart</a></li>
+            <li><a href="#map-wrapper" onclick="scrollToElement(event, 'map-wrapper')">Kort</a></li>
+            <li><a href="#line-viz" onclick="scrollToElement(event, 'line-viz')">Line Chart</a></li>
+            <li><a href="#chartContainer" onclick="scrollToElement(event, 'chartContainer')">Bar Chart</a></li>
+            <li><a href="#" onclick="showQuiz()">Quizzen</a></li>
         </ul>
     </nav>
+    
 
     <!-- Billede -->
     <img src="Billeder/Billede1.png" alt="Description of the image" class="image-class">
@@ -174,5 +176,6 @@
     <script src="LineGraph.js"></script>
     <script src="tæller.js"></script>
     <script src="map.js"></script> <!-- Link til Kortet -->
+    <script src="scrollTilMidten.js"></script>
 </body> 
 </html>
