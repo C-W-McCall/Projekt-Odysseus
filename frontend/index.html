@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  id="hjem">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,18 +14,20 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 </head>
-<body class="colorChange">
+<body>
 
     <!-- Navigations bar -->
     <nav class="menubar">
         <ul>
-            <li><a href="#">Hjem</a></li>
-            <li><a href="#">Spand Chart</a></li>
-            <li><a href="#">Line Chart</a></li> 
-            <li><a href="#">Bar Chart</a></li> 
-            <li><a href="#" onclick="showQuiz()">Quizzen</a></li> <!-- Knap til at vise quizzen -->
+            <li><a href="#hjem">Hjem</a></li>
+            <li><a href="#spandChart" onclick="scrollToElement(event, 'spandChart')">Spand Chart</a></li>
+            <li><a href="#map-wrapper" onclick="scrollToElement(event, 'map-wrapper')">Kort</a></li>
+            <li><a href="#line-viz" onclick="scrollToElement(event, 'line-viz')">Line Chart</a></li>
+            <li><a href="#chartContainer" onclick="scrollToElement(event, 'chartContainer')">Bar Chart</a></li>
+            <li><a href="#" onclick="showQuiz()">Quizzen</a></li>
         </ul>
     </nav>
+    
 
 
     <!-- Overskrift og underoverskrift -->
@@ -45,7 +47,7 @@
     <!-- Tekst over visualisering -->
 
     <div class="text-box-container" style="padding-top: 900px;">
-        <div class="text-box">
+        <div class="text-box"  id="spandChart">
             <h3>Gennemsnitlig mængde af mikroplast i havene pr. m3 pr. år siden 2014</h3>
             <p>Hver spand skal visualisere én gennemsnitlig m3 vand i det givne hav, spandene bliver fyldt med den gennemsnitlige mængde af mikroplast for det hav i det givne år</p>
         </div>
@@ -72,18 +74,19 @@
         <button id="2020btn">Vis 2020</button>
     </div>
 
+    <!-- Søjlediagram -->  
+    <div id="chartContainer"></div>
+     <div id="buttonContainer">
+       <button id="comparisonButton">Vis sammenligning</button>
+       <button id="rankingButton">Vis rangering</button>
+    </div>
+  </div>
+
       <!-- Visualisering kort -->  
   <div id="map-wrapper" class="map-wrapper">
     <div id="map"></div>
 </div>
     
-          
-        <div id="controls"></div>
-        <div class="visualisering-content2"></div>
-            <button id="comparisonButton">Sammenligning</button>
-            <button id="rankingButton">Rank År</button>
-            <div id="chartContainer"></div>
-        </div>
         
 
 
@@ -170,5 +173,6 @@
     <script src="LineGraph.js"></script>
     <script src="tæller.js"></script>
     <script src="map.js"></script> <!-- Link til Kortet -->
+    <script src="scrollTilMidten.js"></script>
 </body> 
 </html>
