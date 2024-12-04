@@ -119,11 +119,6 @@ function checkAnswer(selectedIndex) {
         wrongAnswerBox.style.display = "block";
     }
 
-    const optionsContainer = document.getElementById("options");
-    const allButtons = optionsContainer.getElementsByTagName("button");
-    for (let button of allButtons) {
-        button.disabled = true;
-    }
 
     nextButtonContainer.style.display = "block";
     document.getElementById("score").innerText = `Score: ${score} / ${questions.length}`;
