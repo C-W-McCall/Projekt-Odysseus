@@ -115,6 +115,19 @@ body {
     line-height:  1.6;
 }
 
+/* beskrivelse */
+.beskrivelse {
+    height: 10vh;
+    width: auto;
+    padding: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text__body {font-size: 30px; color: #fcffc7;}
+
+.typed-cursor {color: #545454;}
 
 /* Tekst over visualisering */
 .visualisering-tekst-container {
