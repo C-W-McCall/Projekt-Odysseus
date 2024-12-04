@@ -1,3 +1,4 @@
+//Venter på, at HTML-dokumentet er fuldt indlæst, før koden køres.
 document.addEventListener("DOMContentLoaded", () => {
     // Dimensioner for diagrammet
     const w = 1000; // Bredde
