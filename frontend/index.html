@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  id="hjem">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,15 +14,15 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
 </head>
-<body class="colorChange">
+<body>
 
     <!-- Navigations bar -->
     <nav class="menubar">
         <ul>
-            <li><a href="#">Hjem</a></li>
-            <li><a href="#">Spand Chart</a></li>
-            <li><a href="#">Line Chart</a></li> 
-            <li><a href="#">Bar Chart</a></li> 
+            <li><a href="#hjem">Hjem</a></li>
+            <li><a href="#spandChart">Spand Chart</a></li>
+            <li><a href="#line-viz">Line Chart</a></li> 
+            <li><a href="#chartContainer">Bar Chart</a></li> 
             <li><a href="#" onclick="showQuiz()">Quizzen</a></li> <!-- Knap til at vise quizzen -->
         </ul>
     </nav>
@@ -48,7 +48,7 @@
     <!-- Tekst over visualisering -->
 
     <div class="text-box-container" style="padding-top: 900px;">
-        <div class="text-box">
+        <div class="text-box"  id="spandChart">
             <h3>Gennemsnitlig mængde af mikroplast i havene pr. m3 pr. år siden 2014</h3>
             <p>Hver spand skal visualisere én gennemsnitlig m3 vand i det givne hav, spandene bliver fyldt med den gennemsnitlige mængde af mikroplast for det hav i det givne år</p>
         </div>

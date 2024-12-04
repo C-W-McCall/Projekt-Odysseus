@@ -1227,56 +1227,33 @@ function createPlasticPacific2018 (xShift) {
 
 
 // Tilføjer en 'eventListener' til knappen, som gør at når den bliver klikket kører den funktionen
-// else if attachEvent gør, at ældre browsere såsom Internet Explorer 8 og ældre også kan kalde funktionen
-// attachEvent er mere eller mindre ubrugelig for vores projekt
 
 const btn14 = document.getElementById("2014btn");
-if (btn14.addEventListener)
-    btn14.addEventListener("click", show2014, false);   // Tredje paratemer i addEventListener er optionel, og bruges ikke i vores projekt
-else if(btn14.attachEvent)
-    btn14.attachEvent("onclick", show2014);
+btn14.addEventListener("click", show2014, false);   // Tredje paratemer i addEventListener er optionel, og bruges ikke i vores projekt, ved ikke hvad det gør
 
 
 const btn15 = document.getElementById("2015btn");
-if (btn15.addEventListener)
-    btn15.addEventListener("click", show2015, false);
-else if(btn15.attachEvent)
-    btn15.attachEvent("onclick", show2015);
+btn15.addEventListener("click", show2015, false);
 
 
 const btn16 = document.getElementById("2016btn");
-if (btn16.addEventListener)
-    btn16.addEventListener("click", show2016, false);
-else if(btn16.attachEvent)
-    btn16.attachEvent("onclick", show2016);
+btn16.addEventListener("click", show2016, false);
 
 
 const btn17 = document.getElementById("2017btn");
-if (btn17.addEventListener)
-    btn17.addEventListener("click", show2017, false);
-else if(btn17.attachEvent)
-    btn17.attachEvent("onclick", show2017);
+btn17.addEventListener("click", show2017, false);
 
 
 const btn18 = document.getElementById("2018btn");
-if (btn18.addEventListener)
-    btn18.addEventListener("click", show2018, false);
-else if(btn18.attachEvent)
-    btn18.attachEvent("onclick", show2018);
+btn18.addEventListener("click", show2018, false);
 
 
 const btn19 = document.getElementById("2019btn");
-if (btn19.addEventListener)
-    btn19.addEventListener("click", show2019, false);
-else if(btn19.attachEvent)
-    btn19.attachEvent("onclick", show2019);
+ btn19.addEventListener("click", show2019, false);
 
 
 const btn20 = document.getElementById("2020btn");
-if (btn20.addEventListener)
-    btn20.addEventListener("click", show2020, false);
-else if(btn20.attachEvent)
-    btn20.attachEvent("onclick", show2020);
+btn20.addEventListener("click", show2020, false);
 
 
-})
+});
