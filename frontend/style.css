@@ -505,3 +505,17 @@ button:active {
     transition: opacity 0.2s;
     color: black;
 }
+
+#chartContainer {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#buttonContainer {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
