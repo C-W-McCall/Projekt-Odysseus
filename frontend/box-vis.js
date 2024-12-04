@@ -38,8 +38,8 @@ d3.json(`/api/albums`).then((data) => {
     // Teksten til Atlantic over bucket
     svg
     .append("text")
-    .text("Atlantic Ocean")
-    .attr("x", 470)
+    .text("Atlanterhavet")
+    .attr("x", 479)
     .attr("y", 170)
     .attr("id", "pac")
     .style("fill", "#fcffc7")
@@ -49,8 +49,8 @@ d3.json(`/api/albums`).then((data) => {
     // Teksten til Pacific over bucket
     svg
     .append("text")
-    .text("Pacific Ocean")
-    .attr("x", 1075)
+    .text("Stillehavet")
+    .attr("x", 1090)
     .attr("y", 170)
     .style("fill", "#fcffc7")
     .style("font-size", 20)
@@ -58,8 +58,8 @@ d3.json(`/api/albums`).then((data) => {
     // Teksten til Arctic over bucket
     svg
     .append("text")
-    .text("Arctic Ocean")
-    .attr("x", 180)
+    .text("Ishavet")
+    .attr("x", 202)
     .attr("y", 170)
     .style("fill", "#fcffc7")
     .style("font-size", 20)
@@ -67,8 +67,8 @@ d3.json(`/api/albums`).then((data) => {
     // Teksten til Indian over buvket
     svg
     .append("text")
-    .text("Indian Ocean")
-    .attr("x", 780)
+    .text("Indiske Ocean")
+    .attr("x", 775)
     .attr("y", 170)
     .style("fill", "#fcffc7")
     .style("font-size", 20)

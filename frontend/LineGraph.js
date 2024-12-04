@@ -19,7 +19,7 @@ const explainerStart = svgLine
 
 const explainerH = svgLine
                   .append("text")
-                  .text("'High'")
+                  .text("'Høj'")
                   .attr("fill", "#FFFF00")
                   .attr("x", 362)
                   .attr("y", 20)
@@ -33,24 +33,41 @@ const og = svgLine
 
 const explainerVH = svgLine
                   .append("text")
-                  .text("'Very High'")
+                  .text("'Meget Høj'")
                   .attr("fill", "#ff0000")
                   .attr("x", 427)
                   .attr("y", 20)
 
 const veryHighTxt = svgLine
                     .append("text")
-                    .text("Very High")
+                    .text("Meget Høj")
                     .attr("fill", "#ff0000")
                     .attr("x", 1200)
                     .attr("y", 515)
 
 const HighTxt = svgLine
                     .append("text")
-                    .text("High")
+                    .text("Høj")
                     .attr("fill", "#FFFF00")
                     .attr("x", 1200)
                     .attr("y", 465)
+
+const samplesText = svgLine
+                      .append("text")
+                      .text("Samples")
+                      .attr("fill", "#fcffc7")
+                      .attr("x", -60)
+                      .attr("y", 604)
+                      .attr("font-size", 11)
+
+const årText = svgLine
+                      .append("text")
+                      .text("år")
+                      .attr("fill", "#fcffc7")
+                      .attr("x", -25)
+                      .attr("y", 616)
+                      .attr("font-size", 11)
+
 
 
 d3.json(`/api/density`).then((data) => {
@@ -68,14 +85,14 @@ d3.json(`/api/density`).then((data) => {
     
     svgLine.append("g")
     .attr("transform", `translate(0, ${height})`) // Sætter x og y værdien for vores g element
-    .call(d3.axisBottom(xAxis).ticks(19).tickFormat(d => `år ${d}`));  // axisBottom bestemmer hvor ticks' skal stritte ud. xAxis scaler g elementet. tickFormat() bruges til at sætte prefix foran året
+    .call(d3.axisBottom(xAxis).ticks(19).tickFormat(d => `${d}`));  // axisBottom bestemmer hvor ticks' skal stritte ud. xAxis scaler g elementet. tickFormat() bruges her til at fjerne , mellem 2 i fx 2014
 
     // Tilføjer y-akse
     const yAxis = d3.scaleLinear()
                     .domain([0, 400]) // Istedet for at lave max af data, laver jeg max statisk, så vi får den øverste tick med (hvis max bliver max af data kommer sidste tick ikke med)
                     .range([height, 0]);
     svgLine.append("g")
-           .call(d3.axisLeft(yAxis).tickFormat(d => `Samples ${d}`)); // yAxis scaler g elementet
+           .call(d3.axisLeft(yAxis)); // yAxis scaler g elementet
 
     // Farven til hver gruppering
     const color = d3.scaleOrdinal()
