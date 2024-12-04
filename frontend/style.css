@@ -177,7 +177,6 @@ svg {
     margin-bottom: 15px;         /* Tilføj lidt afstand under teksten */
 }
 
-#fcffc7
 /* Stil på overskrift */
 .counter-box h2 {
     font-size: 24px;
@@ -253,10 +252,6 @@ svg {
     color: #fcffc7; /* Samme farve som teksten */
 }
 
-#oceanimg {
-    height: 300px;
-    width: 4000px;
-}
 
 .text-box p {
     margin: 0;
@@ -501,3 +496,4 @@ button:active {
     transition: opacity 0.2s;
     color: black;
 }
+
