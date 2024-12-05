@@ -7,12 +7,11 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     color: #fcffc7;
-    background: linear-gradient(45deg, #011F4B, #02294d, #005B96, #6497B1, #B3CDE0);
-    background-size: 200% 200%; /* Gør baggrunden større for animation */
-    animation: wave 10s ease-in-out infinite; /* Havbevægelse */
+    background: linear-gradient(45deg, #011F4B, #02294d, #005B96, #6497B1, #65b3ec);
 }
 
 
+<<<<<<< HEAD
 .sidebysidedivs {
     display: flex;
     justify-content: center;
@@ -46,6 +45,8 @@ body {
         background-position: 0% 50%; /* Tilbage til start */
     }
 }
+=======
+>>>>>>> 218d46a23acb26ec61d749b31e3234c64d1c2862
 
 /* Navigationsbaren */
 .menubar {
@@ -275,7 +276,7 @@ svg {
     border: 2px solid #fcffc7; /* Samme farve som navigationsbaren */
     text-align: left;
     min-width: 250px; /* Minimum bredde på hver tekstboks */
-    max-width: 375px; /* Gør boksene en passende størrelse */
+    max-width: 1000px; /* Gør boksene en passende størrelse */
     flex: 1; /* Sørger for, at de deler plads ligeligt */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
