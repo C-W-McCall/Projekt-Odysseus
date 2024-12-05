@@ -253,7 +253,7 @@ svg {
     border: 2px solid #fcffc7; /* Samme farve som navigationsbaren */
     text-align: left;
     min-width: 250px; /* Minimum bredde på hver tekstboks */
-    max-width: 375px; /* Gør boksene en passende størrelse */
+    max-width: 1000px; /* Gør boksene en passende størrelse */
     flex: 1; /* Sørger for, at de deler plads ligeligt */
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
