@@ -14,13 +14,13 @@ body {
 .sidebysidedivs {
     display: flex;
     justify-content: center;
-    gap: 300px;
+    gap: 150px;
     padding-top: 250px;
     padding-bottom: 250px;
 }
 
 #pushToLeft {
-    
+    margin-right: auto;
 }
 
 #spandChart {
@@ -501,7 +501,7 @@ button:active {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     padding: 20px; /* Indvendig margen */
     height: 600px; /* Højde */
-    width: 50%; /* Bredde */
+    width: 100%; /* Bredde */
 }
 
 /* baggrund til line chart */
