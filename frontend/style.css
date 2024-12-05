@@ -17,6 +17,8 @@ body {
     display: flex;
     justify-content: center;
     gap: 100px;
+    padding-top: 250px;
+    padding-bottom: 250px;
 }
 
 #spandChart {
