@@ -235,6 +235,7 @@ svg {
     overflow: hidden; /* Ensures map tiles don’t spill outside rounded corners */
 }
 
+
 .text-box-container {
     display: flex; /* Placerer boksene vandret */
     gap: 20px; /* Afstand mellem boksene */
