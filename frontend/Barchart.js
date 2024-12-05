@@ -42,21 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const yScale = d3.scaleLinear()
             .domain([0, d3.max(formattedData, d => d.avg_measurement)])
             .range([h - padding, padding]);
-
-            // Tilføj baggrund og centrer chartContainer
-       d3.select("#chartContainer")
-           .style("background", "linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0))")
-           .style("backdrop-filter", "blur(10px)")
-           .style("-webkit-backdrop-filter", "blur(10px)")
-           .style("border-radius", "20px")
-           .style("border", "1px solid rgba(255, 255, 255, 0.18)")
-           .style("box-shadow", "0 8px 32px 0 rgba(0, 0, 0, 0.37)")
-           .style("width", "80%")
-           .style("margin", "auto") // Centrer vandret
-           .style("position", "relative") 
-           .style("top", "50%") // Start 50% ned
-           .style("transform", "translateY(-50%)") // Flyt op halv højde
-           .style("text-align", "center");
+      
 
     
 
