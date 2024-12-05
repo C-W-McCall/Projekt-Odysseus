@@ -35,12 +35,12 @@
     <!-- Overskrift og underoverskrift -->
     <main>
         <section class="overskrift">
-            <h1>Microplast i verdenshavene</h1>
-            <h2>En lille ting med stor indflydelse</h2>
+            <h1>Plastic pollution</h1>
+            <h2>The long lasting problem</h2>
         </section>
 
         <section class="problemstilling">
-            <p>Mikroplast er plastmaterialer, der er mindre end 5 mm (0,20 tommer). Mens mikroplast primært stammer fra plastmaterialer som flasker og poser, kommer de også ind i økosystemer fra tøj og kosmetik. Mikroplast er udbredt overalt i miljøet. De findes i oceaner, floder, flodmundinger, søer, atmosfæren, strande, havis og sedimenter. Mikroplast dannes oftest på land og transporteres derefter af floder og vind til havene, hvor de bliver en del af det globale havcirkulationssystem.</p>
+            <p>Hvordan ser udviklingen af mikroplast ud i de forskellige oceaner rundt omkring i verden, og er man dermed kommet tættere på FN’s mål om “…bæredygtig forvaltning og beskyttelse af havene og kystnære økosystemer…”</p>
         </section>
     </main>
 
@@ -51,46 +51,52 @@
             </div>
     </section>
  
-  <!--Text box til Map-->
-  <div class="text-box-container">
-    <div class="text-box">
-        <h3>Verdens mikroplast-målinger</h3>
-        <p>Dette interaktive verdenskort viser, hvor forskere har taget prøver af mikroplast i verdenshavene. Hver markør på kortet repræsenterer et sted, hvor en måling er blevet lavet. Ved at klikke på en markør kan du få detaljeret information om den specifikke måling, for eksempel hvor prøven blev taget, og hvad den viste. Kortet gør det muligt at udforske, hvordan mikroplast er fordelt i havene verden over, og det giver et visuelt indblik i, hvor forskningen foregår. Det er en lærerig måde at forstå mere om verdenshavene og det arbejde, forskere udfører for at undersøge dem.</p>
-    </div>
-</div>
-
       <!-- Visualisering kort -->  
       <div id="map-wrapper" class="map-wrapper">
         <div id="map"></div>
     </div>
 
+
+
+
+
+
     <!-- Tekst over visualisering -->
-     <div class="text-box-container">
+    <div class="sidebysidedivs">
+        <section class="visualisering-boks" style="padding-left: 50px;">
+            <div class="visualisering-content">
+                <!-- Visualisering indhold -->
+            </div>
+    
+            <div id="visuals"></div>  <!-- Cirklerne vil blive tilføjet her -->
+        
+        
+        <!-- Show knapper -->
+        <div id="buttns-viz" style="padding-bottom: 700px;">
+            <button id="2014btn">Vis 2014</button>
+            <button id="2015btn">Vis 2015</button>
+            <button id="2016btn">Vis 2016</button>
+            <button id="2017btn">Vis 2017</button>
+            <button id="2018btn">Vis 2018</button>
+            <button id="2019btn">Vis 2019</button>
+            <button id="2020btn">Vis 2020</button>
+        </div>
+    </section>
+
+
+     <div id="spandChartExplainer">
          <div class="text-box"  id="spandChart">
              <h3>Gennemsnitlig mængde af mikroplast i havene pr. m3 pr. år siden 2014</h3>
              <p>Hver spand skal visualisere én gennemsnitlig m3 vand i det givne hav, spandene bliver fyldt med den gennemsnitlige mængde af mikroplast for det hav i det givne år</p>
           </div>
       </div>
- 
-    <section class="visualisering-boks">
-        <div class="visualisering-content">
-            <!-- Visualisering indhold -->
-        </div>
+</div>
 
-        <div id="visuals"></div>  <!-- Cirklerne vil blive tilføjet her -->
-        <!-- Show knapper -->
-    <div id="buttns-viz" style="padding-bottom: 500px;">
-        <button id="2014btn">Vis 2014</button>
-        <button id="2015btn">Vis 2015</button>
-        <button id="2016btn">Vis 2016</button>
-        <button id="2017btn">Vis 2017</button>
-        <button id="2018btn">Vis 2018</button>
-        <button id="2019btn">Vis 2019</button>
-        <button id="2020btn">Vis 2020</button>
-    </div>
-    </section>
+
+
 
 <!--Text box til BarChart-->
+<div class="sidebysidedivs">
 <div class="text-box-container">
     <div class="text-box">
         <h3>Barchart</h3>
@@ -105,9 +111,33 @@
         </div>
     </div>
   </div>
+</div>
 
 
+
+
+
+  <!--Text box til Map-->
+<div class="text-box-container">
+    <div class="text-box">
+        <h3>Verdens mikroplast-målinger</h3>
+        <p>I dette interaktive map kan du selv dykke ned i præcist hvor samples er taget, og alle detaljer deromkring. Samples er grupperet efter antallet af samples i det pågældene område, scroller man langt nok ind finder man det individuelle sample</p>
+    </div>
+</div>
+      <!-- Visualisering kort -->  
+
+
+  <!-- Visualisering kort -->  
+  <div id="map-wrapper" class="map-wrapper">
+      <div id="map"></div>
+  </div>
     
+        
+
+
+
+
+  
     <div class="text-box-container">
         <div class="text-box">
             <h3>Hyppigheden af density-classes 'high' og 'very high' over tid</h3>
