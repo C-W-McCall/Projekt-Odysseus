@@ -14,6 +14,7 @@
     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
     <script src="https://unpkg.com/leaflet.markercluster/dist/leaflet.markercluster.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
 </head>
 <body>
 
@@ -52,16 +53,13 @@
  
 
     <!-- Tekst over visualisering -->
-
-    <div class="text-box-container" style="padding-top: 900px;">
-        <div class="text-box"  id="spandChart">
-            <h3>Gennemsnitlig mængde af mikroplast i havene pr. m3 pr. år siden 2014</h3>
-            <p>Hver spand skal visualisere én gennemsnitlig m3 vand i det givne hav, spandene bliver fyldt med den gennemsnitlige mængde af mikroplast for det hav i det givne år</p>
-        </div>
-    </div>
-  
-
-
+     <div class="text-box-container" style="padding-top: 900px;">
+         <div class="text-box"  id="spandChart">
+             <h3>Gennemsnitlig mængde af mikroplast i havene pr. m3 pr. år siden 2014</h3>
+             <p>Hver spand skal visualisere én gennemsnitlig m3 vand i det givne hav, spandene bliver fyldt med den gennemsnitlige mængde af mikroplast for det hav i det givne år</p>
+          </div>
+      </div>
+ 
     <section class="visualisering-boks">
         <div class="visualisering-content">
             <!-- Visualisering indhold -->
@@ -84,9 +82,9 @@
 <div class="text-box-container">
     <div class="text-box">
         <h3>Barchart</h3>
-    <p>Her er en Barchart</p>
+      <p>Her er en Barchart</p>
     </div>
-    </div>
+</div>
     <!-- Søjlediagram -->  
     <div id="chartContainer"> 
         <div id="buttonContainer">
@@ -198,5 +196,6 @@
     <script src="map.js"></script> <!-- Link til Kortet -->
     <script src="scrollTilMidten.js"></script>
     <script src="beskrivelse.js"></script>
+    <script src="scrollbar.js"></script>
 </body> 
 </html>

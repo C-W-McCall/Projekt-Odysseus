@@ -25,9 +25,6 @@ body {
     }
 }
 
-
-
-
 /* Navigationsbaren */
 .menubar {
     position: fixed;
@@ -137,6 +134,7 @@ body {
     max-width: 80%; 
     margin-left: auto; 
     margin-right: auto; 
+    
 }
 .visualisering-tekst {
     font-size: 18px; /* Gør teksten lidt større */
