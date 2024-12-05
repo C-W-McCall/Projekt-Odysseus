@@ -7,41 +7,10 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     color: #fcffc7;
-    background: linear-gradient(45deg, #011F4B, #02294d, #005B96, #6497B1, #B3CDE0);
-    background-size: 200% 200%; /* Gør baggrunden større for animation */
-    animation: wave 10s ease-in-out infinite; /* Havbevægelse */
+    background: linear-gradient(45deg, #011F4B, #02294d, #005B96, #6497B1, #65b3ec);
 }
 
 
-.sidebysidedivs {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    padding-top: 250px;
-    padding-bottom: 250px;
-}
-
-#spandChart {
-    margin-top: 200px;
-}
-
-#barcharten {
-    display: flex;
-}
-
-
-/* Animationen */
-@keyframes wave {
-    0% {
-        background-position: 0% 50%; /* Start */
-    }
-    50% {
-        background-position: 100% 50%; /* Midtvejs */
-    }
-    100% {
-        background-position: 0% 50%; /* Tilbage til start */
-    }
-}
 
 /* Navigationsbaren */
 .menubar {

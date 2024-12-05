@@ -5,7 +5,9 @@ ScrollReveal().reveal(
         duration: 800,
         easing: "ease-in-out",
         interval: 300,
-        scale: 1.1, // Mindre skalering
-        opacity: 0, // Starter usynligt
+        scale: 1, // Ingen skalering
+        opacity: 0,
+        distance: "30px", // Mindre lodret bevægelse
     }
 );
+
