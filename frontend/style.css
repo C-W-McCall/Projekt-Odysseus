@@ -27,10 +27,6 @@ body {
     margin-top: 200px;
 }
 
-#barcharten {
-    display: flex;
-}
-
 
 /* Navigationsbaren */
 .menubar {
@@ -438,18 +434,6 @@ button:active {
     background-color: #45a049;
 }
 
-
-#tooltip {
-    position: absolute;
-    background: white;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    padding: 10px;
-    pointer-events: none;
-    opacity: 0;
-    transition: opacity 0.2s;
-    color: black
-}
 
 #chartContainer {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
