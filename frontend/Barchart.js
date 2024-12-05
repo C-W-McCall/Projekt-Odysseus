@@ -43,6 +43,23 @@ document.addEventListener("DOMContentLoaded", () => {
             .domain([0, d3.max(formattedData, d => d.avg_measurement)])
             .range([h - padding, padding]);
 
+            // Tilføj baggrund og centrer chartContainer
+       d3.select("#chartContainer")
+           .style("background", "linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0))")
+           .style("backdrop-filter", "blur(10px)")
+           .style("-webkit-backdrop-filter", "blur(10px)")
+           .style("border-radius", "20px")
+           .style("border", "1px solid rgba(255, 255, 255, 0.18)")
+           .style("box-shadow", "0 8px 32px 0 rgba(0, 0, 0, 0.37)")
+           .style("width", "80%")
+           .style("margin", "auto") // Centrer vandret
+           .style("position", "relative") 
+           .style("top", "50%") // Start 50% ned
+           .style("transform", "translateY(-50%)") // Flyt op halv højde
+           .style("text-align", "center");
+
+    
+
         const svg = d3.select("#chartContainer")
             .append("svg")
             .attr("width", w)
@@ -62,7 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const tooltip = d3.select("body")
             .append("div")
             .style("position", "absolute")
-            .style("background", "white")
+            .style("background", "rgba(0, 0, 0, 0.7)")
+            .style("color", "white")
             .style("border", "1px solid #ccc")
             .style("border-radius", "5px")
             .style("padding", "10px")
@@ -77,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .attr("y", h - padding)
             .attr("width", xScale.bandwidth())
             .attr("height", 0)
-            .attr("fill", "steelblue")
+            .attr("fill", "#59e36b")
             .on("mouseover", (event, d) => {
                 tooltip.style("opacity", 1)
                     .html(`Year: ${d.year}<br>Avg Measurement: ${d.avg_measurement.toFixed(2)}`)
@@ -96,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         svg.append("text")
             .attr("x", w / 2)
-            .attr("y", h - 10)
+            .attr("y", h - 5)
             .attr("text-anchor", "middle")
             .attr("fill", "white")
             .text("År");
@@ -104,14 +122,15 @@ document.addEventListener("DOMContentLoaded", () => {
         svg.append("text")
             .attr("transform", "rotate(-90)")
             .attr("x", -h / 2)
-            .attr("y", 15)
+            .attr("y", 11)
             .attr("text-anchor", "middle")
             .attr("fill", "white")
-            .text("Total gennemsnitlig måling");
+            .text("Total gennemsnitlig måling")
     };
 
     document.getElementById("comparisonButton").addEventListener("click", () => createChart());
     document.getElementById("rankingButton").addEventListener("click", () => createChart(true));
 
+    // Vis det første diagram, når siden indlæses
     createChart();
 });

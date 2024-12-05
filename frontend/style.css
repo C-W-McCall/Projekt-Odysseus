@@ -25,9 +25,6 @@ body {
     }
 }
 
-
-
-
 /* Navigationsbaren */
 .menubar {
     position: fixed;
@@ -115,6 +112,19 @@ body {
     line-height:  1.6;
 }
 
+/* beskrivelse */
+.beskrivelse {
+    height: 10vh;
+    width: auto;
+    padding: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text__body {font-size: 30px; color: #fcffc7;}
+
+.typed-cursor {color: #545454;}
 
 /* Tekst over visualisering */
 .visualisering-tekst-container {
@@ -124,6 +134,7 @@ body {
     max-width: 80%; 
     margin-left: auto; 
     margin-right: auto; 
+    
 }
 .visualisering-tekst {
     font-size: 18px; /* Gør teksten lidt større */
@@ -498,19 +509,47 @@ button:active {
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.2s;
-    color: black;
+    color: black
 }
 
 #chartContainer {
-    flex: 1;
-    width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 20px;
+    width: 70%;
+    margin: 0 auto;
 }
+
 #buttonContainer {
     margin: 20px 0;
     display: flex;
     justify-content: center;
     gap: 10px;
+}
+
+#buttonContainer button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+#buttonContainer button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
