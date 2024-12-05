@@ -32,19 +32,6 @@ body {
 }
 
 
-/* Animationen */
-@keyframes wave {
-    0% {
-        background-position: 0% 50%; /* Start */
-    }
-    50% {
-        background-position: 100% 50%; /* Midtvejs */
-    }
-    100% {
-        background-position: 0% 50%; /* Tilbage til start */
-    }
-}
-
 /* Navigationsbaren */
 .menubar {
     position: fixed;
@@ -93,16 +80,6 @@ body {
     color: #fcffc7;
 }
 
-/* Billede */
-.image-class {
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 800px; 
-    height: auto; 
-  }
-  
-
 /* Overskriften */
 .overskrift {
     padding: 50px 20px 10px 20px;
@@ -146,28 +123,13 @@ body {
 
 .typed-cursor {color: #545454;}
 
-/* Tekst over visualisering */
-.visualisering-tekst-container {
-    text-align: center;
-    margin-top: 450px; 
-    margin-bottom: 20px; 
-    max-width: 80%; 
-    margin-left: auto; 
-    margin-right: auto; 
-    
-}
-.visualisering-tekst {
-    font-size: 18px; /* Gør teksten lidt større */
-    line-height: 1.6; /* Tilføjer passende linjeafstand */
-    text-align: center; /* Centrer teksten */
-    color: #fcffc7; /* Beholder den eksisterende tekstfarve */
-}
-
+/* Centering af Svg*/
 svg {
     display: block;
     margin: auto;
 }
 
+/* Alle knapper er i midten */ 
 #buttns-viz {
     display: flex;
     align-items: center;
@@ -246,6 +208,7 @@ svg {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Tilføj en skygge for effekt */
 }
 
+/* Interaktivt kort */
 #map {
     width: 60%; /* Adjust as needed */
     height: 500px; /* Adjust as needed */
@@ -255,7 +218,7 @@ svg {
     overflow: hidden; /* Ensures map tiles don’t spill outside rounded corners */
 }
 
-
+ /* Faktabokse */
 .text-box-container {
     display: flex; /* Placerer boksene vandret */
     gap: 20px; /* Afstand mellem boksene */
@@ -296,6 +259,7 @@ svg {
     color: #fcffc7; /* Samme farve som teksten */
 }
 /* Style til spillet /*
+
 /* Sløring af baggrund, når quizzen vises */
 #quiz-overlay {
     position: fixed;
@@ -324,19 +288,7 @@ svg {
     box-sizing: border-box;  /* Sørger for, at padding og border ikke påvirker bredde og højde */
 }
 
-/* Styling af quiz-knapper (De er i spil.css) */
-.option {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #020c23;
-    color: #fcffc7;
-    border: 2px solid #fcffc7;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
+/* Styling af quiz-knapper */
 
 .option:hover {
     background-color: #fcffc7;
@@ -424,40 +376,6 @@ button:active {
 }
 
 /* Score */
-#score {
-    font-size: 18px;
-    margin-top: 10px;
-    font-weight: bold;
-}
-#Quizzen {
-    position: absolute; /* Absolut positionering */
-    top: 45%; /* Placér 40% fra toppen, lige over knappen */
-    left: 50%; /* Placér 50% fra venstre */
-    transform: translate(-50%, -50%); /* Juster for centreret placering */
-    font-size: 24px; /* Størrelse på overskriften */
-    font-family: Arial, sans-serif; /* Skrifttype */
-    text-align: center; /* Juster tekst til midten */
-    color: #020c23; /* Mørkegrå farve */
-    margin: 0; /* Fjern margin for præcis placering */
-}
-
-#startBtn {
-    position: absolute;
-    top: 50%; /* Placér knappen under overskriften */
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 12px 24px;
-    font-size: 16px;
-    font-family: Arial, sans-serif;
-    cursor: pointer;
-    border-radius: 5px;
-    box-shadow: 0 4px #2e7d32;
-    transition: all 0.3s ease;
-}
-
 #startBtn:hover {
     background-color: #45a049;
 }
@@ -571,6 +489,7 @@ button:active {
     transform: scale(1.05);
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.3);
 }
+
 /* baggrund til spande viz */
 .visualisering-boks
 {
@@ -584,6 +503,7 @@ button:active {
     height: 600px; /* Højde */
     width: 50%; /* Bredde */
 }
+
 /* baggrund til line chart */
 #line-viz {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
