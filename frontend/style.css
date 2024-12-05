@@ -11,7 +11,6 @@ body {
 }
 
 
-<<<<<<< HEAD
 .sidebysidedivs {
     display: flex;
     justify-content: center;
@@ -45,8 +44,6 @@ body {
         background-position: 0% 50%; /* Tilbage til start */
     }
 }
-=======
->>>>>>> 218d46a23acb26ec61d749b31e3234c64d1c2862
 
 /* Navigationsbaren */
 .menubar {
