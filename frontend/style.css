@@ -76,6 +76,8 @@ body {
     color: #fcffc7;
 }
 
+
+
 /* Overskriften */
 .overskrift {
     padding: 50px 20px 10px 20px;
@@ -132,17 +134,7 @@ svg {
     justify-content: center;
 }
 
-/* Live Tæller Sektion */
-.live-counter {
-    margin-top: 100px; /* Justér afstanden fra toppen af siden */
-    text-align: left; /* Justér teksten til venstre */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1000px;
-    padding-bottom: 500px;
 
-}
 
 /* Kasse der indeholder tælleren og teksten */
 .counter-box {
@@ -160,6 +152,18 @@ svg {
     border-radius: 20px;
     border:1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Live Tæller Sektion */
+.live-counter {
+    margin-top: 100px; /* Justér afstanden fra toppen af siden */
+    text-align: left; /* Justér teksten til venstre */
+    display: flex;
+    justify-content: right;
+    align-items: left;
+    padding-top: 100px;
+    padding-bottom: 5px;
+
 }
 
 .counter-box .skrald-text {
