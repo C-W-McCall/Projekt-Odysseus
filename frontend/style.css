@@ -27,6 +27,13 @@ body {
     margin-top: 200px;
 }
 
+.overskrifter {
+    font-size: 28px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    font-style: italic;
+    justify-self: center;
+}
 
 /* Navigationsbaren */
 .menubar {

@@ -26,9 +26,9 @@ for (let i = 0; i < 4; i++) {
         .attr('r', circleRadius)  // Brug den beregnede radius
         .attr("id", `viz${i}`)  // Unikt ID for hver cirkel (fx viz0, viz1, osv.)
         .attr('fill', 
-            i === 0 ? '#FF0000' :   // Gør den første cirkel rød
-            (i === 1 ? '#FCFF00' :  // Gør den anden cirkel gul
-            (i === 2 ? '#FFFFFF' :  // Gør den tredje cirkel hvid
+            i === 0 ? '#DA2D2D' :   // Gør den første cirkel rød
+            (i === 1 ? '#EB8242' :  // Gør den anden cirkel gul
+            (i === 2 ? '#F6DA63' :  // Gør den tredje cirkel hvid
             '#FFFFFF')));  // Gør den lille cirkel hvid (i == 3)
 
     // Tilføj tekst ved cirklerne
