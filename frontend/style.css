@@ -46,7 +46,7 @@ body {
     padding-top: 200px;
     padding-bottom: 200px;
     font-style: italic;
-    justify-self: center;
+    text-align: center;
 }
 
 /* Navigationsbaren */

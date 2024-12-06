@@ -1,0 +1,68 @@
+/* Generalt */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #fcffc7;
+    background: linear-gradient(45deg, #011F4B, #02294d, #005B96, #6497B1, #65b3ec);
+}
+.sidebysidedivs {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
+
+.sidebysidedivs {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
+
+#pushToLeft {
+    margin-right: auto;
+}
+
+.overskrifter {
+    font-size: 28px;
+    padding-top: 200px;
+    padding-bottom: 200px;
+    font-style: italic;
+    text-align: center;
+}
+
+.problemstilling {
+    padding: 0 20px;
+    margin-left: 150px;
+    max-width: 600px;
+    line-height:  1.6;
+}
+
+/* beskrivelse */
+.beskrivelse {
+    height: 10vh;
+    width: auto;
+    padding: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.text__body {font-size: 30px; color: #fcffc7;}
+
+.typed-cursor {color: #545454;}
+
+/* Menu bar */
+
+/* Textbocs */
+
+/* Tæller */
+

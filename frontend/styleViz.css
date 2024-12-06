@@ -1,0 +1,34 @@
+/* Map */
+
+/* Spand */
+
+#spandChart {
+    margin-top: 200px;
+}
+
+#spandChart {
+    margin-top: 200px;
+}
+
+#buttns-viz {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Bar */
+
+/* Line */
+
+#line-viz {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    padding: 20px; /* Indvendig margen */
+    height: 650px; /* Højde */
+    width: 95%; /* Bredde */
+    margin: 0 auto; /* Centrerer elementet horisontalt */
+}
