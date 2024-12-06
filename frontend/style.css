@@ -9,7 +9,21 @@ body {
     color: #fcffc7;
     background: linear-gradient(45deg, #011F4B, #02294d, #005B96, #6497B1, #65b3ec);
 }
+.sidebysidedivs {
+    display: flex;
+    justify-content: center;
+    gap: 100px;
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
 
+#spandChart {
+    margin-top: 200px;
+}
+
+#barcharten {
+    display: flex;
+}
 
 .sidebysidedivs {
     display: flex;
