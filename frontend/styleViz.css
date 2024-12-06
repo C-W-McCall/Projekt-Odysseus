@@ -49,6 +49,6 @@
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     padding: 20px; /* Indvendig margen */
     height: 650px; /* Højde */
-    width: 1350px; /* Bredde */
+    width: 1350px; /* Bredde, samme bredde som svg'en */
     margin: 0 auto; /* Centrerer elementet horisontalt */
 }
