@@ -1,4 +1,4 @@
-const svg = d3.selectAll(".visualisering-content").append("svg").attr("width", 1400).attr("height", 300);
+const svg = d3.selectAll(".visualisering-content").append("svg").attr("width", 1400).attr("height", 300).attr("id", "spandVizSvg"); 
 
 
 d3.json(`/api/albums`).then((data) => {

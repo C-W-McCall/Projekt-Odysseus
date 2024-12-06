@@ -11,14 +11,8 @@ body {
     color: #fcffc7;
     background: linear-gradient(45deg, #011F4B, #02294d, #005B96, #6497B1, #65b3ec);
 }
-.sidebysidedivs {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    padding-top: 250px;
-    padding-bottom: 250px;
-}
 
+/* Gør sådan at elementer i diven kommer til at være ved siden af hinanden */
 .sidebysidedivs {
     display: flex;
     justify-content: center;
@@ -27,9 +21,25 @@ body {
     padding-bottom: 250px;
 }
 
-#pushToLeft {
-    margin-right: auto;
+@media (max-width: 2100px) {
+    .sidebysidedivs {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    #pushToLeft {
+        margin: auto;
+    }
+    
+    #spandChart {
+        margin:auto
+    }
+
+    #lineChartExplainer {
+        margin: auto;   
+    }
 }
+
 
 .overskrifter {
     font-size: 28px;
@@ -46,7 +56,6 @@ body {
     line-height:  1.6;
 }
 
-/* beskrivelse */
 .beskrivelse {
     height: 10vh;
     width: auto;
@@ -60,9 +69,38 @@ body {
 
 .typed-cursor {color: #545454;}
 
+button {
+    margin: 20px 10px; /* Mellemrum: 20px vertikalt, 10px horisontalt */
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #ffffff;
+    border: 2px solid #020c23;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
 /* Menu bar */
 
-/* Textbocs */
+/* Textbokse */
+
+.text-box {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); /* Matcher sidens baggrund */
+    padding: 20px;
+    border: 2px solid #fcffc7; /* Samme farve som navigationsbaren */
+    min-width: 250px; /* Minimum bredde på hver tekstboks */
+    max-width: 1000px; /* Gør boksene en passende størrelse */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border:1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
 
 /* Tæller */
 
