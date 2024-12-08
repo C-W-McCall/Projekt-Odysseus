@@ -1,4 +1,13 @@
 /* Map */
+#map {
+    width: 60vw; /* 60% af bredden af viewport */
+    height: 50vh; /* 50% af højden af viewport */
+    margin: 0 auto; /* Center kortet horisontalt */
+    background: #f0f0f0; /* Valgfrit: Baggrund for synlighed */
+    border-radius: 2vw; /* Afrundede hjørner justeret relativt til viewport-bredde */
+    overflow: hidden; /* Sikrer, at kortfliser ikke går uden for de afrundede hjørner */
+}
+
 
 /* Spand */
 

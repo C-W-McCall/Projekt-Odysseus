@@ -1,5 +1,4 @@
 /* Generalt */
-
 html {
     scroll-behavior: smooth;
 }
@@ -12,80 +11,103 @@ body {
     background: linear-gradient(45deg, #011F4B, #02294d, #005B96, #6497B1, #65b3ec);
 }
 
-/* Gør sådan at elementer i diven kommer til at være ved siden af hinanden */
-.sidebysidedivs {
-    display: flex;
-    justify-content: center;
-    gap: 150px;
-    padding-top: 250px;
-    padding-bottom: 250px;
+
+/* Overskriften */
+.overskrift {
+    padding: 5vh 2vw 1vh 2vw; /* Indvendig afstand relativ til viewport */
+    text-align: left;
+    margin-left: 10vw; /* Ydermargin til venstre relativ til viewport-bredden */
+    margin-top: 10vh; /* Ydermargin til toppen relativ til viewport-højden */
+    max-width: 40vw; /* Maksimal bredde relativ til viewport-bredden */
+    z-index: 1; 
+    position: relative;
 }
 
-@media (max-width: 2100px) {
-    .sidebysidedivs {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-    
-    #pushToLeft {
-        margin: auto;
-    }
-    
-    #spandChart {
-        margin:auto
-    }
-
-    #lineChartExplainer {
-        margin: auto;   
-    }
+.overskrift h1 {
+    font-size: 4vw; /* Fontstørrelse relativ til viewport-bredden */
+    margin: 0 0 1vh 0; /* Margin justeret til viewport-højde */
 }
 
-
-.overskrifter {
-    font-size: 28px;
-    padding-top: 200px;
-    padding-bottom: 200px;
-    font-style: italic;
-    text-align: center;
+.overskrift h2 {
+    font-size: 2vw; /* Fontstørrelse relativ til viewport-bredden */
+    font-weight: normal;
+    margin: 0 0 2vh 0; /* Margin justeret til viewport-højde */
 }
 
 .problemstilling {
-    padding: 0 20px;
-    margin-left: 150px;
-    max-width: 600px;
-    line-height:  1.6;
+    padding: 0 2vw; /* Indvendig afstand relativ til viewport */
+    margin-left: 10vw; /* Ydermargin til venstre relativ til viewport-bredden */
+    max-width: 40vw; /* Maksimal bredde relativ til viewport-bredden */
+    line-height: 1.6; /* Beholder linjeafstand som tidligere */
 }
 
+/* beskrivelse */
 .beskrivelse {
-    height: 10vh;
+    height: 10vh; /* Højde relativ til viewport-højde */
     width: auto;
-    padding: 200px;
+    padding: 20vh; /* Indvendig afstand relativ til viewport-højde */
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.text__body {font-size: 30px; color: #fcffc7;}
+.text__body {
+    font-size: 30px; /* Fontstørrelse relativ til viewport-bredden */
+    color: #fcffc7;
+}
 
-.typed-cursor {color: #545454;}
-
-button {
-    margin: 20px 10px; /* Mellemrum: 20px vertikalt, 10px horisontalt */
-    padding: 10px 20px;
-    font-size: 16px;
-    color: #ffffff;
-    border: 2px solid #020c23;
-    cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+.typed-cursor {
+    color: #545454;
 }
 
 /* Menu bar */
+.menubar {
+    position: fixed;
+    top: 2vh; /* Placering relativ til viewport-højden */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1vh 2vw; /* Indvendig afstand skaleret til viewport */
+    text-align: center;
+    z-index: 1000;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 1vw; /* Afrunding justeret efter viewport-bredden */
+    border: 0.1vw solid rgba(255, 255, 255, 0.18); /* Justeret kant */
+    box-shadow: 0 0.8vh 3.2vh 0 rgba(0, 0, 0, 0.37); /* Skygge justeret efter viewport */
+}
+
+.menubar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 2vw; /* Afstand mellem elementer relativ til viewport-bredden */
+}
+
+.menubar li {
+    padding: 1vh 2vw; /* Indvendig afstand relativ til viewport */
+    border-radius: 0.8vw; /* Afrunding justeret efter viewport-bredden */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 0.1vw solid rgba(255, 255, 255, 0.18); /* Justeret kant */
+    box-shadow: 0 0.8vh 3.2vh 0 rgba(0, 0, 0, 0.37); /* Skygge justeret efter viewport */
+}
+
+.menubar li:hover {
+    background-color: #020c236f;
+}
+
+.menubar a {
+    display: block; /* Linket fylder hele knappen */
+    white-space: nowrap; /* Ingen linjeskift */
+    text-decoration: none;
+    color: #fcffc7;
+}
+
 
 /* Textbokse */
 
