@@ -12,22 +12,15 @@
 /* Spand */
 
 #spandChart {
-    margin-top: 200px;
-}
-
-#spandChart {
-    margin-top: 200px;
+    margin-top: 25% ;
 }
 
 #buttns-viz {
     display: flex;
-    align-items: center;
     justify-content: center;
+    gap: 10px;
 }
 
-#pushToLeft {
-    margin-right: auto;
-}
 
 .visualisering-boks
 {
@@ -64,8 +57,8 @@
     justify-content: center;
     gap: 10px;
 }
-    
-#buttonContainer button {
+
+#buttonContainer, button {
     padding: 10px 20px;
     font-size: 16px;
     color: white;
@@ -99,4 +92,8 @@
     height: 650px; /* Højde */
     width: 1350px; /* Bredde, samme bredde som svg'en */
     margin: 0 auto; /* Centrerer elementet horisontalt */
+}
+
+#lineChartExplainer {
+    margin-top: 25%;
 }
