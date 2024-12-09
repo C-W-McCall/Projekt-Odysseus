@@ -11,6 +11,34 @@ body {
     background: linear-gradient(45deg, #011F4B, #02294d, #005B96, #6497B1, #65b3ec);
 }
 
+@media (max-width: 2100px) {
+    .sidebysidedivs {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    #pushToLeft {
+        margin: auto;
+    }
+    
+    #spandChart {
+        margin:auto
+    }
+
+    #lineChartExplainer {
+        margin: auto;   
+    }
+}
+
+.sidebysidedivs {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    padding-top: 250px;
+    padding-bottom: 250px;
+}
+
+
 
 /* Overskriften */
 .overskrift {

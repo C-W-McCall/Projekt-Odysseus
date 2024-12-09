@@ -12,11 +12,7 @@
 /* Spand */
 
 #spandChart {
-    margin-top: 200px;
-}
-
-#spandChart {
-    margin-top: 200px;
+    margin-top: 40% ;
 }
 
 #buttns-viz {
@@ -97,4 +93,8 @@
     height: 650px; /* Højde */
     width: 1350px; /* Bredde, samme bredde som svg'en */
     margin: 0 auto; /* Centrerer elementet horisontalt */
+}
+
+#lineChartExplainer {
+    margin-top: 50%;
 }
