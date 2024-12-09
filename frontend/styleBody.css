@@ -41,7 +41,7 @@ body {
 .sidebysidedivs, .sidebysidedivs2 {
     display: flex;
     justify-content: center;
-    gap: 150px;
+    gap: 50px;
     padding-top: 25px;
     padding-bottom: 25px;
 }
