@@ -19,6 +19,7 @@ body {
     
     #pushToLeft {
         margin: auto;
+        padding: 0;
     }
     
     #spandChart {
