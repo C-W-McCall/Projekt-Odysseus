@@ -1,14 +1,3 @@
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    color: #fcffc7;
-    background: linear-gradient(45deg, #011F4B, #02294d, #005B96, #6497B1, #65b3ec);
-}
 
 
 /* Thanus */
@@ -40,26 +29,6 @@ svg {
     justify-content: center;
 }
 
-
-
-/* Kasse der indeholder tælleren og teksten */
-/* Joe */
-.counter-box {
-    color: #fcffc7;  /* Lys tekstfarve */
-    border-radius: 15px;  /* Afrundede hjørner */
-    padding: 30px;  /* Afstand rundt om indholdet */
-    width: 80%;  /* Juster bredden af kassen */
-    max-width: 600px;  /* Maksimal bredde */
-    margin-left: 20px;  /* Afstand fra venstre side */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);  /* Skyggeeffekt for dybde */
-    border: 3px solid #fcffc7;  /* Lys kant rundt om kassen */
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border:1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
 
 
 

@@ -140,6 +140,28 @@ body {
     color: #fcffc7; /* Lysegul tekstfarve */
 }
 
+/* Historie */ 
+.historie {
+    max-width: 80vw; /* Begrænser bredden til 80% af vinduets bredde */
+    margin: 5vh auto; /* Centrerer sektionen og tilføjer afstand (vertikal: 5% af højde) */
+    padding: 3vh 2vw; /* Indvendig afstand (vertikal og horisontal) */
+}
+
+/* Styling for titlen */
+.historie-titel {
+    font-size: 30px; /* Gør overskriften relativ til viewport-højde */
+    font-weight: bold; /* Gør overskriften fremhævet */
+    color: #fcffc7; 
+    margin-bottom: 2vh; /* Giver afstand til teksten */
+}
+
+/* Styling for tekst */
+.historie-teskt {
+    font-size: 20px; /* Let større skriftstørrelse, baseret på viewport-højde */
+    line-height: 1.8; /* Gør teksten mere luftig */
+    color: #fcffc7; 
+    margin-bottom: 2vh; /* Afstand til bunden af sektionen */
+}
 
 
 /* Textbokse */
