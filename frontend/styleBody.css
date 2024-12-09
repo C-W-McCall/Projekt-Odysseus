@@ -165,4 +165,74 @@ body {
   
 
 /* Tæller */
+.live-counter {
+    margin-top: 5vh; /* Mindre afstand fra toppen */
+    text-align: left; /* Justér teksten til venstre */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10vh; /* Mindre padding fra toppen */
+    padding-bottom: 5vh; /* Mindre padding fra bunden */
+}
 
+/* Kasse der indeholder tælleren og teksten */
+.counter-box {
+    color: #fcffc7;  /* Lys tekstfarve */
+    border-radius: 1vw;  /* Afrundede hjørner */
+    padding: 2vw;  /* Mindre afstand rundt om indholdet */
+    width: 60vw;  /* Reduceret bredde af kassen */
+    max-width: 30vw;  /* Mindre maksimal bredde */
+    margin-left: 1vw;  /* Mindre afstand fra venstre side */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);  /* Mindre skygge */
+    border: 0.2vw solid #fcffc7;  /* Lys kant rundt om kassen */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(0.5vw);
+    -webkit-backdrop-filter: blur(0.5vw);
+    box-shadow: 0 4px 16px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Tekst i kassen */
+.counter-box .skrald-text {
+    font-size: 0.8vw; /* Reduceret størrelse på teksten */
+    font-style: italic; /* Gør teksten kursiv */
+    color: #fcffc7; /* Tekstfarve */
+    margin-top: 0.5vh; /* Mindre afstand over teksten */
+    margin-bottom: 1vh; /* Mindre afstand under teksten */
+}
+
+/* Stil på overskrift */
+.counter-box h2 {
+    font-size: 1.5vw; /* Mindre fontstørrelse */
+    margin-bottom: 0.5vh; /* Mindre afstand under overskriften */
+}
+
+/* Stil på paragrafen med beskrivelsen */
+.counter-box p {
+    font-size: 1vw; /* Mindre fontstørrelse */
+    margin-bottom: 1.5vh; /* Mindre afstand under teksten */
+}
+
+/* Stil på tælleren */
+.counter {
+    font-size: 2vw; /* Mindre tekst for tælleren */
+    font-weight: bold; /* Gør tælleren fed */
+    color: #ff6f61; /* Farve på tælleren */
+}
+
+/* Stil på "Live Tæller" teksten i h2 */
+.live-text {
+    color: #ff6f61; /* Rød tekstfarve */
+    font-weight: bold; /* Gør teksten fed */
+    border: 0.1vw solid #ff6f61; /* Tyndere kant */
+    padding: 0.1vw 0.3vw; /* Mindre indvendig afstand */
+    border-radius: 0.2vw; /* Mindre bløde hjørner */
+    display: inline-block; /* Sørg for, at kassen passer præcist til teksten */
+}
+
+/* Stil på fremhævet tal */
+.ton {
+    color: #ff6f61; /* Fremhæv tallet i rød */
+    font-weight: bold; /* Gør teksten fed */
+    font-size: 1.5vw; /* Mindre tekststørrelse */
+    text-shadow: 0.05vw 0.05vw 0.1vw rgba(0, 0, 0, 0.3); /* Mindre skygge for effekt */
+}

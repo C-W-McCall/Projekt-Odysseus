@@ -1,0 +1,168 @@
+/* Style til spillet */
+/* Sløring af baggrund, når quizzen vises */
+#quiz-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(1, 31, 75, 0.8); /* Dyb blå semi-transparent baggrund */
+    z-index: 999; /* Sørg for, at quizzen vises over alt andet */
+    display: flex;
+    justify-content: center;  /* Centrer horisontalt */
+    align-items: center;      /* Centrer vertikalt */
+}
+
+/* Quiz-containeren i overlay */
+#quiz-container {
+    background-color: rgba(101, 179, 236, 1); /* Mørk blå baggrund */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fcffc7; /* Lys gul tekstfarve */
+    text-align: center;
+    width: 90%;
+    max-width: 600px;  /* Max bredde for quiz-containeren */
+    margin: 0;         /* Sørger for at containeren ikke har ekstra margin */
+    box-sizing: border-box;  /* Sørger for, at padding og border ikke påvirker bredde og højde */
+}
+
+/* Styling af quiz-knapper */
+
+.option:hover {
+    background-color: #6497B1; /* Lysere blå */
+    color: #fcffc7; /* Lys gul tekstfarve */
+}
+
+/* Titel */
+h1 {
+    color: #fcffc7; /* Lys gul */
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+/* Spørgsmålstekst */
+#question {
+    font-size: 20px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    color: #fcffc7;
+}
+
+/* Knapper til svarmuligheder */
+.option {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #65b3ec; /* Mellemblå */
+    color: #fcffc7; /* Lys gul */
+    border: 2px solid #fcffc7; /* Lys gul kant */
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #6497B1; /* Lysere blå */
+    color: #fcffc7; /* Lys gul */
+}
+
+.option:active {
+    background-color: #02294d; /* Mørkere blå */
+    color: #fcffc7; /* Lys gul */
+}
+
+/* Knap til næste spørgsmål */
+button {
+    margin: 20px 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #fcffc7; /* Lys gul */
+    border: 2px solid #fcffc7;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background: linear-gradient(135deg, rgba(1, 31, 75, 0.7), rgba(1, 31, 75, 0.5));
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Container til centrering og yderligere styling */
+.button-container {
+    display: flex;
+    justify-content: center; /* Centrerer knapper horisontalt */
+    gap: 15px; /* Mellemrum mellem knapper */
+    flex-wrap: wrap; /* Tillader linjebrud ved små skærme */
+}
+
+
+button:hover {
+    background-color: #6497B1; /* Lysere blå */
+    color: #fcffc7; /* Lys gul */
+}
+
+button:active {
+    background-color: #02294d; /* Mørkere blå */
+    color: #fcffc7; /* Lys gul */
+}
+
+/* Feedback besked */
+#feedback {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #fcffc7; /* Lys gul */
+}
+
+/* Score */
+#startBtn:hover {
+    background-color: #45a049; /* Grøn fra det oprindelige design */
+}
+
+#startBtn:active {
+    background-color: #3e8e41;
+    box-shadow: 0 2px #1b5e20;
+    transform: translate(-50%, -48%);
+}
+
+#wrongAnswerBox {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(140%, -50%);
+    background-color: #005B96; /* Mellemblå */
+    border: 2px solid red;
+    padding: 20px;
+    width: 200px; 
+    height: 200px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    text-align: center;
+    color: #fcffc7; /* Lys gul */
+}
+
+/* Knap til næste spørgsmål */
+#nextButtonContainer button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #4CAF50; /* Grøn */
+    color: #fcffc7; /* Lys gul */
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+}
+
+#nextButtonContainer button:hover {
+    background-color: #45a049; /* Lysere grøn */
+}
+
+#question-number {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: left;
+    color: #fcffc7; /* Lys gul */
+}
