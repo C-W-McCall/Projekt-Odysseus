@@ -16,6 +16,11 @@ body {
         display: flex;
         flex-direction: column-reverse;
     }
+
+    .sidebysidedivs2 {
+        display: flex;
+        flex-direction: column;
+    }
     
     #pushToLeft {
         margin: auto;
@@ -33,7 +38,7 @@ body {
 }
 
 
-.sidebysidedivs {
+.sidebysidedivs, .sidebysidedivs2 {
     display: flex;
     justify-content: center;
     gap: 150px;
@@ -186,7 +191,7 @@ body {
     max-width: 800px;
     margin: 0 auto 20px auto; /* Centrer og tilføj luft under boksen */
     text-align: center;
-    color: white;
+    color: #fcffc7;
     padding: 20px; /* Mindre padding for en kompakt boks */
     border-radius: 10px;
     position: relative;
