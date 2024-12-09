@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .attr("fill", "#59e36b")
             .on("mouseover", (event, d) => {
                 tooltip.style("opacity", 1)
-                    .html(`Year: ${d.year}<br>Avg Measurement: ${d.avg_measurement.toFixed(2)}`)
+                    .html(`År: ${d.year}<br>Gennemsnitet: ${d.avg_measurement.toFixed(2)} stk pr. kubikmeter`)
                     .style("left", `${event.pageX + 10}px`)
                     .style("top", `${event.pageY - 30}px`);
             })
@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .attr("y", 11)
             .attr("text-anchor", "middle")
             .attr("fill", "white")
-            .text("Total gennemsnitlig måling")
+            .text("Total gennemsnitlig måling (stk pr. kubikmeter)")
     };
 
     document.getElementById("comparisonButton").addEventListener("click", () => createChart());
