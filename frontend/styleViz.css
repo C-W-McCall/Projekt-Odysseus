@@ -71,7 +71,7 @@
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     padding: 20px; /* Indvendig margen */
     height: 600px; /* Højde */
-    width: 1400px; /* Bredde */
+    width: 1300px; /* Bredde */
 }
 
 
@@ -98,7 +98,7 @@
 }
 
 
-#buttonContainer, button {
+button {
     padding: 12px 24px; /* Større knapper */
     font-size: 18px; /* Større tekst */
     color: white;
