@@ -19,6 +19,7 @@ body {
     
     #pushToLeft {
         margin: auto;
+        padding: 0;
     }
     
     #spandChart {
@@ -28,7 +29,9 @@ body {
     #lineChartExplainer {
         margin: auto;   
     }
+
 }
+
 
 .sidebysidedivs {
     display: flex;
@@ -181,14 +184,15 @@ body {
 
 .text-box-container {
     max-width: 800px;
-    margin: 0 auto;
+    margin: 0 auto 20px auto; /* Centrer og tilføj luft under boksen */
     text-align: center;
     color: white;
-    padding: 30px;
+    padding: 20px; /* Mindre padding for en kompakt boks */
     border-radius: 10px;
-    position: relative; 
-    top: -60px; /* Flytter boksen højere op */
-  }
+    position: relative;
+    top: 0; /* Fjern unødvendig flytning */
+}
+
   
 
 /* Tæller */

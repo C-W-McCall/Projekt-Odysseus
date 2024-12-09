@@ -82,7 +82,6 @@ button {
     border: 2px solid #fcffc7;
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
-    background: linear-gradient(135deg, rgba(1, 31, 75, 0.7), rgba(1, 31, 75, 0.5));
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border-radius: 5px;
@@ -132,7 +131,7 @@ button:active {
     top: 50%;
     left: 50%;
     transform: translate(140%, -50%);
-    background-color: #005B96; /* Mellemblå */
+    background-color: #65b3ec; /* Mellemblå */
     border: 2px solid red;
     padding: 20px;
     width: 200px; 
