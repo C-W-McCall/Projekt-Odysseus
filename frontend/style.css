@@ -10,32 +10,10 @@ body {
     background: linear-gradient(45deg, #011F4B, #02294d, #005B96, #6497B1, #65b3ec);
 }
 
-/* Morten */
-.sidebysidedivs {
-    display: flex;
-    justify-content: center;
-    gap: 100px;
-    padding-top: 250px;
-    padding-bottom: 250px;
-}
-
-/* Morten */
-#spandChart {
-    margin-top: 200px;
-}
 
 /* Thanus */
 #barcharten {
     display: flex;
-}
-
-
-#pushToLeft {
-    margin-right: auto;
-}
-
-#spandChart {
-    margin-top: 200px;
 }
 
 
@@ -133,21 +111,6 @@ body {
 .text__body {font-size: 30px; color: #fcffc7;}
 
 .typed-cursor {color: #545454;}
-
-/* Centering af Svg*/
-/* Morten */
-svg {
-    display: block;
-    margin: auto;
-}
-
-/* Alle knapper er i midten */ 
-#buttns-viz {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
 
 
 /* Kasse der indeholder tælleren og teksten */
@@ -516,19 +479,4 @@ button:active {
     padding: 20px; /* Indvendig margen */
     height: 600px; /* Højde */
     width: 100%; /* Bredde */
-}
-
-/* baggrund til line chart */
-/* Morten */
-#line-viz {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 20px;
-    border:1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    padding: 20px; /* Indvendig margen */
-    height: 650px; /* Højde */
-    width: 95%; /* Bredde */
-    margin: 0 auto; /* Centrerer elementet horisontalt */
 }

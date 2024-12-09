@@ -12,18 +12,15 @@
 /* Spand */
 
 #spandChart {
-    margin-top: 40% ;
+    margin-top: 25% ;
 }
 
 #buttns-viz {
     display: flex;
-    align-items: center;
     justify-content: center;
+    gap: 10px;
 }
 
-#pushToLeft {
-    margin-right: auto;
-}
 
 .visualisering-boks
 {
@@ -58,7 +55,7 @@
     gap: 10px;
 }
 
-#buttonContainer button {
+#buttonContainer, button {
     padding: 10px 20px;
     font-size: 16px;
     color: white;
@@ -94,5 +91,5 @@
 }
 
 #lineChartExplainer {
-    margin-top: 50%;
+    margin-top: 25%;
 }
