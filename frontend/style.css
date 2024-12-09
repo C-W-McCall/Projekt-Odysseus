@@ -39,101 +39,6 @@ body {
 }
 
 
-
-/* Navigationsbaren */ 
-/* Elias */
-.menubar {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 20px;
-    text-align: center;
-    z-index: 1000;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border-radius: 15px;
-    border:1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
-
-.menubar ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    gap: 20px;
-}
-
-.menubar li {
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border:1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-}
-
-.menubar li:hover {
-    background-color: #020c236f;
-}
-
-.menubar a {
-    display: block; /* Linket fylder hele knappen */
-    white-space: nowrap; /* IK LINJE SKIFT*/
-    text-decoration: none;
-    color: #fcffc7;
-}
-
-
-
-/* Overskriften */
-.overskrift {
-    padding: 50px 20px 10px 20px;
-    text-align: left;
-    margin-left: 150px; 
-    margin-top: 100px; 
-    max-width: 600px; 
-    z-index: 1; 
-    position: relative;
-}
-
-.overskrift h1 {
-    font-size: 48px;
-    margin: 0 0 10px 0;
-}
-
-.overskrift h2 {
-    font-size: 24px;
-    font-weight: normal;
-    margin: 0 0 20px 0;
-}
-
-.problemstilling {
-    padding: 0 20px;
-    margin-left: 150px;
-    max-width: 600px;
-    line-height:  1.6;
-}
-
-/* beskrivelse */
-.beskrivelse {
-    height: 10vh;
-    width: auto;
-    padding: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.text__body {font-size: 30px; color: #fcffc7;}
-
-.typed-cursor {color: #545454;}
-
 /* Centering af Svg*/
 /* Morten */
 svg {
@@ -229,15 +134,6 @@ svg {
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Tilføj en skygge for effekt */
 }
 
-/* Interaktivt kort */
-#map {
-    width: 60%; /* Adjust as needed */
-    height: 500px; /* Adjust as needed */
-    margin: 0 auto; /* Center the map horizontally */
-    background: #f0f0f0; /* Optional: Background for visibility */
-    border-radius: 15px; /* Adjust the value for more or less rounding */
-    overflow: hidden; /* Ensures map tiles don’t spill outside rounded corners */
-}
 
  /* Faktabokse */
 .text-box-container {
