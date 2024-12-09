@@ -28,11 +28,13 @@ body {
     }
     
     #spandChart {
-        margin:auto
+        margin-left:auto;
+        margin-right: auto;
+        margin-top: 0% !important;
     }
 
     #lineChartExplainer {
-        margin: auto;   
+        margin-top: 0% !important;
     }
 
 }

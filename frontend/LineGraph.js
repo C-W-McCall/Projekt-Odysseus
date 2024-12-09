@@ -125,5 +125,11 @@ d3.json(`/api/density`).then((data) => {
      
       drawPath();
       
+      svgLine.append("rect")
+      .attr("x", 100)
+      .attr("y", 200)
+      .attr("width", 300)
+      .attr("height", 40)
+      .attr("opacity", 0.1)
       
 });
