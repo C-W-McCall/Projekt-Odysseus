@@ -10,7 +10,7 @@ const svgLine = d3.select("#line-viz").append("svg").attr("width", width + margi
 
 const explainerStart = svgLine
                   .append("text")
-                  .text("Hyppigheden af samples med density class")
+                  .text("Hyppigheden af målinger med density class")
                   .attr("fill", "#fcffc7")
                   .attr("x", 50)
                   .attr("y", 20)
@@ -54,7 +54,7 @@ const HighTxt = svgLine
 
 const samplesText = svgLine
                       .append("text")
-                      .text("Samples")
+                      .text("Målinger")
                       .attr("fill", "#fcffc7")
                       .attr("x", -60)
                       .attr("y", 604)

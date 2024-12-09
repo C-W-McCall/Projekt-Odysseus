@@ -1,5 +1,5 @@
 ScrollReveal().reveal(
-    ".text-box-container, .visualisering-boks, .visuals, .buttns-viz, #chartContainer, .map-wrapper, #line-viz, .live-counter",
+    ".text-box-container, .visualisering-boks, .visuals, .buttns-viz, #chartContainer, .map-wrapper, #line-viz, .live-counter, .historie",
     {
         delay: 700,
         duration: 800,

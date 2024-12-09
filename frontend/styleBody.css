@@ -8,13 +8,18 @@ body {
     padding: 0;
     font-family: Arial, sans-serif;
     color: #fcffc7;
-    background: linear-gradient(45deg, #011F4B, #02294d, #005B96, #6497B1, #65b3ec);
+    background: linear-gradient(45deg, #011F4B, #02294d, #005B96, #65b3ec);
 }
 
 @media (max-width: 2100px) {
     .sidebysidedivs {
         display: flex;
         flex-direction: column-reverse;
+    }
+
+    .sidebysidedivs2 {
+        display: flex;
+        flex-direction: column;
     }
     
     #pushToLeft {
@@ -33,7 +38,7 @@ body {
 }
 
 
-.sidebysidedivs {
+.sidebysidedivs, .sidebysidedivs2 {
     display: flex;
     justify-content: center;
     gap: 150px;
@@ -186,7 +191,7 @@ body {
     max-width: 800px;
     margin: 0 auto 20px auto; /* Centrer og tilføj luft under boksen */
     text-align: center;
-    color: white;
+    color: #fcffc7;
     padding: 20px; /* Mindre padding for en kompakt boks */
     border-radius: 10px;
     position: relative;
