@@ -9,6 +9,8 @@ body {
     color: #fcffc7;
     background: linear-gradient(45deg, #011F4B, #02294d, #005B96, #6497B1, #65b3ec);
 }
+
+/* Morten */
 .sidebysidedivs {
     display: flex;
     justify-content: center;
@@ -17,21 +19,16 @@ body {
     padding-bottom: 250px;
 }
 
+/* Morten */
 #spandChart {
     margin-top: 200px;
 }
 
+/* Thanus */
 #barcharten {
     display: flex;
 }
 
-.sidebysidedivs {
-    display: flex;
-    justify-content: center;
-    gap: 150px;
-    padding-top: 250px;
-    padding-bottom: 250px;
-}
 
 #pushToLeft {
     margin-right: auto;
@@ -41,15 +38,10 @@ body {
     margin-top: 200px;
 }
 
-.overskrifter {
-    font-size: 28px;
-    padding-top: 200px;
-    padding-bottom: 200px;
-    font-style: italic;
-    text-align: center;
-}
 
-/* Navigationsbaren */
+
+/* Navigationsbaren */ 
+/* Elias */
 .menubar {
     position: fixed;
     top: 20px;
@@ -143,6 +135,7 @@ body {
 .typed-cursor {color: #545454;}
 
 /* Centering af Svg*/
+/* Morten */
 svg {
     display: block;
     margin: auto;
@@ -158,6 +151,7 @@ svg {
 
 
 /* Kasse der indeholder tælleren og teksten */
+/* Joe */
 .counter-box {
     color: #fcffc7;  /* Lys tekstfarve */
     border-radius: 15px;  /* Afrundede hjørner */
@@ -176,6 +170,7 @@ svg {
 }
 
 /* Live Tæller Sektion */
+/* Joe */
 .live-counter {
     margin-top: 100px; /* Justér afstanden fra toppen af siden */
     text-align: left; /* Justér teksten til venstre */
@@ -186,7 +181,7 @@ svg {
     padding-bottom: 5px;
 
 }
-
+/* Joe */
 .counter-box .skrald-text {
     font-size: 12px;             /* Justér størrelsen på teksten */
     font-style: italic;          /* Gør teksten kursiv */
@@ -196,24 +191,28 @@ svg {
 }
 
 /* Stil på overskrift */
+/* Joe */
 .counter-box h2 {
     font-size: 24px;
     margin-bottom: 10px;
 }
 
 /* Stil på paragrafen med beskrivelsen */
+/* Joe */
 .counter-box p {
     font-size: 18px;
     margin-bottom: 20px;
 }
 
 /* Stil på tælleren */
+/* Joe */
 .counter {
     font-size: 30px;  /* Større tekst for tælleren */
     font-weight: bold;  /* Gør tælleren fed */
     color: #ff6f61;  /* Farve på tælleren */
 }
 /* Stil på "Live Tæller" teksten i h2 */
+/* Joe */
 .live-text {
   color: #ff6f61;           /* Rød tekstfarve */
     font-weight: bold;        /* Gør teksten fed */
@@ -222,6 +221,7 @@ svg {
     border-radius: 5px;       /* Bløde hjørner på kassen */
     display: inline-block;    /* Sørg for, at kassen passer præcist til teksten */
 }
+/* Joe */
 .ton {
     color: #ff6f61;    /* Fremhæv tallet i rød */
     font-weight: bold; /* Gør teksten fed */
@@ -266,13 +266,14 @@ svg {
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
+/* Thanus */
 .text-box h3 {
     margin: 0 0 10px 0;
     font-size: 20px;
     color: #fcffc7; /* Samme farve som teksten */
 }
 
-
+/* Thanus */
 .text-box p {
     margin: 0;
     font-size: 14px;
@@ -317,6 +318,7 @@ svg {
 }
 
 /* Titel */
+/* Joe */
 h1 {
     color: #fcffc7;
     font-size: 24px;
@@ -324,6 +326,7 @@ h1 {
 }
 
 /* Spørgsmålstekst */
+/* Joe */
 #question {
     font-size: 20px;
     margin-bottom: 20px;
@@ -331,6 +334,7 @@ h1 {
 }
 
 /* Knapper til svarmuligheder */
+/* Joe */
 .option {
     display: inline-block;
     margin: 10px;
@@ -343,17 +347,17 @@ h1 {
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-
+/* Joe */
 .option:hover {
     background-color: #fcffc7;
     color: #020c23;
 }
-
+/* Joe */
 .option:active {
     background-color: #d0d1a1;
     color: #020c23;
 }
-
+/* Joe */
 /* Knap til næste spørgsmål */
 button {
     margin: 20px 10px; /* Mellemrum: 20px vertikalt, 10px horisontalt */
@@ -459,7 +463,7 @@ button:active {
     background-color: #45a049;
 }
 
-
+/* Thanus*/
 #chartContainer {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
@@ -500,6 +504,7 @@ button:active {
 }
 
 /* baggrund til spande viz */
+/* Thanus */
 .visualisering-boks
 {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
@@ -514,6 +519,7 @@ button:active {
 }
 
 /* baggrund til line chart */
+/* Morten */
 #line-viz {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
     backdrop-filter: blur(10px);
