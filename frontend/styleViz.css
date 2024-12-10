@@ -122,8 +122,8 @@ button {
 }
 .tooltip {
     position: absolute;
-    background: rgba(0, 0, 0, 0.7);
-    color: white;
+    background: rgba(255, 255, 255, 0.7);
+    color: rgb(0, 0, 0);
     border: 1px solid #ccc;
     border-radius: 5px;
     padding: 10px;
@@ -141,7 +141,8 @@ button {
 
 /* Styling for bars in the chart */
 .bar {
-    fill: #59e36b;
+    fill: #00ff228a;
+    
 }
 
 /* Styling for x-axis text */

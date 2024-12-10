@@ -14,19 +14,26 @@ document.addEventListener("DOMContentLoaded", () => {
         const data = await fetchData();
         if (!data || data.length === 0) return;
 
-        const aggregatedData = data.reduce((acc, d) => {
-            acc[d.year] = acc[d.year] || { total: 0, count: 0 };
-            acc[d.year].total += +d.avg_measurement;
-            acc[d.year].count++;
-            return acc;
-        }, {});
+// Beregn gennemsnittet for hvert år
+const GennemsnitData = data.reduce((acc, d) => {
+    const yearData = acc[d.year] || { total: 0, count: 0 };
+    yearData.total += +d.avg_measurement;
+    yearData.count++;
+    acc[d.year] = yearData;
+    return acc;
+}, {});
 
-        let formattedData = Object.entries(aggregatedData).map(([year, { total, count }]) => ({
-            year: +year,
-            avg_measurement: total / count,
-        }));
+// Formater dataen til et array og beregn gennemsnit
+let formattedData = Object.entries(GennemsnitData).map(([year, { total, count }]) => ({
+    year: Number(year),
+    avg_measurement: total / count,
+}));
 
-        if (sortByAvg) formattedData.sort((a, b) => b.avg_measurement - a.avg_measurement);
+// Sorter dataen efter gennemsnit, hvis sortByAvg er sand
+if (sortByAvg) {
+    formattedData.sort((a, b) => b.avg_measurement - a.avg_measurement);
+}
+
 
         d3.select("#chartContainer").select("svg").remove();
 
@@ -56,7 +63,19 @@ document.addEventListener("DOMContentLoaded", () => {
             .attr("class", "y-axis")
             .attr("transform", `translate(${padding}, 0)`)
             .call(d3.axisLeft(yScale));
-
+            
+            // Tilføj gridlines langs Y-aksen
+        svg.append("g")
+           .attr("class", "grid")
+           .attr("transform", `translate(${padding}, 0)`)
+           .call(d3.axisLeft(yScale)
+           .tickSize(-w + 2 * padding) // Lav gridlines på tværs af diagrammet
+           .tickFormat("") // Fjern tekst for grid ticks
+            )
+           .selectAll("line")
+           .attr("stroke", "#ddd") // Ændre farve på gridlines
+           .attr("stroke-dasharray", "5,2"); // Lav stregerne stiplede
+            
         const tooltip = d3.select("body")
             .append("div")
             .attr("class", "tooltip")
@@ -73,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
             .attr("height", 0)
             .on("mouseover", (event, d) => {
                 tooltip.style("opacity", 1)
-                    .html(`År: ${d.year}<br>Gennemsnit: ${d.avg_measurement.toFixed(2)} stk pr. kubikmeter`)
+                    .html(`År: ${d.year}<br>Gennemsnit: ${d.avg_measurement.toFixed(2)} pr. kubikmeter (m3)`)
                     .style("left", `${event.pageX + 10}px`)
                     .style("top", `${event.pageY - 30}px`);
             })
