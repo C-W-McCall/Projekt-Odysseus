@@ -74,8 +74,6 @@
     width: 1300px; /* Bredde */
 }
 
-
-
 /* Bar */
 #chartContainer {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
@@ -120,7 +118,44 @@ button {
 
 #barChartText {
     margin-top: 10%;
+    /* Styling for tooltip */
 }
+.tooltip {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    pointer-events: none;
+}
+
+
+
+/* Styling for x-axis labels */
+.x-axis-label {
+    transform: rotate(-45deg);
+    text-anchor: end;
+    fill: white;
+}
+
+/* Styling for bars in the chart */
+.bar {
+    fill: #59e36b;
+}
+
+/* Styling for x-axis text */
+.x-label {
+    fill: white;
+    text-anchor: middle;
+}
+
+/* Styling for y-axis text */
+.y-label {
+    fill: white;
+    text-anchor: middle;
+}
+
 
 
 /* Line */

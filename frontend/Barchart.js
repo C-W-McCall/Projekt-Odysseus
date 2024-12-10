@@ -1,22 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Definer dimensioner for diagrammet
+
+// Definer dimensioner for diagrammet
     const w = 1000, h = 500, padding = 50;
 
     // Funktion til at hente data fra API
     const fetchData = async () => {
-        try {
-            const response = await fetch("/api/albums");
-            if (!response.ok) throw new Error("Network response was not ok");
-            return await response.json();
-        } catch (error) {
-            console.error("Failed to fetch data:", error);
-        }
+        const response = await fetch("/api/albums");
+        return await response.json();
     };
 
     // Funktion til at oprette diagrammet
     const createChart = async (sortByAvg = false) => {
         const data = await fetchData();
-        if (!data) return;
+        if (!data || data.length === 0) return;
 
         const aggregatedData = data.reduce((acc, d) => {
             acc[d.year] = acc[d.year] || { total: 0, count: 0 };
@@ -42,49 +38,42 @@ document.addEventListener("DOMContentLoaded", () => {
         const yScale = d3.scaleLinear()
             .domain([0, d3.max(formattedData, d => d.avg_measurement)])
             .range([h - padding, padding]);
-      
-
-    
 
         const svg = d3.select("#chartContainer")
             .append("svg")
+            .attr("class", "chart-svg")
             .attr("width", w)
             .attr("height", h);
 
         svg.append("g")
+            .attr("class", "x-axis")
             .attr("transform", `translate(0, ${h - padding})`)
             .call(d3.axisBottom(xScale))
             .selectAll("text")
-            .attr("transform", "rotate(-45)")
-            .style("text-anchor", "end");
+            .attr("class", "x-axis-label");
 
         svg.append("g")
+            .attr("class", "y-axis")
             .attr("transform", `translate(${padding}, 0)`)
             .call(d3.axisLeft(yScale));
 
         const tooltip = d3.select("body")
             .append("div")
-            .style("position", "absolute")
-            .style("background", "rgba(0, 0, 0, 0.7)")
-            .style("color", "white")
-            .style("border", "1px solid #ccc")
-            .style("border-radius", "5px")
-            .style("padding", "10px")
-            .style("pointer-events", "none")
+            .attr("class", "tooltip")
             .style("opacity", 0);
 
         svg.selectAll("rect")
             .data(formattedData)
             .enter()
             .append("rect")
+            .attr("class", "bar")
             .attr("x", d => xScale(d.year))
             .attr("y", h - padding)
             .attr("width", xScale.bandwidth())
             .attr("height", 0)
-            .attr("fill", "#59e36b")
             .on("mouseover", (event, d) => {
                 tooltip.style("opacity", 1)
-                    .html(`År: ${d.year}<br>Gennemsnitet: ${d.avg_measurement.toFixed(2)} stk pr. kubikmeter`)
+                    .html(`År: ${d.year}<br>Gennemsnit: ${d.avg_measurement.toFixed(2)} stk pr. kubikmeter`)
                     .style("left", `${event.pageX + 10}px`)
                     .style("top", `${event.pageY - 30}px`);
             })
@@ -99,19 +88,17 @@ document.addEventListener("DOMContentLoaded", () => {
             .attr("height", d => h - padding - yScale(d.avg_measurement));
 
         svg.append("text")
+            .attr("class", "x-label")
             .attr("x", w / 2)
             .attr("y", h - 5)
-            .attr("text-anchor", "middle")
-            .attr("fill", "white")
             .text("År");
 
         svg.append("text")
+            .attr("class", "y-label")
             .attr("transform", "rotate(-90)")
             .attr("x", -h / 2)
             .attr("y", 11)
-            .attr("text-anchor", "middle")
-            .attr("fill", "white")
-            .text("Total gennemsnitlig måling (stk pr. kubikmeter)")
+            .text("Totale Gennemsnitlig mikroplast i havene pr. m3");
     };
 
     document.getElementById("comparisonButton").addEventListener("click", () => createChart());
