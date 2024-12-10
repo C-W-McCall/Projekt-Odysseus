@@ -98,38 +98,37 @@ d3.json(`/api/density`).then((data) => {
     const color = d3.scaleOrdinal()
                     .range(["#FFFF00", "#ff0000"])
 
+
     // Lav linjerne baseret på data
     const path = svgLine.selectAll(".line")
-    .data(sumstat)
-    .join("path")  // Laver en <path> for hvert group i sumstat
-      .attr("fill", "none") // Ingen fill, da fill fylder pladsen under grafen (som noget integral noget). uden .attr("fill") vil den alligevel fylde ud med sort farve.
-      .attr("stroke", function(d){ return color(d[0]) })  // Her bliver farverne sat på, baseret på d[0] som er group keys i vores InternMap
-      .attr("stroke-width", 1.5)
-      .attr("d", function(d){   // "d" bestemmer 'formen' på vores linjer
-        return d3.line()  // Line funktionen laver linjer baseret på datasæt
-                .x(function(d) {return xAxis(d.year); })  // Linjens x-værdi lig med datasættets år
-                .y(function(d) {return yAxis(+d.high); })  // Linjens y-værdi lig med datasættets 'high' værdi som er mængden af samples med enten 'high' eller 'very high' i density. '+' er der for at konvertere værdierne til et nummer
-                (d[1])  // d[1] er et array af data som tilhører gruppen (her ved os er det 'high' og 'very high') hvor d[0] er group keys, altså 'high' og 'very high' i vores tilfælde
-      })
-
-      const pathLength = path.node().getTotalLength();
-
-      function drawPath(){
-      path.attr("stroke-dashoffset", pathLength)
-      .attr("stroke-dasharray", pathLength)
-      .transition()
-      .duration(2500)
-      .attr("stroke-dashoffset", 0);
-      };
+    .data(sumstat)  // Brug sumstat, som er grupperet data efter værdierne 'high' og 'very high'
+    .join("g") // g elementerne er en form for containere for line segmenterne af hver gruppe
+    .selectAll("path")  //vælg alle path som ikke eksistere endnu (vi kommer til at have 2 path for hver gruppe én til den grå del og én til den farvede del)
+    .data(d => {
+        // Lav en konstant der splitter gupperne af dataet ind i to segmenter, før og efter 2012
+        const før2012 = d[1].filter(dataPoint => +dataPoint.year <= 2012); // Her filtrerer vi data i sumstat, efter år under 2012 og år efter 2012 så vi kan give forskellige farver 
+        const efter2012 = d[1].filter(dataPoint => +dataPoint.year >= 2012);  // (de inkluderer begge 2012, ellers bliver data mellem 2012 og 2013 eller 2012 og 2011 ikke inkluderet)
+        console.log(d[0]);                                                    // d[1] er den del af sumstat og internMap som har 2 arrays med data, hvor d[0] er selve keys til de arrays
+        console.log(d[1]);                                                    // Console-logger for at få bedre forståelse for InternMaps
+        console.log(d[1].filter(dataPoint => +dataPoint.year >= 2012));
+        return [
+            { segment: før2012, color: "#808080" }, // Grå frave til år <= 2012
+            { segment: efter2012, color: color(d[0]) } // Gruppe farver til år >= 2012 Returnere en array af 2 objects, med segmentet og farven
+        ];   // Hele denne .data del 'transformere' dataen, så vi kan lave den til forskellige farver basc.
+    })
+    .join("path") // Laver et path element til hver segment inde i grupperne (4 i alt, 2 til hver gruppe 1 med farve og 1 der er grå)
+    .attr("fill", "none")                   // .join("path") itererer åbenbart over array automatisk, hvilket er derfor i linje 121, at man ikke først skal d[0].color
+    .attr("stroke", d => d.color) // Brug segmenternes farver (fordi d (eller data) operere med det det behandlede data i linje 107 istedet for linje 104)
+    .attr("stroke-width", 1.5)
+    .attr("d", d => {
+        // Use d3.line to generate the path for each segment
+        return d3.line()
+            .x(dataPoint => xAxis(+dataPoint.year))  // Hver data's year-værdi til x
+            .y(dataPoint => yAxis(+dataPoint.high)) // Hver data's measurement værdi (hedder high pga. dårlig query) til y (+ foran begge så man er sikker på at de bliver omdannet fra string til numeriske værdier)
+            (d.segment); // Sætter d3's line() på segmenternes datapunkter
+    });
 
      
-      drawPath();
       
-      svgLine.append("rect")
-      .attr("x", 100)
-      .attr("y", 200)
-      .attr("width", 300)
-      .attr("height", 40)
-      .attr("opacity", 0.1)
       
 });
