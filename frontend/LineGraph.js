@@ -128,7 +128,21 @@ d3.json(`/api/density`).then((data) => {
             (d.segment); // Sætter d3's line() på segmenternes datapunkter
     });
 
-     
+
+    // Append cirkler på alle data punkter
+    for(let i = 0; i < data.length; i++) {
+
+        svgLine.append("circle")
+        .attr("cx", xAxis(data[i].year))
+        .attr("cy", yAxis(data[i].high))
+        .attr("r", 3)
+        .attr("fill", "yellow")
+        .attr("stroke", "black")
+        .attr("id", `datapoint ${i}`)
+
+
+    }
+    
       
       
 });
