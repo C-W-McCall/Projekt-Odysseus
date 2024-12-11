@@ -145,6 +145,7 @@ body {
 }
 
 .menubar a {
+    font-size: 1.5vh;
     display: block; /* Gør hele elementet klikbart */
     width: 100%; /* Sørg for, at a fylder hele li */
     height: 100%; /* Sørg for, at a fylder hele li */
