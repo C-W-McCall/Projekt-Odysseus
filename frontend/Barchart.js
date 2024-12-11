@@ -1,6 +1,10 @@
+
+// Metode som venter på begivenheden "DOMContentLoaded" som sker når hjemmesiden bliver indlæst,
+// så vi kan begynde at lave DOM manipulation.
+// () => {} er en arrow function som bliver sat igang når begivenheden er kørt. 
 document.addEventListener("DOMContentLoaded", () => {
 
-// Definer dimensioner for diagrammet
+// Deklaration af en konstant som definer dimensioner for diagrammet
     const w = 1000, h = 500, padding = 50;
 
 // Funktion til at hente data fra API
