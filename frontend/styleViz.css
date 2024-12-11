@@ -8,6 +8,45 @@
     overflow: hidden; /* Sikrer, at kortfliser ikke går uden for de afrundede hjørner */
 }
 
+/* Cluster Farver */
+.marker-cluster-small {
+	background-color: rgba(140, 226, 219, 0.6);
+	}
+.marker-cluster-small div {
+	background-color: rgba(57, 182, 204, 0.6);
+	}
+
+.marker-cluster-medium {
+	background-color: rgba(87, 159, 241, 0.6);
+	}
+.marker-cluster-medium div {
+	background-color: rgba(12, 137, 240, 0.6);
+	}
+
+.marker-cluster-large {
+	background-color: rgba(115, 163, 253, 0.6);
+	}
+.marker-cluster-large div {
+	background-color: rgba(23, 117, 241, 0.6);
+	}
+
+.marker-cluster {
+	background-clip: padding-box;
+	border-radius: 20px;
+	}
+.marker-cluster div {
+	width: 30px;
+	height: 30px;
+	margin-left: 5px;
+	margin-top: 5px;
+
+	text-align: center;
+	border-radius: 15px;
+	font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+	}
+.marker-cluster span {
+	line-height: 30px;
+	}
 
 /* Spand */
 
@@ -32,10 +71,8 @@
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     padding: 20px; /* Indvendig margen */
     height: 600px; /* Højde */
-    width: 1400px; /* Bredde */
+    width: 1300px; /* Bredde */
 }
-
-
 
 /* Bar */
 #chartContainer {
@@ -59,7 +96,7 @@
 }
 
 
-#buttonContainer, button {
+button {
     padding: 12px 24px; /* Større knapper */
     font-size: 18px; /* Større tekst */
     color: white;
@@ -81,7 +118,45 @@
 
 #barChartText {
     margin-top: 10%;
+    /* Styling for tooltip */
 }
+.tooltip {
+    position: absolute;
+    background: rgba(255, 255, 255, 0.7);
+    color: rgb(0, 0, 0);
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    pointer-events: none;
+}
+
+
+
+/* Styling for x-axis labels */
+.x-axis-label {
+    transform: rotate(-45deg);
+    text-anchor: end;
+    fill: white;
+}
+
+/* Styling for bars in the chart */
+.bar {
+    fill: #00ff228a;
+    
+}
+
+/* Styling for x-axis text */
+.x-label {
+    fill: white;
+    text-anchor: middle;
+}
+
+/* Styling for y-axis text */
+.y-label {
+    fill: white;
+    text-anchor: middle;
+}
+
 
 
 /* Line */
