@@ -115,7 +115,6 @@ body {
     box-shadow: 0 0.8vh 3.2vh 0 rgba(0, 0, 0, 0.37); /* Skygge med proportioner, der skaleres med viewport */
 }
 
-
 .menubar ul {
     list-style-type: none; /* Fjerner punkttegn fra listen */
     margin: 0; /* Fjerner standard margener */
@@ -124,30 +123,40 @@ body {
     gap: 2vw; /* Laver mellemrum mellem listeelementerne, skaleret efter viewport-bredde */
 }
 
-
 .menubar li {
-    padding: 1vh 2vw; /* Indre afstand, der skaleres efter viewport */
-    border-radius: 0.8vw; /* Afrundede hjørner, skaleret efter viewport-bredde */
+    display: flex; /* Brug flexbox til li for at gøre hele knappen klikbar */
+    justify-content: center; /* Centrer indholdet vandret */
+    align-items: center; /* Centrer indholdet lodret */
+    width: 5vw; /* Bredde justeret til 15% af viewportens bredde */
+    height: 4vh; /* Højde justeret til 5% af viewportens højde */
+    border-radius: 1.5vw; /* Afrundede hjørner justeret med vw */
     cursor: pointer; /* Ændrer markøren til en "pegehånd" for klikbare elementer */
-    transition: background-color 0.3s; /* Skaber en glidende effekt, når baggrundsfarven ændres */
+    transition: background-color 0.3s; /* Skaber en glidende effekt, når baggrundsfarven ændres */ 
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); /* Semi-transparent gradient baggrund */
     backdrop-filter: blur(10px); /* Gør baggrunden sløret */
     -webkit-backdrop-filter: blur(10px); /* For Safari browser */
     border: 0.1vw solid rgba(255, 255, 255, 0.18); /* Tynd semi-transparent kant */
     box-shadow: 0 0.8vh 3.2vh 0 rgba(0, 0, 0, 0.37); /* Skygge, der skaleres med viewport */
+    padding: 0; /* Sørg for, at der ikke er ekstra padding i li */
 }
-
 
 .menubar li:hover {
-    background-color: #020c236f; /* Ændrer baggrundsfarve ved hover */
+    background-color: rgba(2, 12, 35, 0.43); /* Ændrer baggrund ved hover */
 }
 
-
 .menubar a {
+    font-size: 1.5vh;
     display: block; /* Gør hele elementet klikbart */
-    white-space: nowrap; /* Forhindrer linjeskift, selv hvis teksten er lang */
-    text-decoration: none; /* Fjerner understregning fra links */
+    width: 100%; /* Sørg for, at a fylder hele li */
+    height: 100%; /* Sørg for, at a fylder hele li */
+    text-align: center; /* Centrerer indholdet */
     color: #fcffc7; /* Lysegul tekstfarve */
+    text-decoration: none; /* Fjerner understregning fra linket */
+    padding: 0; /* Sørger for, at der ikke er ekstra padding */
+    display: flex; /* Gør a til en fleksibel container */
+    justify-content: center; /* Centrerer tekst indeni */
+    align-items: center; /* Centrerer tekst vertikalt */
+    white-space: nowrap; /* Forhindrer linjeskift, selv hvis teksten er lang */
 }
 
 /* Historie */ 
