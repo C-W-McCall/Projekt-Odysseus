@@ -104,7 +104,7 @@ body {
     top: 2vh; /* Placerer menubaren 2% fra toppen af viewport-højden */
     left: 50%; /* Centrerer menubaren horisontalt */
     transform: translateX(-50%); /* Flytter menubaren så dens midte er centreret */
-    padding: 2vh 4vw; /* Indre afstand skaleres relativt til viewport-højde og bredde */
+    padding: 1vh 2vw; /* Indre afstand skaleres relativt til viewport-højde og bredde */
     text-align: center; /* Centrerer indholdet inden i menubaren */
     z-index: 1000; /* Sørger for, at menubaren vises over andre elementer */
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0)); /* Semi-transparent gradient */
@@ -127,8 +127,8 @@ body {
     display: flex; /* Brug flexbox til li for at gøre hele knappen klikbar */
     justify-content: center; /* Centrer indholdet vandret */
     align-items: center; /* Centrer indholdet lodret */
-    width: 10vw; /* Bredde justeret til 15% af viewportens bredde */
-    height: 5vh; /* Højde justeret til 5% af viewportens højde */
+    width: 5vw; /* Bredde justeret til 15% af viewportens bredde */
+    height: 4vh; /* Højde justeret til 5% af viewportens højde */
     border-radius: 1.5vw; /* Afrundede hjørner justeret med vw */
     cursor: pointer; /* Ændrer markøren til en "pegehånd" for klikbare elementer */
     transition: background-color 0.3s; /* Skaber en glidende effekt, når baggrundsfarven ændres */ 
