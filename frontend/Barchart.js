@@ -3,11 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
 // Definer dimensioner for diagrammet
     const w = 1000, h = 500, padding = 50;
 
-    // Funktion til at hente data fra API
-    const fetchData = async () => {
-        const response = await fetch("/api/albums");
-        return await response.json();
-    };
+// Funktion til at hente data fra API
+const fetchData = async () => {
+    const response = await fetch("/api/albums");
+    return await response.json();
+};
 
     // Funktion til at oprette diagrammet
     const createChart = async (sortByAvg = false) => {
@@ -15,25 +15,21 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!data || data.length === 0) return;
 
 // Beregn gennemsnittet for hvert år
-const GennemsnitData = data.reduce((acc, d) => {
-    const yearData = acc[d.year] || { total: 0, count: 0 };
-    yearData.total += +d.avg_measurement;
-    yearData.count++;
-    acc[d.year] = yearData;
-    return acc;
+const GennemsnitData = data.reduce((nydata, d) => {
+    nydata[d.year] = nydata[d.year] || { total: 0, count: 0 };
+    nydata[d.year].total += +d.avg_measurement;
+    nydata[d.year].count++;
+    return nydata;
 }, {});
 
 // Formater dataen til et array og beregn gennemsnit
-let formattedData = Object.entries(GennemsnitData).map(([year, { total, count }]) => ({
-    year: Number(year),
-    avg_measurement: total / count,
-}));
-
-// Sorter dataen efter gennemsnit, hvis sortByAvg er sand
-if (sortByAvg) {
-    formattedData.sort((a, b) => b.avg_measurement - a.avg_measurement);
-}
-
+let formattedData = Object.entries(GennemsnitData)
+    .map(([year, { total, count }]) => ({
+        year: +year, // Kortere måde at konvertere til Number
+        avg_measurement: total / count,
+    }))
+    
+    .sort(sortByAvg ? (a, b) => b.avg_measurement - a.avg_measurement : undefined);
 
         d3.select("#chartContainer").select("svg").remove();
 
