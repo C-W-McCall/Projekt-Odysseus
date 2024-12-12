@@ -140,14 +140,6 @@ d3.json(`/api/density`).then((data) => {
         .attr("stroke", "black")
         .attr("id", `datapoint${i}`)
 
-
-        d3.select(`#datapoint${i}`)
-        .append("div")
-        .style("position", "absolute")
-        .style("visibility", "visible")
-        .attr("id", `datapointDiv${i}`)
-        .text(`${data[i].high}`);
-
     };
 
     
