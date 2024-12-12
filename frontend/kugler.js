@@ -1,6 +1,6 @@
 // Opret en SVG-container direkte på body (uden at pakke det ind i en aflang boks)
 const svgLegend = d3.selectAll(".visualisering-content").append("svg")
-    .attr("width", 1400)  // Brede af SVG, juster efter behov
+    .attr("width", 1200)  // Brede af SVG, juster efter behov
     .attr("height", 100);  // Højde af SVG
 
 const r = 10;  // Radius for cirklerne (standard)
