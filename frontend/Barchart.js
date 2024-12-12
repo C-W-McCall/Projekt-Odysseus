@@ -16,7 +16,6 @@ const fetchData = async () => {
     // Funktion til at oprette diagrammet
     const createChart = async (sortByAvg = false) => {
         const data = await fetchData();
-        if (!data || data.length === 0) return;
 
 // Beregn gennemsnittet for hvert år
 const GennemsnitData = data.reduce((nydata, d) => {
