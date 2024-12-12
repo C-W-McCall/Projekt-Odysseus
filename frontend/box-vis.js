@@ -1,9 +1,39 @@
-const svg = d3.selectAll(".visualisering-content").append("svg").attr("width", 1400).attr("height", 300) 
+const svg = d3.selectAll(".visualisering-content").append("svg").attr("width", 1200).attr("height", 300) 
 
 
 d3.json(`/api/albums`).then((data) => {
   
     console.log(data);
+
+
+    // Alle år tekstenes X og Y koordinat
+    let årTextX = 575;
+    let årTextY = 20;
+
+    // Hav tekstenes y koordinat
+    let oceanTextY = 170;
+
+    // Hav-tekstenes x koordinat
+    let atlaTextX = 389;
+    let pacificTextX = 1000;
+    let arcticTextX = 112;
+    let indiTextX = 685;
+
+    // Starten på 'create balls' funktionernes x koordinat
+    let atlaStart = 262;
+    let pacifStart = 862;
+    let indiStart = 562;
+    let arctiStart = -38;
+
+    // Selve værdien der kommer frem's y koordinat start transition og slut transition
+    let oceanMeasurementYStart = 170;
+    let oceanMeasurementYEnd = 140;
+
+    // Mesasurements x koordinat over spanden
+    let atlaMeasurementX = 430;
+    let pacifMeasurementX = 1033;
+    let indiMeasurementX = 735;
+    let arctiMeasurementX = 135;
 
     function createBucket  (scaling, xShift, yShift) {
         svg.append("line")
@@ -28,10 +58,10 @@ d3.json(`/api/albums`).then((data) => {
         .attr('stroke', '#fcffc7')
     };
 
-    createBucket (1.25, 50, -75);
-    createBucket (1.25, 350, -75);
-    createBucket (1.25, 650, -75);
-    createBucket (1.25, 950, -75);
+    createBucket (1.25, -40, -75);
+    createBucket (1.25, 260, -75);
+    createBucket (1.25, 560, -75);
+    createBucket (1.25, 860, -75);
 
 
 
@@ -39,9 +69,8 @@ d3.json(`/api/albums`).then((data) => {
     svg
     .append("text")
     .text("Atlanterhavet")
-    .attr("x", 479)
-    .attr("y", 170)
-    .attr("id", "pac")
+    .attr("x", atlaTextX)
+    .attr("y", oceanTextY)
     .style("fill", "#fcffc7")
     .style("font-size", 20)
 
@@ -50,8 +79,8 @@ d3.json(`/api/albums`).then((data) => {
     svg
     .append("text")
     .text("Stillehavet")
-    .attr("x", 1090)
-    .attr("y", 170)
+    .attr("x", pacificTextX)
+    .attr("y", oceanTextY)
     .style("fill", "#fcffc7")
     .style("font-size", 20)
 
@@ -59,8 +88,8 @@ d3.json(`/api/albums`).then((data) => {
     svg
     .append("text")
     .text("Ishavet")
-    .attr("x", 202)
-    .attr("y", 170)
+    .attr("x", arcticTextX)
+    .attr("y", oceanTextY)
     .style("fill", "#fcffc7")
     .style("font-size", 20)
 
@@ -68,8 +97,8 @@ d3.json(`/api/albums`).then((data) => {
     svg
     .append("text")
     .text("Indiske Ocean")
-    .attr("x", 775)
-    .attr("y", 170)
+    .attr("x", indiTextX)
+    .attr("y", oceanTextY)
     .style("fill", "#fcffc7")
     .style("font-size", 20)
    
@@ -77,14 +106,14 @@ d3.json(`/api/albums`).then((data) => {
     function show2014 () {
       svg.selectAll("#viz").remove();
         svg.selectAll("#viz_year").remove();
-        createPlasticAtla2014 (352);
-        createPlasticPacific2014 (952);
+        createPlasticAtla2014 (atlaStart);
+        createPlasticPacific2014 (pacifStart);
 
         svg
         .append("text")
         .text("2014")
-        .attr("x", 665)
-        .attr("y", 20)
+        .attr("x", årTextX)
+        .attr("y", årTextY)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 20);
@@ -93,47 +122,47 @@ d3.json(`/api/albums`).then((data) => {
         svg
         .append("text")
         .text(`${Pac2014.slice(0, 4)}`)  // .slice 'cutter' en værdi (tal eller string) hvor 0 er start på cut (altså starten) og 4 er der hvor cuttet skal gå exclusiv den værdi
-        .attr("x", 1123)
-        .attr("y", 170)
+        .attr("x", pacifMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 1123)
-        .attr("y", 140 )
+        .attr("x", pacifMeasurementX)
+        .attr("y", oceanMeasurementYEnd)
         .style("opacity", 1);
 
         let Atl2014 = data[1].avg_measurement
         svg
         .append("text")
         .text(`${Atl2014.slice(0, 4)}`)
-        .attr("x", 520)
-        .attr("y", 170)
+        .attr("x", atlaMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 520)
-        .attr("y", 140 )
+        .attr("x", atlaMeasurementX)
+        .attr("y", oceanMeasurementYEnd)
         .style("opacity", 1);
     };
    
     function show2015 () {
       svg.selectAll("#viz").remove();
       svg.selectAll("#viz_year").remove();
-      createPlasticAtla2015 (352);
-      createPlasticPacific2015 (952);
+      createPlasticAtla2015 (atlaStart);
+      createPlasticPacific2015 (pacifStart);
         
 
         svg
         .append("text")
         .text("2015")
-        .attr("x", 665)
-        .attr("y", 20)
+        .attr("x", årTextX)
+        .attr("y", årTextY)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 20);
@@ -142,32 +171,32 @@ d3.json(`/api/albums`).then((data) => {
         svg
         .append("text")
         .text(`${Pac2015.slice(0, 3)}`)
-        .attr("x", 1123)
-        .attr("y", 170)
+        .attr("x", pacifMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 1123)
-        .attr("y", 140 )
+        .attr("x", pacifMeasurementX)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
 
         let Atl2015 = data[5].avg_measurement
         svg
         .append("text")
         .text(`${Atl2015.slice(0, 4)}`)
-        .attr("x", 520)
-        .attr("y", 170)
+        .attr("x", atlaMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 520)
-        .attr("y", 140 )
+        .attr("x", 430)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
         
     };
@@ -176,15 +205,15 @@ d3.json(`/api/albums`).then((data) => {
     function show2016 () {
       svg.selectAll("#viz").remove();
       svg.selectAll("#viz_year").remove();
-      createPlasticAtla2016 (352)
-      createPlasticArc2016 (52)
+      createPlasticAtla2016 (atlaStart)
+      createPlasticArc2016 (arctiStart)
         
 
         svg
         .append("text")
         .text("2016")
-        .attr("x", 665)
-        .attr("y", 20)
+        .attr("x", årTextX)
+        .attr("y", årTextY)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 20);
@@ -193,32 +222,32 @@ d3.json(`/api/albums`).then((data) => {
         svg
         .append("text")
         .text(`${Atl2016.slice(0, 3)}`)
-        .attr("x", 520)
-        .attr("y", 170)
+        .attr("x", atlaMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 520)
-        .attr("y", 140 )
+        .attr("x", atlaMeasurementX)
+        .attr("y", oceanMeasurementYEnd)
         .style("opacity", 1);
 
         let Arc2016 = data[8].avg_measurement
         svg
         .append("text")
         .text(`${Arc2016.slice(0, 2)}`)
-        .attr("x", 225)
-        .attr("y", 170)
+        .attr("x", arctiMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 225)
-        .attr("y", 140 )
+        .attr("x", arctiMeasurementX)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
     };
 
@@ -226,15 +255,15 @@ d3.json(`/api/albums`).then((data) => {
     function show2017 () {
       svg.selectAll("#viz").remove();
       svg.selectAll("#viz_year").remove();
-      createPlasticAtla2017 (352);
-      createPlasticIndia2017 (652);
-      createPlasticPacific2017 (952);
+      createPlasticAtla2017 (atlaStart);
+      createPlasticIndia2017 (indiStart);
+      createPlasticPacific2017 (pacifStart);
 
         svg
         .append("text")
         .text("2017")
-        .attr("x", 665)
-        .attr("y", 20)
+        .attr("x", årTextX)
+        .attr("y", årTextY)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 20);
@@ -243,48 +272,48 @@ d3.json(`/api/albums`).then((data) => {
         svg
         .append("text")
         .text(`${Atl2017.slice(0, 3)}`)
-        .attr("x", 520)
-        .attr("y", 170)
+        .attr("x", atlaMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 520)
-        .attr("y", 140 )
+        .attr("x", atlaMeasurementX)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
 
         let Pac2017 = data[15].avg_measurement
         svg
         .append("text")
         .text(`${Pac2017.slice(0, 4)}`)
-        .attr("x", 1123)
-        .attr("y", 170)
+        .attr("x", pacifMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 1123)
-        .attr("y", 140 )
+        .attr("x", pacifMeasurementX)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
 
         let Indi2017 = data[14].avg_measurement
         svg
         .append("text")
         .text(`${Indi2017.slice(0, 2)}`)
-        .attr("x", 818)
-        .attr("y", 170)
+        .attr("x", indiMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 818)
-        .attr("y", 140 )
+        .attr("x", indiMeasurementX)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
     }
 
@@ -292,14 +321,14 @@ d3.json(`/api/albums`).then((data) => {
     function show2018 () {
       svg.selectAll("#viz").remove();
       svg.selectAll("#viz_year").remove();
-      createPlasticAtla2018 (352);
-      createPlasticPacific2018 (952);
+      createPlasticAtla2018 (atlaStart);
+      createPlasticPacific2018 (pacifStart);
 
         svg
         .append("text")
         .text("2018")
-        .attr("x", 665)
-        .attr("y", 20)
+        .attr("x", årTextX)
+        .attr("y", årTextY)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 20);
@@ -308,48 +337,48 @@ d3.json(`/api/albums`).then((data) => {
         svg
         .append("text")
         .text(`${Atl2018.slice(0, 3)}`)
-        .attr("x", 520)
-        .attr("y", 170)
+        .attr("x", atlaMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 520)
-        .attr("y", 140 )
+        .attr("x", atlaMeasurementX)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
 
         let Pac2018 = data[19].avg_measurement
         svg
         .append("text")
         .text(`${Pac2018.slice(0, 4)}`)
-        .attr("x", 1123)
-        .attr("y", 170)
+        .attr("x", pacifMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 1123)
-        .attr("y", 140 )
+        .attr("x", pacifMeasurementX)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
     }
 
     function show2019 () {
         svg.selectAll("#viz").remove();
         svg.selectAll("#viz_year").remove();
-        createPlasticAtla2019 (352);
-        createPlasticPacific2019 (952);
-        createPlasticArc2019 (52);
-        createPlasticIndia2019 (652);
+        createPlasticAtla2019 (atlaStart);
+        createPlasticPacific2019 (pacifStart);
+        createPlasticArc2019 (arctiStart);
+        createPlasticIndia2019 (indiStart);
 
         svg
         .append("text")
         .text("2019")
-        .attr("x", 665)
-        .attr("y", 20)
+        .attr("x", årTextX)
+        .attr("y", årTextY)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 20);
@@ -358,64 +387,64 @@ d3.json(`/api/albums`).then((data) => {
         svg
         .append("text")
         .text(`${Atl2019.slice(0, 4)}`)
-        .attr("x", 520)
-        .attr("y", 170)
+        .attr("x", atlaMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 520)
-        .attr("y", 140 )
+        .attr("x", atlaMeasurementX)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
 
         let Pac2019 = data[23].avg_measurement
         svg
         .append("text")
         .text(`${Pac2019.slice(0, 5)}`)
-        .attr("x", 1123)
-        .attr("y", 170)
+        .attr("x", pacifMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 1123)
-        .attr("y", 140 )
+        .attr("x", pacifMeasurementX)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
 
         let Indi2019 = data[22].avg_measurement
         svg
         .append("text")
         .text(`${Indi2019.slice(0, 4)}`)
-        .attr("x", 818)
-        .attr("y", 170)
+        .attr("x", indiMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 818)
-        .attr("y", 140 )
+        .attr("x", indiMeasurementX)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
 
         let Arc2019 = data[20].avg_measurement
         svg
         .append("text")
         .text(`${Arc2019.slice(0, 4)}`)
-        .attr("x", 225)
-        .attr("y", 170)
+        .attr("x", arctiMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 225)
-        .attr("y", 140 )
+        .attr("x", arctiMeasurementX)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
         
     };
@@ -424,16 +453,16 @@ d3.json(`/api/albums`).then((data) => {
     function show2020 () {
       svg.selectAll("#viz").remove();
       svg.selectAll("#viz_year").remove();
-      createPlasticAtla2020 (352);
-      createPlasticIndia2020 (652);
-      createPlasticPacific2020 (952);
+      createPlasticAtla2020 (atlaStart);
+      createPlasticIndia2020 (indiStart);
+      createPlasticPacific2020 (pacifStart);
 
 
       svg
       .append("text")
       .text("2020")
-      .attr("x", 665)
-      .attr("y", 20)
+      .attr("x", årTextX)
+      .attr("y", årTextY)
       .attr("id", "viz_year")
       .style("fill", "#fcffc7")
       .style("font-size", 20);
@@ -442,48 +471,48 @@ d3.json(`/api/albums`).then((data) => {
         svg
         .append("text")
         .text(`${Atl2020.slice(0, 3)}`)
-        .attr("x", 520)
-        .attr("y", 170)
+        .attr("x", atlaMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 520)
-        .attr("y", 140 )
+        .attr("x", atlaMeasurementX)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
 
         let Pac2020 = data[27].avg_measurement
         svg
         .append("text")
         .text(`${Pac2020.slice(0, 2)}`)
-        .attr("x", 1123)
-        .attr("y", 170)
+        .attr("x", pacifMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 1123)
-        .attr("y", 140 )
+        .attr("x", pacifMeasurementX)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
 
         let Indi2020 = data[26].avg_measurement
         svg
         .append("text")
         .text(`${Indi2020.slice(0, 3)}`)
-        .attr("x", 818)
-        .attr("y", 170)
+        .attr("x", indiMeasurementX)
+        .attr("y", oceanMeasurementYStart)
         .attr("id", "viz_year")
         .style("fill", "#fcffc7")
         .style("font-size", 16)
         .style("opacity", 0)
         .transition()
         .duration(1000)
-        .attr("x", 818)
-        .attr("y", 140 )
+        .attr("x", indiMeasurementX)
+        .attr("y", oceanMeasurementYEnd )
         .style("opacity", 1);
     }
 
